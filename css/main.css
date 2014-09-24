@@ -109,7 +109,11 @@ p {
     font-weight: 300;
 }
 
-
+.container {
+    margin: 0 auto;
+    max-width: 760px;
+    padding: 0 10px;
+}
 
 
 
