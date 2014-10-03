@@ -110,6 +110,10 @@ body {
     background-clip: initial;
     background-color: rgb(255, 254, 252);
     -webkit-tap-highlight-color: rgba(0,0,0,0);
+
+    margin: 0 auto;
+    max-width: 660px;
+    padding: 0 10px;
 }
 
 html {
@@ -119,18 +123,12 @@ html {
 
 h1 { 
     font-weight: 700; 
+    letter-spacing: 2px;
 }
 
 p {
     font-weight: 300;
 }
-
-.container {
-    margin: 0 auto;
-    max-width: 660px;
-    padding: 0 10px;
-}
-
 
 
 
