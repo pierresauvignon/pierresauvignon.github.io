@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="description" content="Web entrepreneur focused on early-stage startups. Former Head of Product at Pollenizer, founder of Heyscape, now building a portfolio of products: OnSilent, LobsterOne, TigerSoup and OnReplay." />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="color-scheme" content="light dark" />
@@ -15,6 +14,7 @@
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@pierre_s" />
   <link rel="canonical" href="https://pierresauvignon.github.io/" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23bd4a2c'/%3E%3Ctext x='32' y='45' font-family='Georgia, serif' font-size='38' font-weight='bold' text-anchor='middle' fill='%23f3efe6'%3EP%3C/text%3E%3C/svg%3E" />
 
   <title>Pierre Sauvignon: Web Entrepreneur with a Product Bias</title>
 
@@ -94,6 +94,14 @@
     }
     ::selection{ background:var(--accent); color:var(--paper); }
 
+    /* Paper grain */
+    body::after{
+      content:""; position:fixed; inset:0; z-index:2; pointer-events:none; opacity:.05;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    :focus-visible{ outline:2px solid var(--accent); outline-offset:3px; border-radius:2px; }
+
     .skip{ position:absolute; left:-9999px; }
     .skip:focus{ position:fixed; left:1rem; top:1rem; z-index:10; background:var(--ink); color:var(--paper);
       padding:.55rem .8rem; border-radius:5px; font-size:.85rem; text-decoration:none; }
@@ -116,7 +124,7 @@
 
     .name{
       font-family:var(--disp); font-weight:700; font-size:clamp(2.1rem,3.4vw,2.7rem);
-      line-height:1.02; letter-spacing:-.03em; margin:0 0 1.1rem;
+      line-height:1.02; letter-spacing:-.03em; margin:0 0 1.1rem; text-wrap:balance;
     }
     .role{ font-size:1.05rem; color:var(--ink); font-weight:500; margin:0 0 .2rem; }
     .place{ font-size:1.05rem; color:var(--muted); margin:0 0 1.6rem; }
@@ -144,12 +152,19 @@
     .rail-links a:hover .ar{ color:var(--accent); }
 
     .rail-foot{ margin-top:2.4rem; font-size:.85rem; color:var(--faint); }
+    .content-foot{ display:none; margin-top:4rem; padding-top:1.5rem; border-top:1px solid var(--line);
+      font-size:.85rem; color:var(--faint); }
+    @media (max-width:900px){
+      .rail-foot{ display:none; }
+      .content-foot{ display:block; }
+    }
 
     /* ---------- Content column ---------- */
     .content{ max-width:40rem; }
     .lede{
       font-family:var(--disp); font-weight:500; font-size:clamp(1.7rem,3.6vw,2.55rem);
       line-height:1.16; letter-spacing:-.02em; margin:0 0 clamp(3rem,7vw,4.5rem); color:var(--ink);
+      text-wrap:balance;
     }
     .lede .hl{ color:var(--accent); }
 
@@ -171,7 +186,8 @@
     .entry{ display:grid; grid-template-columns:5.5rem 1fr; gap:1.6rem;
       padding:1.5rem 0; border-top:1px solid var(--line); }
     .entry:first-of-type{ border-top:0; padding-top:0; }
-    .entry .when{ color:var(--muted); font-size:.95rem; font-weight:500; padding-top:.2rem; }
+    .entry .when{ color:var(--muted); font-size:.95rem; font-weight:500; padding-top:.2rem;
+      font-variant-numeric:tabular-nums; }
     .entry .when.now, .entry .when.next{ color:var(--accent); font-weight:700; }
     .entry p{ margin:0; }
     @media (max-width:520px){ .entry{ grid-template-columns:1fr; gap:.4rem; } }
@@ -242,7 +258,7 @@
 
     <!-- ============ Content ============ -->
     <main id="content" class="content">
-      <p class="lede rev r2">Entrepreneur with a <span class="hl">product bias.</span> I turn early-stage ideas into things people actually use.</p>
+      <p class="lede rev r2">Entrepreneur with a <span class="hl">product bias.</span> I turn early-stage ideas into products people use and pay for.</p>
 
       <section class="block rev r4">
         <p class="label">The road here</p>
@@ -257,7 +273,7 @@
         <div class="entry">
           <div class="when">2008</div>
           <p>Originally from France, I moved to Australia while finishing a Masters of IT and jumped
-            straight into Sydney's startup scene. In 2008 I joined
+            straight into Sydney's startup scene, joining
             <a class="link" href="https://www.afr.com/technology/end-of-an-era-as-aussie-startup-pioneers-pollenizer-call-it-a-day-20170228-gun90e" target="_blank" rel="noopener">Pollenizer</a>
             in its earliest days.</p>
         </div>
@@ -270,7 +286,7 @@
             <a class="link" href="http://www.amazon.com/Startup-Focus-Mick-Liubinskas/dp/0980809746/" target="_blank" rel="noopener">a book</a>
             to share it. We also had wins: one venture
             <a class="link" href="http://anthillonline.com/spreets-sold-for-40-million-in-the-biggest-and-fastest-group-buying-deal-of-the-year-so-far/" target="_blank" rel="noopener">sold to Yahoo!7 for AU$40M</a>,
-            and several others became profitable companies.</p>
+            and several others turned profitable.</p>
         </div>
 
         <div class="entry">
@@ -287,7 +303,7 @@
             <a class="link" href="https://rac.com.au/" target="_blank" rel="noopener">RAC</a>
             to incubate new ventures within its innovation arm. That's where I created
             <a class="link" href="https://heyscape.com.au" target="_blank" rel="noopener">Heyscape</a>,
-            off-grid tiny-cabin stays across exclusive Western Australian locations. I grew it from
+            off-grid tiny-cabin stays in remote corners of Western Australia. I grew it from
             idea to profitability in four years, reaching 25 cabins across 7 sites. Watch
             <a class="link" href="https://www.youtube.com/watch?v=ZKadr02tapA" target="_blank" rel="noopener">the brand story</a>
             to see the cabins, the locations, and me wearing a buttoned-up shirt (rare!).</p>
@@ -298,10 +314,10 @@
           <p>After four years at Heyscape it was time for a new challenge, and along the way my wife
             and I launched two little "startups" at home (kids!). These days I'm doing what I love most:
             building a small portfolio of software products, solo. A mix of consumer apps and tools
-            for developers. I also contract with established businesses to roll out AI where it counts,
-            most recently as AI Tech Lead at
+            for developers. I also contract with established businesses to put AI to work where it counts.
+            Most recently, as AI Tech Lead at
             <a class="link" href="https://www.respondent.io" target="_blank" rel="noopener">Respondent.io</a>,
-            taking their supply-side platform from zero to a production back-office, autonomous AI agent
+            I took their supply-side platform from zero to a production back-office, autonomous AI agent
             included, in under three months.</p>
         </div>
 
@@ -321,9 +337,9 @@
             <a class="item" href="https://onsilent.com" target="_blank" rel="noopener">
               <span class="cat">AI assistant</span>
               <span class="pn">OnSilent</span>
-              <span class="desc">An AI assistant in your pocket that handles your calls in &amp; out, provides
-                support and helps grow your business 24/7, for anyone who lives on their phone: sales,
-                property, trades and services.</span>
+              <span class="desc">An AI assistant that answers your calls, makes them, and follows up around
+                the clock. Built for people who run their business from a phone: sales, property,
+                trades and services.</span>
               <span class="go">onsilent.com <span class="ar" aria-hidden="true">↗</span></span>
             </a>
           </li>
@@ -331,9 +347,8 @@
             <a class="item" href="https://lobsterone.ai" target="_blank" rel="noopener">
               <span class="cat">Developer tool · macOS</span>
               <span class="pn">LobsterOne</span>
-              <span class="desc">A menu-bar app that tracks token usage, cost and productivity for developers
-                using AI coding tools: a private dashboard plus a global leaderboard, and it never touches
-                your code.</span>
+              <span class="desc">A menu-bar app that tracks token usage, cost and output across AI coding
+                tools. Private dashboard, global leaderboard, and it never reads your code.</span>
               <span class="go">lobsterone.ai <span class="ar" aria-hidden="true">↗</span></span>
             </a>
           </li>
@@ -341,8 +356,8 @@
             <a class="item" href="https://www.tigersoup.com" target="_blank" rel="noopener">
               <span class="cat">Developer tool · macOS</span>
               <span class="pn">TigerSoup</span>
-              <span class="desc">Gets developers from idea to deployed. It provisions your AWS account, GitHub
-                repo and CI/CD pipelines automatically, so you can skip the setup and just build.</span>
+              <span class="desc">Takes a project from idea to deployed. It provisions your AWS account, GitHub
+                repo and CI/CD pipeline so you skip the setup and just build.</span>
               <span class="go">tigersoup.com <span class="ar" aria-hidden="true">↗</span></span>
             </a>
           </li>
@@ -350,13 +365,15 @@
             <a class="item" href="https://onreplay.ai" target="_blank" rel="noopener">
               <span class="cat">Consumer app</span>
               <span class="pn">OnReplay</span>
-              <span class="desc">Turns any photo into a cinematic short film in minutes, alongside a growing set
-                of free AI creative tools. Upload a photo, pick a mood, share the result.</span>
+              <span class="desc">Turns a single photo into a cinematic short film in minutes. Upload, pick a
+                mood, share. Comes with a growing set of free AI creative tools.</span>
               <span class="go">onreplay.ai <span class="ar" aria-hidden="true">↗</span></span>
             </a>
           </li>
         </ol>
       </section>
+
+      <p class="content-foot">© Pierre Sauvignon</p>
     </main>
   </div>
 </body>
