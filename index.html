@@ -5,8 +5,8 @@
   <meta name="description" content="Web entrepreneur focused on early-stage startups. Former Head of Product at Pollenizer, founder of Heyscape, now building a portfolio of products: OnSilent, LobsterOne, TigerSoup and OnReplay." />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="color-scheme" content="light dark" />
-  <meta name="theme-color" content="#17150f" media="(prefers-color-scheme: dark)" />
-  <meta name="theme-color" content="#f3efe6" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#101012" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#f4f3ee" media="(prefers-color-scheme: light)" />
   <meta property="og:title" content="Pierre Sauvignon: Web Entrepreneur with a Product Bias" />
   <meta property="og:description" content="Web entrepreneur focused on early-stage startups. Former Head of Product at Pollenizer, founder of Heyscape, now building a portfolio of products: OnSilent, LobsterOne, TigerSoup and OnReplay." />
   <meta property="og:type" content="website" />
@@ -14,13 +14,13 @@
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@pierre_s" />
   <link rel="canonical" href="https://pierresauvignon.github.io/" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23bd4a2c'/%3E%3Ctext x='32' y='45' font-family='Georgia, serif' font-size='38' font-weight='bold' text-anchor='middle' fill='%23f3efe6'%3EP%3C/text%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%232438ff'/%3E%3Ctext x='32' y='46' font-family='Arial Black, sans-serif' font-size='36' font-weight='900' text-anchor='middle' fill='%23f4f3ee'%3EP%3C/text%3E%3C/svg%3E" />
 
   <title>Pierre Sauvignon: Web Entrepreneur with a Product Bias</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,800;0,900;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
 
   <!-- Entity / attribution: ties this person to his profiles and the products he builds -->
   <script type="application/ld+json">
@@ -50,187 +50,204 @@
 
   <style>
     /* ============================================================
-       STUDIO : warm editorial personal site
-       Bone paper · ink · one clay accent
-       Bricolage Grotesque (display) / Hanken Grotesk (text)
+       INDEX : bold swiss personal site
+       Bone white · near black · electric cobalt
+       Archivo (display + text) / Instrument Serif (italic accents)
        ============================================================ */
     :root{
-      --paper:  #f3efe6;
-      --paper2: #efe9dd;
-      --ink:    #1c1a15;
-      --muted:  #7b756a;
-      --faint:  #a49d90;
-      --line:   #1c1a1518;
-      --accent: #bd4a2c;
-      --accent-soft: #bd4a2c22;
+      --paper: #f4f3ee;
+      --ink:   #131313;
+      --muted: #6e6d67;
+      --faint: #a3a29a;
+      --line:  #13131326;
+      --blue:  #2438ff;
+      --blue-ink: #f4f3ee; /* text on blue */
 
-      --disp: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
-      --text: "Hanken Grotesk", ui-sans-serif, system-ui, -apple-system, sans-serif;
+      --sans:  "Archivo", ui-sans-serif, system-ui, sans-serif;
+      --serif: "Instrument Serif", Georgia, serif;
+
+      --gutter: clamp(1.25rem, 4vw, 4rem);
     }
     @media (prefers-color-scheme: dark){
       :root{
-        --paper:  #16140f;
-        --paper2: #1d1b14;
-        --ink:    #ece6d8;
-        --muted:  #918a7b;
-        --faint:  #6f695c;
-        --line:   #ece6d818;
-        --accent: #e2694a;
-        --accent-soft: #e2694a26;
+        --paper: #101012;
+        --ink:   #ecece6;
+        --muted: #8f8e88;
+        --faint: #5d5c57;
+        --line:  #ecece626;
+        --blue:  #3d50ff;
+        --blue-ink: #f4f3ee;
       }
     }
 
     *{ box-sizing:border-box; }
     html{ -webkit-text-size-adjust:100%; }
     body{
-      margin:0; color:var(--ink);
-      font-family:var(--text); font-size:1.1875rem; line-height:1.6; font-weight:400;
-      background:
-        radial-gradient(80rem 40rem at 8% -8%, var(--accent-soft), transparent 55%),
-        radial-gradient(60rem 40rem at 100% 0%, color-mix(in oklab, var(--ink), transparent 96%), transparent 60%),
-        var(--paper);
-      background-attachment:fixed;
+      margin:0; background:var(--paper); color:var(--ink);
+      font-family:var(--sans); font-size:1.125rem; line-height:1.55; font-weight:400;
       -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
     }
-    ::selection{ background:var(--accent); color:var(--paper); }
-
-    /* Paper grain */
-    body::after{
-      content:""; position:fixed; inset:0; z-index:2; pointer-events:none; opacity:.05;
-      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    }
-
-    :focus-visible{ outline:2px solid var(--accent); outline-offset:3px; border-radius:2px; }
+    ::selection{ background:var(--blue); color:var(--blue-ink); }
+    :focus-visible{ outline:2px solid var(--blue); outline-offset:3px; }
 
     .skip{ position:absolute; left:-9999px; }
-    .skip:focus{ position:fixed; left:1rem; top:1rem; z-index:10; background:var(--ink); color:var(--paper);
-      padding:.55rem .8rem; border-radius:5px; font-size:.85rem; text-decoration:none; }
+    .skip:focus{ position:fixed; left:1rem; top:1rem; z-index:20; background:var(--ink); color:var(--paper);
+      padding:.55rem .8rem; font-size:.85rem; text-decoration:none; }
 
-    /* ---------- Shell / grid ---------- */
-    .shell{
-      max-width:76rem; margin:0 auto;
-      padding:clamp(2.5rem,6vw,5rem) clamp(1.5rem,5vw,4rem);
-      display:grid; grid-template-columns:minmax(0,20rem) minmax(0,1fr);
-      gap:clamp(2.5rem,6vw,6rem);
-      align-items:start;
-    }
-    @media (max-width:900px){
-      .shell{ grid-template-columns:1fr; gap:3.5rem; }
-    }
+    .wrap{ padding-left:var(--gutter); padding-right:var(--gutter); max-width:90rem; margin:0 auto; }
 
-    /* ---------- Identity rail ---------- */
-    .rail{ position:sticky; top:clamp(2rem,6vh,4rem); }
-    @media (max-width:900px){ .rail{ position:static; top:auto; } }
-
-    .name{
-      font-family:var(--disp); font-weight:700; font-size:clamp(2.1rem,3.4vw,2.7rem);
-      line-height:1.02; letter-spacing:-.03em; margin:0 0 1.1rem; text-wrap:balance;
+    /* ---------- Header ---------- */
+    .top{
+      display:flex; justify-content:space-between; align-items:center;
+      padding-top:1.4rem; padding-bottom:1.4rem;
+      border-bottom:1px solid var(--line);
+      font-size:.9rem; font-weight:600; letter-spacing:.02em;
     }
-    .role{ font-size:1.05rem; color:var(--ink); font-weight:500; margin:0 0 .2rem; }
-    .place{ font-size:1.05rem; color:var(--muted); margin:0 0 1.6rem; }
+    .top .mark{ font-weight:900; letter-spacing:-.02em; font-size:1rem; color:var(--ink); text-decoration:none; }
+    .top nav{ display:flex; gap:clamp(1rem,3vw,2.2rem); }
+    .top nav a{ color:var(--ink); text-decoration:none; position:relative; }
+    .top nav a::after{ content:""; position:absolute; left:0; right:100%; bottom:-4px; height:2px;
+      background:var(--blue); transition:right .25s cubic-bezier(.4,0,.2,1); }
+    .top nav a:hover{ color:var(--blue); }
+    .top nav a:hover::after{ right:0; }
 
-    .status{
-      display:inline-flex; align-items:center; gap:.6rem;
-      font-size:.9rem; font-weight:500; color:var(--ink);
-      background:var(--paper2); border:1px solid var(--line);
-      padding:.5rem .85rem; border-radius:999px; margin-bottom:2rem;
+    /* ---------- Hero ---------- */
+    .hero{ padding-top:clamp(3rem,8vh,6rem); padding-bottom:clamp(3rem,8vh,6rem); }
+    .hero h1{
+      margin:0; font-weight:900; text-transform:uppercase;
+      font-size:clamp(3rem, 12.5vw, 11rem);
+      line-height:.88; letter-spacing:-.035em;
     }
-    .dot{ width:.55rem; height:.55rem; border-radius:50%; background:var(--accent); position:relative; flex:none; }
-    .dot::after{ content:""; position:absolute; inset:0; border-radius:50%; background:var(--accent);
+    .hero h1 .l2{ display:block; color:transparent; -webkit-text-stroke:2px var(--ink); }
+    @media (max-width:600px){ .hero h1 .l2{ -webkit-text-stroke:1.2px var(--ink); } }
+
+    .hero-row{
+      display:grid; grid-template-columns:minmax(0,1fr) auto; gap:2rem; align-items:end;
+      margin-top:clamp(2rem,5vh,3.5rem);
+    }
+    @media (max-width:800px){ .hero-row{ grid-template-columns:1fr; } }
+
+    .lede{
+      max-width:34ch; margin:0;
+      font-size:clamp(1.5rem,3.2vw,2.4rem); line-height:1.18; letter-spacing:-.015em; font-weight:500;
+      text-wrap:balance;
+    }
+    .lede em{ font-family:var(--serif); font-style:italic; font-weight:400; color:var(--blue);
+      font-size:1.06em; letter-spacing:0; }
+
+    .facts{ display:flex; flex-direction:column; gap:.45rem; align-items:flex-start;
+      font-size:.9rem; font-weight:600; color:var(--muted); }
+    .facts .pill{
+      display:inline-flex; align-items:center; gap:.55rem;
+      border:1px solid var(--ink); color:var(--ink); border-radius:999px; padding:.45rem .9rem;
+    }
+    .dot{ width:.5rem; height:.5rem; border-radius:50%; background:var(--blue); position:relative; flex:none; }
+    .dot::after{ content:""; position:absolute; inset:0; border-radius:50%; background:var(--blue);
       animation:ping 2.6s cubic-bezier(0,0,.2,1) infinite; }
     @keyframes ping{ 0%{ transform:scale(1); opacity:.6; } 70%,100%{ transform:scale(3); opacity:0; } }
 
-    .rail-links{ display:flex; flex-direction:column; gap:.55rem; margin:0; padding:0; list-style:none; }
-    .rail-links a{
-      display:inline-flex; align-items:center; gap:.5rem; width:fit-content;
-      color:var(--muted); text-decoration:none; font-size:1rem; transition:color .2s, gap .2s;
+    /* ---------- Section scaffolding ---------- */
+    section{ border-top:1px solid var(--line); padding-top:clamp(2.5rem,6vh,4rem); padding-bottom:clamp(3.5rem,8vh,6rem); }
+    .sec-head{
+      display:flex; align-items:baseline; gap:1.2rem; margin-bottom:clamp(2.5rem,6vh,4rem);
     }
-    .rail-links a .lab{ border-bottom:1px solid transparent; transition:border-color .2s; }
-    .rail-links a:hover{ color:var(--accent); gap:.75rem; }
-    .rail-links a:hover .lab{ border-color:var(--accent); }
-    .rail-links a .ar{ color:var(--faint); transition:color .2s; }
-    .rail-links a:hover .ar{ color:var(--accent); }
-
-    .rail-foot{ margin-top:2.4rem; font-size:.85rem; color:var(--faint); }
-    .content-foot{ display:none; margin-top:4rem; padding-top:1.5rem; border-top:1px solid var(--line);
-      font-size:.85rem; color:var(--faint); }
-    @media (max-width:900px){
-      .rail-foot{ display:none; }
-      .content-foot{ display:block; }
+    .sec-head .no{ font-weight:900; font-size:.95rem; color:var(--blue); font-variant-numeric:tabular-nums; }
+    .sec-head h2{
+      margin:0; font-weight:800; text-transform:uppercase; letter-spacing:.06em; font-size:.95rem;
     }
 
-    /* ---------- Content column ---------- */
-    .content{ max-width:40rem; }
-    .lede{
-      font-family:var(--disp); font-weight:500; font-size:clamp(1.7rem,3.6vw,2.55rem);
-      line-height:1.16; letter-spacing:-.02em; margin:0 0 clamp(3rem,7vw,4.5rem); color:var(--ink);
-      text-wrap:balance;
-    }
-    .lede .hl{ color:var(--accent); }
-
-    .block{ margin-bottom:clamp(3rem,7vw,4.5rem); }
-    .block:last-child{ margin-bottom:0; }
-    .label{
-      font-family:var(--text); font-size:.8rem; font-weight:600; letter-spacing:.11em;
-      text-transform:uppercase; color:var(--faint); margin:0 0 1.8rem;
-      display:flex; align-items:center; gap:.9rem;
-    }
-    .label::after{ content:""; height:1px; flex:1; background:var(--line); }
-
-    /* Prose links */
-    a.link{ color:var(--ink); text-decoration:none; font-weight:500;
-      border-bottom:1.5px solid var(--accent-soft); transition:border-color .2s, color .2s; }
-    a.link:hover{ color:var(--accent); border-color:var(--accent); }
-
-    /* Timeline */
-    .entry{ display:grid; grid-template-columns:5.5rem 1fr; gap:1.6rem;
-      padding:1.5rem 0; border-top:1px solid var(--line); }
+    /* ---------- Timeline ---------- */
+    .road{ max-width:46rem; }
+    .entry{ display:grid; grid-template-columns:7rem 1fr; gap:1.8rem; padding:1.6rem 0; border-top:1px solid var(--line); }
     .entry:first-of-type{ border-top:0; padding-top:0; }
-    .entry .when{ color:var(--muted); font-size:.95rem; font-weight:500; padding-top:.2rem;
-      font-variant-numeric:tabular-nums; }
-    .entry .when.now, .entry .when.next{ color:var(--accent); font-weight:700; }
-    .entry p{ margin:0; }
-    @media (max-width:520px){ .entry{ grid-template-columns:1fr; gap:.4rem; } }
+    .entry .when{
+      font-weight:800; font-size:.95rem; letter-spacing:.02em; color:var(--faint);
+      font-variant-numeric:tabular-nums; padding-top:.25rem; text-transform:uppercase;
+    }
+    .entry .when.now, .entry .when.next{ color:var(--blue); }
+    .entry p{ margin:0; color:var(--ink); }
+    .entry p a{ color:var(--ink); font-weight:600; text-decoration:none;
+      border-bottom:2px solid var(--blue); transition:background .15s, color .15s; }
+    .entry p a:hover{ background:var(--blue); color:var(--blue-ink); }
+    @media (max-width:520px){ .entry{ grid-template-columns:1fr; gap:.5rem; } }
 
-    /* Work index */
-    .work{ list-style:none; margin:0; padding:0; }
+    /* ---------- Work index ---------- */
+    .work{ list-style:none; margin:0; padding:0; counter-reset:proj; }
+    .work li{ border-top:1px solid var(--line); }
+    .work li:last-child{ border-bottom:1px solid var(--line); }
     .item{
-      position:relative; display:grid; grid-template-columns:1fr auto; align-items:baseline;
-      gap:.5rem 1.5rem; padding:1.8rem .2rem; border-top:1px solid var(--line);
-      text-decoration:none; color:var(--ink);
-      transition:padding-left .3s cubic-bezier(.4,0,.1,1);
+      counter-increment:proj;
+      display:grid; grid-template-columns:4.5rem minmax(0,1fr) minmax(0,38ch) auto;
+      gap:1.5rem 2.5rem; align-items:center;
+      padding:2.2rem 0; text-decoration:none; color:var(--ink);
+      position:relative; z-index:0;
     }
-    .work li:last-child .item{ border-bottom:1px solid var(--line); }
-    .item::before{ content:""; position:absolute; left:-.2rem; top:1.8rem; bottom:1.8rem; width:2px;
-      background:var(--accent); transform:scaleY(0); transform-origin:top; transition:transform .3s cubic-bezier(.4,0,.1,1); }
-    .item:hover, .item:focus-visible{ padding-left:1.2rem; outline:none; }
+    .item::before{
+      content:""; position:absolute; inset:0 calc(var(--gutter) * -1); z-index:-1;
+      background:var(--blue); transform:scaleY(0); transform-origin:bottom;
+      transition:transform .32s cubic-bezier(.65,0,.15,1);
+    }
     .item:hover::before, .item:focus-visible::before{ transform:scaleY(1); }
+    .item:hover, .item:focus-visible{ color:var(--blue-ink); outline:none; }
 
-    .item .cat{ grid-column:1; font-size:.78rem; font-weight:600; letter-spacing:.07em;
-      text-transform:uppercase; color:var(--faint); display:block; margin-bottom:.45rem; }
-    .item .pn{ grid-column:1; font-family:var(--disp); font-weight:700; font-size:1.6rem;
-      letter-spacing:-.02em; line-height:1.05; transition:color .2s; }
-    .item:hover .pn, .item:focus-visible .pn{ color:var(--accent); }
-    .item .desc{ grid-column:1; margin:.6rem 0 0; color:var(--muted); font-size:1.05rem; line-height:1.5; max-width:44ch; }
-    .item .go{ grid-column:2; grid-row:1 / span 3; align-self:center; color:var(--faint);
-      font-size:.95rem; white-space:nowrap; display:flex; align-items:center; gap:.5rem; transition:color .2s; }
-    .item:hover .go, .item:focus-visible .go{ color:var(--accent); }
-    .item .go .ar{ transition:transform .3s cubic-bezier(.4,0,.1,1); }
-    .item:hover .go .ar{ transform:translate(3px,-3px); }
+    .item .no::before{
+      content:"0" counter(proj);
+      font-weight:900; font-size:.95rem; color:var(--blue); font-variant-numeric:tabular-nums;
+      transition:color .2s;
+    }
+    .item:hover .no::before, .item:focus-visible .no::before{ color:var(--blue-ink); }
+
+    .item .pn{
+      font-weight:900; text-transform:uppercase; letter-spacing:-.02em;
+      font-size:clamp(1.9rem,4.5vw,3.4rem); line-height:.95;
+    }
+    .item .meta{ display:flex; flex-direction:column; gap:.4rem; }
+    .item .cat{ font-size:.78rem; font-weight:800; letter-spacing:.09em; text-transform:uppercase;
+      color:var(--blue); transition:color .2s; }
+    .item:hover .cat, .item:focus-visible .cat{ color:var(--blue-ink); }
+    .item .desc{ margin:0; font-size:.98rem; line-height:1.5; color:var(--muted); transition:color .2s; }
+    .item:hover .desc, .item:focus-visible .desc{ color:var(--blue-ink); }
+
+    .item .go{ font-size:1.6rem; font-weight:400; transition:transform .32s cubic-bezier(.65,0,.15,1); }
+    .item:hover .go, .item:focus-visible .go{ transform:translate(6px,-6px); }
+
+    @media (max-width:900px){
+      .item{ grid-template-columns:3rem minmax(0,1fr) auto; }
+      .item .meta{ grid-column:2 / 3; grid-row:2; }
+      .item .go{ grid-row:1; }
+    }
     @media (max-width:520px){
-      .item{ grid-template-columns:1fr; }
-      .item .go{ grid-column:1; grid-row:auto; align-self:start; margin-top:.7rem; }
+      .item{ grid-template-columns:1fr; gap:.8rem; padding:1.8rem 0; }
+      .item .meta{ grid-column:1; grid-row:auto; }
+      .item .go{ display:none; }
     }
 
-    /* ---------- Load choreography ---------- */
-    @keyframes rise{ from{ opacity:0; transform:translateY(12px); } to{ opacity:1; transform:none; } }
-    .rev{ opacity:0; animation:rise .75s cubic-bezier(.2,.7,.2,1) forwards; }
-    .r1{ animation-delay:.05s; } .r2{ animation-delay:.14s; } .r3{ animation-delay:.23s; }
-    .r4{ animation-delay:.32s; } .r5{ animation-delay:.42s; } .r6{ animation-delay:.52s; }
+    /* ---------- Footer ---------- */
+    footer{ border-top:1px solid var(--line); padding-top:clamp(2.5rem,6vh,4rem); padding-bottom:clamp(2.5rem,6vh,4rem); }
+    .say{
+      margin:0 0 2.2rem; font-weight:900; text-transform:uppercase; letter-spacing:-.03em;
+      font-size:clamp(2.4rem,8vw,6rem); line-height:.95;
+    }
+    .say a{ color:var(--ink); text-decoration:none; }
+    .say a em{ font-family:var(--serif); font-style:italic; font-weight:400; text-transform:none;
+      letter-spacing:0; color:var(--blue); }
+    .say a:hover em{ text-decoration:underline; text-underline-offset:.12em; }
+    .foot-row{ display:flex; justify-content:space-between; align-items:baseline; gap:1.5rem; flex-wrap:wrap;
+      font-size:.9rem; font-weight:600; }
+    .foot-row nav{ display:flex; gap:clamp(1rem,3vw,2.2rem); }
+    .foot-row nav a{ color:var(--ink); text-decoration:none; }
+    .foot-row nav a:hover{ color:var(--blue); }
+    .foot-row .cc{ color:var(--faint); font-weight:500; }
+
+    /* ---------- Motion ---------- */
+    @keyframes rise{ from{ opacity:0; transform:translateY(16px); } to{ opacity:1; transform:none; } }
+    .rev{ opacity:0; animation:rise .7s cubic-bezier(.2,.7,.2,1) forwards; }
+    .r1{ animation-delay:.05s; } .r2{ animation-delay:.15s; } .r3{ animation-delay:.25s; } .r4{ animation-delay:.35s; }
+    .io{ opacity:0; transform:translateY(18px); transition:opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1); }
+    .io.in{ opacity:1; transform:none; }
     @media (prefers-reduced-motion:reduce){
       *{ animation:none!important; transition:none!important; }
-      .rev{ opacity:1; }
-      html{ scroll-behavior:auto; }
+      .rev, .io{ opacity:1; transform:none; }
     }
   </style>
 </head>
@@ -238,143 +255,190 @@
 <body>
   <a class="skip" href="#content">Skip to content</a>
 
-  <div class="shell">
-    <!-- ============ Identity rail ============ -->
-    <aside class="rail">
-      <h1 class="name rev r1">Pierre<br />Sauvignon</h1>
-      <p class="role rev r2">Product entrepreneur</p>
-      <p class="place rev r2">Perth, Australia</p>
+  <header class="wrap top">
+    <a class="mark" href="/">Pierre Sauvignon</a>
+    <nav aria-label="Profiles">
+      <a href="https://www.linkedin.com/in/pierresauvignon" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://twitter.com/pierre_s" target="_blank" rel="noopener">X</a>
+      <a href="https://github.com/pierresauvignon" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
 
-      <div class="status rev r3"><span class="dot" aria-hidden="true"></span> Building four products, solo</div>
+  <main id="content">
+    <!-- ============ Hero ============ -->
+    <div class="wrap hero">
+      <h1 class="rev r1">Pierre<span class="l2">Sauvignon</span></h1>
+      <div class="hero-row">
+        <p class="lede rev r2">Entrepreneur with a <em>product bias.</em> I turn early-stage ideas into products people use and pay for.</p>
+        <div class="facts rev r3">
+          <span class="pill"><span class="dot" aria-hidden="true"></span> Building four products, solo</span>
+          <span>Perth, Australia · Toulouse from 2027</span>
+        </div>
+      </div>
+    </div>
 
-      <ul class="rail-links rev r4">
-        <li><a href="https://www.linkedin.com/in/pierresauvignon" target="_blank" rel="noopener"><span class="lab">LinkedIn</span> <span class="ar" aria-hidden="true">↗</span></a></li>
-        <li><a href="https://twitter.com/pierre_s" target="_blank" rel="noopener"><span class="lab">Say hello on X</span> <span class="ar" aria-hidden="true">↗</span></a></li>
-        <li><a href="https://github.com/pierresauvignon" target="_blank" rel="noopener"><span class="lab">GitHub</span> <span class="ar" aria-hidden="true">↗</span></a></li>
-      </ul>
+    <!-- ============ Road ============ -->
+    <section class="wrap" aria-labelledby="road-h">
+      <div class="sec-head io">
+        <span class="no" aria-hidden="true">01</span>
+        <h2 id="road-h">The road here</h2>
+      </div>
 
-      <p class="rail-foot rev r5">© Pierre Sauvignon</p>
-    </aside>
-
-    <!-- ============ Content ============ -->
-    <main id="content" class="content">
-      <p class="lede rev r2">Entrepreneur with a <span class="hl">product bias.</span> I turn early-stage ideas into products people use and pay for.</p>
-
-      <section class="block rev r4">
-        <p class="label">The road here</p>
-
-        <div class="entry">
+      <div class="road">
+        <div class="entry io">
           <div class="when">Before</div>
           <p>I started my first venture fresh out of high school, back when Internet access
-            <a class="link" href="https://www.google.com.au/search?q=aol+cd&tbm=isch" target="_blank" rel="noopener" title="AOL CD">came in the mail</a>,
+            <a href="https://www.google.com.au/search?q=aol+cd&tbm=isch" target="_blank" rel="noopener" title="AOL CD">came in the mail</a>,
             and I haven't stopped since.</p>
         </div>
 
-        <div class="entry">
+        <div class="entry io">
           <div class="when">2008</div>
           <p>Originally from France, I moved to Australia while finishing a Masters of IT and jumped
             straight into Sydney's startup scene, joining
-            <a class="link" href="https://www.afr.com/technology/end-of-an-era-as-aussie-startup-pioneers-pollenizer-call-it-a-day-20170228-gun90e" target="_blank" rel="noopener">Pollenizer</a>
+            <a href="https://www.afr.com/technology/end-of-an-era-as-aussie-startup-pioneers-pollenizer-call-it-a-day-20170228-gun90e" target="_blank" rel="noopener">Pollenizer</a>
             in its earliest days.</p>
         </div>
 
-        <div class="entry">
+        <div class="entry io">
           <div class="when">2008–13</div>
           <p>Over the next five years our team built Australia's first and biggest web incubator,
             helping launch 100+ startups and co-founding ~30 businesses. We had plenty of failures
             (and learned a lot), codified what became the "Startup Science," and even wrote
-            <a class="link" href="http://www.amazon.com/Startup-Focus-Mick-Liubinskas/dp/0980809746/" target="_blank" rel="noopener">a book</a>
+            <a href="http://www.amazon.com/Startup-Focus-Mick-Liubinskas/dp/0980809746/" target="_blank" rel="noopener">a book</a>
             to share it. We also had wins: one venture
-            <a class="link" href="http://anthillonline.com/spreets-sold-for-40-million-in-the-biggest-and-fastest-group-buying-deal-of-the-year-so-far/" target="_blank" rel="noopener">sold to Yahoo!7 for AU$40M</a>,
+            <a href="http://anthillonline.com/spreets-sold-for-40-million-in-the-biggest-and-fastest-group-buying-deal-of-the-year-so-far/" target="_blank" rel="noopener">sold to Yahoo!7 for AU$40M</a>,
             and several others turned profitable.</p>
         </div>
 
-        <div class="entry">
+        <div class="entry io">
           <div class="when">2013–15</div>
           <p>In 2013 I took a breather in the south of France and restored a 200-year-old house. In 2015 I joined
-            <a class="link" href="https://www.evergiving.com/" target="_blank" rel="noopener">Evergiving</a>
+            <a href="https://www.evergiving.com/" target="_blank" rel="noopener">Evergiving</a>
             (a Pollenizer alumni) as Product Manager / Designer to lead a platform, brand and design refresh.</p>
         </div>
 
-        <div class="entry">
+        <div class="entry io">
           <div class="when">2016–20</div>
           <p>At the end of 2016 I moved back to Sydney to coach startups. A little later my wife and I
             relocated to Perth, where I joined
-            <a class="link" href="https://rac.com.au/" target="_blank" rel="noopener">RAC</a>
+            <a href="https://rac.com.au/" target="_blank" rel="noopener">RAC</a>
             to incubate new ventures within its innovation arm. That's where I created
-            <a class="link" href="https://heyscape.com.au" target="_blank" rel="noopener">Heyscape</a>,
+            <a href="https://heyscape.com.au" target="_blank" rel="noopener">Heyscape</a>,
             off-grid tiny-cabin stays in remote corners of Western Australia. I grew it from
             idea to profitability in four years, reaching 25 cabins across 7 sites. Watch
-            <a class="link" href="https://www.youtube.com/watch?v=ZKadr02tapA" target="_blank" rel="noopener">the brand story</a>
+            <a href="https://www.youtube.com/watch?v=ZKadr02tapA" target="_blank" rel="noopener">the brand story</a>
             to see the cabins, the locations, and me wearing a buttoned-up shirt (rare!).</p>
         </div>
 
-        <div class="entry">
+        <div class="entry io">
           <div class="when now">Now</div>
           <p>After four years at Heyscape it was time for a new challenge, and along the way my wife
             and I launched two little "startups" at home (kids!). These days I'm doing what I love most:
             building a small portfolio of software products, solo. A mix of consumer apps and tools
             for developers. I also contract with established businesses to put AI to work where it counts.
             Most recently, as AI Tech Lead at
-            <a class="link" href="https://www.respondent.io" target="_blank" rel="noopener">Respondent.io</a>,
+            <a href="https://www.respondent.io" target="_blank" rel="noopener">Respondent.io</a>,
             I took their supply-side platform from zero to a production back-office, autonomous AI agent
             included, in under three months.</p>
         </div>
 
-        <div class="entry">
+        <div class="entry io">
           <div class="when next">Next</div>
           <p>Early 2027 we're moving to Toulouse. After nearly two decades in Australia I'm bringing the
             founder-engineer toolkit home to France, and looking for a lead product or engineering role
             where a hands-on, AI-first way of building can help a team move faster.</p>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="block rev r5">
-        <p class="label">Currently building</p>
+    <!-- ============ Work ============ -->
+    <section class="wrap" aria-labelledby="work-h">
+      <div class="sec-head io">
+        <span class="no" aria-hidden="true">02</span>
+        <h2 id="work-h">Currently building</h2>
+      </div>
 
-        <ol class="work">
-          <li>
-            <a class="item" href="https://onsilent.com" target="_blank" rel="noopener">
+      <ol class="work">
+        <li class="io">
+          <a class="item" href="https://onsilent.com" target="_blank" rel="noopener">
+            <span class="no" aria-hidden="true"></span>
+            <span class="pn">OnSilent</span>
+            <span class="meta">
               <span class="cat">AI assistant</span>
-              <span class="pn">OnSilent</span>
               <span class="desc">An AI assistant that answers your calls, makes them, and follows up around
                 the clock. Built for people who run their business from a phone: sales, property,
                 trades and services.</span>
-              <span class="go">onsilent.com <span class="ar" aria-hidden="true">↗</span></span>
-            </a>
-          </li>
-          <li>
-            <a class="item" href="https://lobsterone.ai" target="_blank" rel="noopener">
+            </span>
+            <span class="go" aria-hidden="true">↗</span>
+          </a>
+        </li>
+        <li class="io">
+          <a class="item" href="https://lobsterone.ai" target="_blank" rel="noopener">
+            <span class="no" aria-hidden="true"></span>
+            <span class="pn">LobsterOne</span>
+            <span class="meta">
               <span class="cat">Developer tool · macOS</span>
-              <span class="pn">LobsterOne</span>
               <span class="desc">A menu-bar app that tracks token usage, cost and output across AI coding
                 tools. Private dashboard, global leaderboard, and it never reads your code.</span>
-              <span class="go">lobsterone.ai <span class="ar" aria-hidden="true">↗</span></span>
-            </a>
-          </li>
-          <li>
-            <a class="item" href="https://www.tigersoup.com" target="_blank" rel="noopener">
+            </span>
+            <span class="go" aria-hidden="true">↗</span>
+          </a>
+        </li>
+        <li class="io">
+          <a class="item" href="https://www.tigersoup.com" target="_blank" rel="noopener">
+            <span class="no" aria-hidden="true"></span>
+            <span class="pn">TigerSoup</span>
+            <span class="meta">
               <span class="cat">Developer tool · macOS</span>
-              <span class="pn">TigerSoup</span>
               <span class="desc">Takes a project from idea to deployed. It provisions your AWS account, GitHub
                 repo and CI/CD pipeline so you skip the setup and just build.</span>
-              <span class="go">tigersoup.com <span class="ar" aria-hidden="true">↗</span></span>
-            </a>
-          </li>
-          <li>
-            <a class="item" href="https://onreplay.ai" target="_blank" rel="noopener">
+            </span>
+            <span class="go" aria-hidden="true">↗</span>
+          </a>
+        </li>
+        <li class="io">
+          <a class="item" href="https://onreplay.ai" target="_blank" rel="noopener">
+            <span class="no" aria-hidden="true"></span>
+            <span class="pn">OnReplay</span>
+            <span class="meta">
               <span class="cat">Consumer app</span>
-              <span class="pn">OnReplay</span>
               <span class="desc">Turns a single photo into a cinematic short film in minutes. Upload, pick a
                 mood, share. Comes with a growing set of free AI creative tools.</span>
-              <span class="go">onreplay.ai <span class="ar" aria-hidden="true">↗</span></span>
-            </a>
-          </li>
-        </ol>
-      </section>
+            </span>
+            <span class="go" aria-hidden="true">↗</span>
+          </a>
+        </li>
+      </ol>
+    </section>
+  </main>
 
-      <p class="content-foot">© Pierre Sauvignon</p>
-    </main>
-  </div>
+  <!-- ============ Footer ============ -->
+  <footer class="wrap">
+    <p class="say io"><a href="https://twitter.com/pierre_s" target="_blank" rel="noopener">Say <em>hello</em> on X</a></p>
+    <div class="foot-row io">
+      <nav aria-label="Profiles">
+        <a href="https://www.linkedin.com/in/pierresauvignon" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://twitter.com/pierre_s" target="_blank" rel="noopener">X</a>
+        <a href="https://github.com/pierresauvignon" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+      <span class="cc">© Pierre Sauvignon</span>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.querySelectorAll('.io').forEach(function(el){ el.classList.add('in'); });
+        return;
+      }
+      var obs = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if (e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); }
+        });
+      }, { rootMargin:'0px 0px -8% 0px', threshold:0.05 });
+      document.querySelectorAll('.io').forEach(function(el){ obs.observe(el); });
+    })();
+  </script>
 </body>
 </html>
