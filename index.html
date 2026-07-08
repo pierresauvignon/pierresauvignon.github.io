@@ -143,6 +143,11 @@
       box-shadow:12px 12px 0 var(--blue);
     }
     .photo:hover img{ filter:none; }
+    /* No hover available (touch): show photos in color, drop the hover hint */
+    @media (hover:none){
+      .photo img{ filter:none; }
+      .gallery .note{ display:none; }
+    }
     .hero-photo img{ aspect-ratio:4/5; object-fit:cover; }
     .photo figcaption{
       margin-top:1.1rem; font-size:.78rem; font-weight:600; letter-spacing:.07em;
