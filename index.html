@@ -278,6 +278,10 @@
     .say a em{ font-family:var(--serif); font-style:italic; font-weight:400; text-transform:none;
       letter-spacing:0; color:var(--blue); }
     .say a:hover em{ text-decoration:underline; text-underline-offset:.12em; }
+    .mail{ margin:0 0 2.5rem; font-size:clamp(1.05rem,2vw,1.35rem); font-weight:600; }
+    .mail a{ color:var(--ink); text-decoration:none; border-bottom:2px solid var(--blue);
+      transition:background .15s, color .15s; }
+    .mail a:hover{ background:var(--blue); color:var(--blue-ink); }
     .foot-row{ display:flex; justify-content:space-between; align-items:baseline; gap:1.5rem; flex-wrap:wrap;
       font-size:.9rem; font-weight:600; }
     .foot-row nav{ display:flex; gap:clamp(1rem,3vw,2.2rem); }
@@ -516,6 +520,7 @@
   <!-- ============ Footer ============ -->
   <footer class="wrap">
     <p class="say io"><a href="https://twitter.com/pierre_s" target="_blank" rel="noopener">Say <em>hello</em> on X</a></p>
+    <p class="mail io">Or write to <a id="mail" href="#" rel="nofollow"><noscript>pierre.sauvignon at gmail dot com</noscript></a></p>
     <div class="foot-row io">
       <nav aria-label="Profiles">
         <a href="https://www.linkedin.com/in/pierresauvignon" target="_blank" rel="noopener">LinkedIn</a>
@@ -527,6 +532,15 @@
   </footer>
 
   <script>
+    (function(){
+      // Assembled at runtime so the address never appears in the page source
+      var u = ['pierre', 'sauvignon'].join('.');
+      var d = ['gmail', 'com'].join('.');
+      var a = document.getElementById('mail');
+      var addr = u + '@' + d;
+      a.href = 'mailto:' + addr;
+      a.textContent = addr;
+    })();
     (function(){
       if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
         document.querySelectorAll('.io').forEach(function(el){ el.classList.add('in'); });
