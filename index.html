@@ -114,7 +114,7 @@
     .top nav a:hover::after{ right:0; }
 
     /* ---------- Hero ---------- */
-    .hero{ padding-top:clamp(3rem,8vh,6rem); padding-bottom:clamp(3rem,8vh,6rem); }
+    .hero{ padding-top:clamp(2.5rem,5vh,4rem); padding-bottom:clamp(2.5rem,6vh,4.5rem); }
     .hero h1{
       margin:0; font-weight:900; text-transform:uppercase;
       font-size:clamp(3rem, 12.5vw, 11rem);
@@ -124,11 +124,11 @@
     @media (max-width:600px){ .hero h1 .l2{ -webkit-text-stroke:1.2px var(--ink); } }
 
     .hero-row{
-      display:grid; grid-template-columns:minmax(0,1fr) clamp(14rem,24vw,19rem);
-      gap:clamp(2rem,5vw,4rem); align-items:end;
-      margin-top:clamp(2rem,5vh,3.5rem);
+      display:grid; grid-template-columns:minmax(0,1fr) clamp(12rem,19vw,16rem);
+      gap:clamp(2rem,5vw,4rem); align-items:start;
+      margin-top:clamp(1.5rem,3.5vh,2.5rem);
     }
-    .hero-copy{ display:flex; flex-direction:column; gap:2.2rem; align-items:flex-start; }
+    .hero-copy{ display:flex; flex-direction:column; gap:1.8rem; align-items:flex-start; padding-top:.5rem; }
     @media (max-width:800px){
       .hero-row{ grid-template-columns:1fr; }
       .hero-photo{ max-width:20rem; }
