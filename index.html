@@ -143,8 +143,8 @@
       box-shadow:12px 12px 0 var(--blue);
     }
     .photo:hover img{ filter:none; }
-    /* No hover available (touch): show photos in color, drop the hover hint */
-    @media (hover:none){
+    /* No hover available (touch) or small screens: photos in color, no hover hint */
+    @media (hover:none), (pointer:coarse), (max-width:700px){
       .photo img{ filter:none; }
       .gallery .note{ display:none; }
     }
