@@ -11,7 +11,7 @@
   <meta property="og:description" content="Web entrepreneur focused on early-stage startups. Former Head of Product at Pollenizer, founder of Heyscape, now building a portfolio of products: OnSilent, LobsterOne, TigerSoup and OnReplay." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://pierresauvignon.github.io/" />
-  <meta property="og:image" content="https://pierresauvignon.github.io/img/pierre-kitesurf.jpg" />
+  <meta property="og:image" content="https://pierresauvignon.github.io/img/pierre-headshot.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@pierre_s" />
   <link rel="canonical" href="https://pierresauvignon.github.io/" />
@@ -30,7 +30,7 @@
     "@type": "Person",
     "name": "Pierre Sauvignon",
     "url": "https://pierresauvignon.github.io/",
-    "image": "https://pierresauvignon.github.io/img/pierre-family-sunset.jpg",
+    "image": "https://pierresauvignon.github.io/img/pierre-headshot.jpg",
     "description": "Web entrepreneur focused on early-stage startups. Former Head of Product at Pollenizer and founder of Heyscape, now building a portfolio of consumer apps and developer tools.",
     "jobTitle": "Founder & Product Entrepreneur",
     "nationality": "French",
@@ -150,14 +150,27 @@
     }
     .photo figcaption .fig{ color:var(--blue); font-weight:900; margin-right:.7rem; }
 
-    .strip{
-      display:grid; grid-template-columns:5fr 3fr; gap:clamp(1.8rem,4vw,3rem);
-      margin-top:clamp(3rem,7vh,4.5rem);
+    .gallery{
+      display:grid; grid-template-columns:repeat(6,minmax(0,1fr));
+      grid-auto-rows:clamp(8rem,18vw,13rem);
+      gap:clamp(1.5rem,3vw,2.5rem);
     }
-    .strip .photo img{ height:clamp(15rem,36vw,25rem); object-fit:cover; }
+    .gallery .photo{ display:flex; flex-direction:column; }
+    .gallery .photo img{ flex:1; min-height:0; height:100%; object-fit:cover; }
+    .gallery .s4{ grid-column:span 4; grid-row:span 2; }
+    .gallery .s2{ grid-column:span 2; grid-row:span 2; }
+    .gallery .note{
+      grid-column:span 4; grid-row:span 2;
+      display:flex; align-items:center; padding:0 clamp(0rem,3vw,2rem);
+      font-family:var(--serif); font-style:italic; font-size:clamp(1.4rem,2.6vw,2rem);
+      line-height:1.25; color:var(--muted); text-wrap:balance;
+    }
+    .gallery .note b{ color:var(--blue); font-weight:400; }
     @media (max-width:700px){
-      .strip{ grid-template-columns:1fr; }
-      .strip .photo img{ height:auto; max-height:26rem; }
+      .gallery{ grid-template-columns:1fr; grid-auto-rows:auto; }
+      .gallery .s4, .gallery .s2, .gallery .note{ grid-column:auto; grid-row:auto; }
+      .gallery .photo img{ height:auto; max-height:28rem; }
+      .gallery .note{ padding:1rem 0; }
     }
 
     .lede{
@@ -310,7 +323,7 @@
           </div>
         </div>
         <figure class="photo hero-photo rev r4">
-          <img src="img/pierre-family-sunset.jpg" alt="Pierre Sauvignon at sunset by a lake in Perth, his youngest son riding on his shoulders" width="1050" height="1400" fetchpriority="high" />
+          <img src="img/pierre-headshot.jpg" alt="Portrait of Pierre Sauvignon in front of a bookshelf" width="1600" height="1200" fetchpriority="high" />
         </figure>
       </div>
     </div>
@@ -389,16 +402,6 @@
         </div>
       </div>
 
-      <div class="strip">
-        <figure class="photo io">
-          <img src="img/pierre-kitesurf.jpg" alt="Pierre kitesurfing, leaning hard into a turn through the spray" width="1600" height="1067" loading="lazy" />
-          <figcaption><span class="fig">Fig. 01</span> Weekends, wind permitting</figcaption>
-        </figure>
-        <figure class="photo io">
-          <img src="img/pierre-pier.jpg" alt="Pierre on a pier by the ocean with his two sons, the youngest on his shoulders" width="720" height="960" loading="lazy" />
-          <figcaption><span class="fig">Fig. 02</span> The two little startups, on tour</figcaption>
-        </figure>
-      </div>
     </section>
 
     <!-- ============ Work ============ -->
@@ -459,6 +462,46 @@
           </a>
         </li>
       </ol>
+    </section>
+
+    <!-- ============ Gallery ============ -->
+    <section class="wrap" aria-labelledby="off-h">
+      <div class="sec-head io">
+        <span class="no" aria-hidden="true">03</span>
+        <h2 id="off-h">Off the clock</h2>
+      </div>
+
+      <div class="gallery">
+        <figure class="photo s4 io">
+          <img src="img/pierre-kitesurf.jpg" alt="Pierre kitesurfing, leaning hard into a turn through the spray" width="1600" height="1067" loading="lazy" />
+          <figcaption><span class="fig">Fig. 01</span> Weekends, wind permitting</figcaption>
+        </figure>
+        <figure class="photo s2 io">
+          <img src="img/pierre-family-sunset.jpg" alt="Pierre at sunset by a lake in Perth, his youngest son riding on his shoulders" width="1050" height="1400" loading="lazy" style="object-position:50% 30%" />
+          <figcaption><span class="fig">Fig. 02</span> Sunset shift, Perth</figcaption>
+        </figure>
+        <figure class="photo s2 io">
+          <img src="img/pierre-pier.jpg" alt="Pierre on a pier by the ocean with his two sons, the youngest on his shoulders" width="720" height="960" loading="lazy" style="object-position:50% 15%" />
+          <figcaption><span class="fig">Fig. 03</span> The two little startups, on tour</figcaption>
+        </figure>
+        <figure class="photo s4 io">
+          <img src="img/pierre-kitchen.jpg" alt="Pierre at the kitchen table holding the baby upright while his eldest has breakfast" width="1500" height="1125" loading="lazy" />
+          <figcaption><span class="fig">Fig. 04</span> The morning standup</figcaption>
+        </figure>
+        <figure class="photo s4 io">
+          <img src="img/pierre-reading.jpg" alt="Pierre reading a picture book about colours with his son" width="1600" height="1200" loading="lazy" />
+          <figcaption><span class="fig">Fig. 05</span> Documentation review</figcaption>
+        </figure>
+        <figure class="photo s2 io">
+          <img src="img/pierre-cafe.jpg" alt="Pierre bottle-feeding the baby at a cafe" width="1200" height="1600" loading="lazy" style="object-position:50% 25%" />
+          <figcaption><span class="fig">Fig. 06</span> On call</figcaption>
+        </figure>
+        <figure class="photo s2 io">
+          <img src="img/pierre-crab.jpg" alt="Pierre on a beach pretending to eat a small crab" width="900" height="1600" loading="lazy" style="object-position:50% 25%" />
+          <figcaption><span class="fig">Fig. 07</span> Negotiating with a local stakeholder</figcaption>
+        </figure>
+        <p class="note io">It all looks very serious in black and white. <b>Hover for the truth.</b></p>
+      </div>
     </section>
   </main>
 
