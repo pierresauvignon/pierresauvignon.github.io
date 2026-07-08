@@ -11,7 +11,8 @@
   <meta property="og:description" content="Web entrepreneur focused on early-stage startups. Former Head of Product at Pollenizer, founder of Heyscape, now building a portfolio of products: OnSilent, LobsterOne, TigerSoup and OnReplay." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://pierresauvignon.github.io/" />
-  <meta name="twitter:card" content="summary" />
+  <meta property="og:image" content="https://pierresauvignon.github.io/img/pierre-kitesurf.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@pierre_s" />
   <link rel="canonical" href="https://pierresauvignon.github.io/" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%232438ff'/%3E%3Ctext x='32' y='46' font-family='Arial Black, sans-serif' font-size='36' font-weight='900' text-anchor='middle' fill='%23f4f3ee'%3EP%3C/text%3E%3C/svg%3E" />
@@ -29,6 +30,7 @@
     "@type": "Person",
     "name": "Pierre Sauvignon",
     "url": "https://pierresauvignon.github.io/",
+    "image": "https://pierresauvignon.github.io/img/pierre-family-sunset.jpg",
     "description": "Web entrepreneur focused on early-stage startups. Former Head of Product at Pollenizer and founder of Heyscape, now building a portfolio of consumer apps and developer tools.",
     "jobTitle": "Founder & Product Entrepreneur",
     "nationality": "French",
@@ -122,10 +124,41 @@
     @media (max-width:600px){ .hero h1 .l2{ -webkit-text-stroke:1.2px var(--ink); } }
 
     .hero-row{
-      display:grid; grid-template-columns:minmax(0,1fr) auto; gap:2rem; align-items:end;
+      display:grid; grid-template-columns:minmax(0,1fr) clamp(14rem,24vw,19rem);
+      gap:clamp(2rem,5vw,4rem); align-items:end;
       margin-top:clamp(2rem,5vh,3.5rem);
     }
-    @media (max-width:800px){ .hero-row{ grid-template-columns:1fr; } }
+    .hero-copy{ display:flex; flex-direction:column; gap:2.2rem; align-items:flex-start; }
+    @media (max-width:800px){
+      .hero-row{ grid-template-columns:1fr; }
+      .hero-photo{ max-width:20rem; }
+    }
+
+    /* ---------- Photos ---------- */
+    .photo{ margin:0; }
+    .photo img{
+      display:block; width:100%; height:auto;
+      filter:grayscale(1) contrast(1.06);
+      transition:filter .45s ease;
+      box-shadow:12px 12px 0 var(--blue);
+    }
+    .photo:hover img{ filter:none; }
+    .hero-photo img{ aspect-ratio:4/5; object-fit:cover; }
+    .photo figcaption{
+      margin-top:1.1rem; font-size:.78rem; font-weight:600; letter-spacing:.07em;
+      text-transform:uppercase; color:var(--muted);
+    }
+    .photo figcaption .fig{ color:var(--blue); font-weight:900; margin-right:.7rem; }
+
+    .strip{
+      display:grid; grid-template-columns:5fr 3fr; gap:clamp(1.8rem,4vw,3rem);
+      margin-top:clamp(3rem,7vh,4.5rem);
+    }
+    .strip .photo img{ height:clamp(15rem,36vw,25rem); object-fit:cover; }
+    @media (max-width:700px){
+      .strip{ grid-template-columns:1fr; }
+      .strip .photo img{ height:auto; max-height:26rem; }
+    }
 
     .lede{
       max-width:34ch; margin:0;
@@ -269,11 +302,16 @@
     <div class="wrap hero">
       <h1 class="rev r1">Pierre<span class="l2">Sauvignon</span></h1>
       <div class="hero-row">
-        <p class="lede rev r2">Entrepreneur with a <em>product bias.</em> I turn early-stage ideas into products people use and pay for.</p>
-        <div class="facts rev r3">
-          <span class="pill"><span class="dot" aria-hidden="true"></span> Building four products, solo</span>
-          <span>Perth, Australia · Toulouse from 2027</span>
+        <div class="hero-copy">
+          <p class="lede rev r2">Entrepreneur with a <em>product bias.</em> I turn early-stage ideas into products people use and pay for.</p>
+          <div class="facts rev r3">
+            <span class="pill"><span class="dot" aria-hidden="true"></span> Building four products, solo</span>
+            <span>Perth, Australia · Toulouse from 2027</span>
+          </div>
         </div>
+        <figure class="photo hero-photo rev r4">
+          <img src="img/pierre-family-sunset.jpg" alt="Pierre Sauvignon at sunset by a lake in Perth, his youngest son riding on his shoulders" width="1050" height="1400" fetchpriority="high" />
+        </figure>
       </div>
     </div>
 
@@ -349,6 +387,17 @@
             founder-engineer toolkit home to France, and looking for a lead product or engineering role
             where a hands-on, AI-first way of building can help a team move faster.</p>
         </div>
+      </div>
+
+      <div class="strip">
+        <figure class="photo io">
+          <img src="img/pierre-kitesurf.jpg" alt="Pierre kitesurfing, leaning hard into a turn through the spray" width="1600" height="1067" loading="lazy" />
+          <figcaption><span class="fig">Fig. 01</span> Weekends, wind permitting</figcaption>
+        </figure>
+        <figure class="photo io">
+          <img src="img/pierre-pier.jpg" alt="Pierre on a pier by the ocean with his two sons, the youngest on his shoulders" width="720" height="960" loading="lazy" />
+          <figcaption><span class="fig">Fig. 02</span> The two little startups, on tour</figcaption>
+        </figure>
       </div>
     </section>
 
