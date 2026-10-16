@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="How I designed, built and operate OnReplay solo: a paid consumer AI product that turns photos into animated short films, orchestrating several generative AI providers per render on AWS serverless." />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#fcfbf9" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#141210" media="(prefers-color-scheme: dark)" />
+  <meta property="og:title" content="OnReplay case study · Pierre Sauvignon" />
+  <meta property="og:description" content="A paid consumer AI product, built and operated solo: 3,121 films delivered to 2,065 creators on a pipeline that orchestrates several generative AI providers per render." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://pierresauvignon.github.io/onreplay/" />
+  <meta property="og:image" content="https://pierresauvignon.github.io/img/pierre-hero.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@pierre_s" />
+  <link rel="canonical" href="https://pierresauvignon.github.io/onreplay/" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%232438ff'/%3E%3Ctext x='32' y='46' font-family='Arial Black, sans-serif' font-size='36' font-weight='900' text-anchor='middle' fill='%23f4f3ee'%3EP%3C/text%3E%3C/svg%3E" />
+  <title>OnReplay case study · Pierre Sauvignon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/case-study.css">
+  <style>
+  :root{--accent:#7c3aed}
+  @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--accent:#a78bfa}}
+  :root[data-theme="dark"]{--accent:#a78bfa}
+  </style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="top"><div class="in"><a href="../#building"><span>←</span>Pierre Sauvignon</a><a class="ext" href="https://onreplay.ai">onreplay.ai ↗</a></div></div>
+
+<main id="main" class="in">
+<header class="cs-head">
+  <div class="eyebrow"><img src="../icons/onreplay.png" alt="" width="160" height="160">Case study · OnReplay</div>
+  <h1>OnReplay Case Study</h1>
+  <p class="lede">OnReplay turns a handful of ordinary photos into a themed, AI-animated short film, sold to consumers on a credit model in eight languages. I designed, built and operate the whole system solo: the web app, the marketing site, the admin backoffice and an AWS serverless backend that orchestrates several generative AI providers per render.</p>
+</header>
+
+<article>
+<h2 id="at-a-glance">At a glance</h2>
+<div class="tbl"><table class="glance"><tbody>
+<tr><td>Role</td><td>Sole engineer and product owner</td></tr>
+<tr><td>Period</td><td>December 2025 to present, about 2,500 commits</td></tr>
+<tr><td>Product</td><td>Consumer web app, paid per render, 8 languages</td></tr>
+<tr><td>Stack</td><td>AWS serverless (Lambda, Step Functions, DynamoDB, Batch), Expo / React, Astro, Stripe</td></tr>
+<tr><td>AI</td><td>Gemini, Kling, Grok, OpenAI, Veo, Sora, HeyGen</td></tr>
+<tr><td>Scale</td><td>30 themed worlds, 140 Lambda functions, about 3,200 marketing pages</td></tr>
+</tbody></table></div>
+
+<h2 id="traction">Traction</h2>
+<p>Since the first film in January 2026, OnReplay has delivered 3,121 films to 2,065 creators.</p>
+<div class="tbl"><table>
+<thead><tr><th>Metric</th><th style="text-align:right">Value</th></tr></thead>
+<tbody>
+<tr><td>Creators who received a film</td><td class="num">2,065</td></tr>
+<tr><td>Registered accounts</td><td class="num">11,083</td></tr>
+<tr><td>Films delivered</td><td class="num">3,121</td></tr>
+<tr><td>AI-animated clips in delivered films</td><td class="num">7,767</td></tr>
+<tr><td>Photos transformed by AI</td><td class="num">9,541</td></tr>
+<tr><td>Finished film delivered</td><td class="num">791 minutes, about 13 hours</td></tr>
+<tr><td>Paid renders delivered successfully</td><td class="num">98%</td></tr>
+<tr><td>Films made in a language other than English</td><td class="num">32%</td></tr>
+</tbody></table></div>
+<figure class="viz chart"><svg viewBox="0 0 760 330" role="img" aria-label="Films delivered per month grew 2.7× from January to September 2026" font-size="12"><text x="40" y="30" font-size="15" font-weight="600" fill="var(--ink)">Films delivered per month grew 2.7× from January to September 2026</text><text x="40" y="52" fill="var(--muted)">2,919 films over 9 months; October not yet complete</text><g><rect x="55.78" y="219.44" width="44" height="70.56" rx="3" fill="var(--bar)"><title>Jan 2026: 179 films delivered</title></rect><text x="77.78" y="211.44" text-anchor="middle" fill="var(--ink)">179</text><text x="77.78" y="310" text-anchor="middle" fill="var(--muted)">Jan</text></g><g><rect x="131.33" y="223.78" width="44" height="66.22" rx="3" fill="var(--bar)"><title>Feb 2026: 168 films delivered</title></rect><text x="153.33" y="215.78" text-anchor="middle" fill="var(--ink)">168</text><text x="153.33" y="310" text-anchor="middle" fill="var(--muted)">Feb</text></g><g><rect x="206.89" y="217.47" width="44" height="72.53" rx="3" fill="var(--bar)"><title>Mar 2026: 184 films delivered</title></rect><text x="228.89" y="209.47" text-anchor="middle" fill="var(--ink)">184</text><text x="228.89" y="310" text-anchor="middle" fill="var(--muted)">Mar</text></g><g><rect x="282.44" y="198.94" width="44" height="91.06" rx="3" fill="var(--bar)"><title>Apr 2026: 231 films delivered</title></rect><text x="304.44" y="190.94" text-anchor="middle" fill="var(--ink)">231</text><text x="304.44" y="310" text-anchor="middle" fill="var(--muted)">Apr</text></g><g><rect x="358" y="148.49" width="44" height="141.51" rx="3" fill="var(--bar)"><title>May 2026: 359 films delivered</title></rect><text x="380" y="140.49" text-anchor="middle" fill="var(--ink)">359</text><text x="380" y="310" text-anchor="middle" fill="var(--muted)">May</text></g><g><rect x="433.56" y="122.47" width="44" height="167.53" rx="3" fill="var(--bar)"><title>Jun 2026: 425 films delivered</title></rect><text x="455.56" y="114.47" text-anchor="middle" fill="var(--ink)">425</text><text x="455.56" y="310" text-anchor="middle" fill="var(--muted)">Jun</text></g><g><rect x="509.11" y="123.65" width="44" height="166.35" rx="3" fill="var(--bar)"><title>Jul 2026: 422 films delivered</title></rect><text x="531.11" y="115.65" text-anchor="middle" fill="var(--ink)">422</text><text x="531.11" y="310" text-anchor="middle" fill="var(--muted)">Jul</text></g><g><rect x="584.67" y="105.12" width="44" height="184.88" rx="3" fill="var(--bar)"><title>Aug 2026: 469 films delivered</title></rect><text x="606.67" y="97.12" text-anchor="middle" fill="var(--ink)">469</text><text x="606.67" y="310" text-anchor="middle" fill="var(--muted)">Aug</text></g><g><rect x="660.22" y="100" width="44" height="190" rx="3" fill="var(--accent)"><title>Sep 2026: 482 films delivered</title></rect><text x="682.22" y="92" font-weight="600" text-anchor="middle" fill="var(--ink)">482</text><text x="682.22" y="310" text-anchor="middle" fill="var(--muted)">Sep</text></g><line x1="40" x2="720" y1="290" y2="290" stroke="var(--edge)"/></svg><figcaption>OnReplay production database · completed films by month, Jan to Sep 2026</figcaption></figure>
+<p>Volume has grown every quarter, from 531 films in Q1 to 1,373 in Q3, on the same pipeline.</p>
+
+<h2 id="product">The product</h2>
+<p>A user picks a themed "world" (a wedding, a family Christmas, a superhero comic, a pet tribute), uploads a few photos, and minutes later receives a short film starring their own faces, animated and scored. Each render costs credits, bought as packs or a subscription.</p>
+<p>The hard part is not calling a model. It is turning slow, metered, sometimes failing AI services into something a paying customer experiences as reliable, with failures recovered automatically and no human in the loop.</p>
+
+<h2 id="architecture">Architecture</h2>
+<figure class="viz"><svg viewBox="0 0 760 642" role="img" aria-label="One serverless backend serves three frontends and eight AI engines" font-size="11.5"><defs><marker id="arch-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="var(--edge)"/></marker></defs><text x="24" y="34" font-size="15" font-weight="600" fill="var(--ink)">One serverless backend serves three frontends and eight AI engines</text><g fill="none" stroke="var(--edge)" stroke-width="1.25"><path d="M132 148V172H368"/><path d="M604 148V172H368"/><path d="M368 148V190" marker-end="url(#arch-arrow)"/><path d="M368 262V300" marker-end="url(#arch-arrow)"/><path d="M132 372V410" marker-end="url(#arch-arrow)"/><path d="M368 372V410" marker-end="url(#arch-arrow)"/><path d="M604 372V410" marker-end="url(#arch-arrow)"/><path d="M604 498V530" marker-end="url(#arch-arrow)"/><path d="M496 480H486V574H476" marker-end="url(#arch-arrow)"/></g><rect x="24" y="60" width="216" height="88" rx="8" fill="none" stroke="var(--edge)" stroke-width="1.25"/><text x="36" y="84" font-size="13" font-weight="600" fill="var(--ink)">Web app · app.onreplay.ai</text><text x="36" y="100" fill="var(--muted)">Expo, React Native Web</text><text x="36" y="116" fill="var(--muted)">Static export, S3 + CloudFront</text><text x="36" y="132" fill="var(--muted)">Zustand stores, 8 languages</text><rect x="260" y="60" width="216" height="88" rx="8" fill="none" stroke="var(--edge)" stroke-width="1.25"/><text x="272" y="84" font-size="13" font-weight="600" fill="var(--ink)">Marketing site · onreplay.ai</text><text x="272" y="100" fill="var(--muted)">Astro, Tailwind, 8 languages</text><text x="272" y="116" fill="var(--muted)">About 3,200 static pages</text><text x="272" y="132" fill="var(--muted)">S3 + CloudFront, push to deploy</text><rect x="496" y="60" width="216" height="88" rx="8" fill="none" stroke="var(--edge)" stroke-width="1.25"/><text x="508" y="84" font-size="13" font-weight="600" fill="var(--ink)">Backoffice (admin)</text><text x="508" y="100" fill="var(--muted)">React, Vite, TanStack Query</text><text x="508" y="116" fill="var(--muted)">Recharts dashboards</text><text x="508" y="132" fill="var(--muted)">AWS SDK and /admin API routes</text><rect x="198" y="190" width="340" height="72" rx="8" fill="none" stroke="var(--edge)" stroke-width="1.25"/><text x="210" y="214" font-size="13" font-weight="600" fill="var(--ink)">API Gateway + Cognito</text><text x="210" y="230" fill="var(--muted)">101 routes, Cognito authorizer, throttled</text><text x="210" y="246" fill="var(--muted)">Passwordless magic link, Google, Apple sign-in</text><rect x="24" y="300" width="688" height="72" rx="8" fill="none" stroke="var(--edge)" stroke-width="1.25"/><text x="36" y="324" font-size="13" font-weight="600" fill="var(--ink)">140 Lambda functions · Node 20 on Graviton</text><text x="36" y="340" fill="var(--muted)">Auth, albums, credits, Stripe webhooks, free tools, email, scheduled monitors</text><text x="36" y="356" fill="var(--muted)">esbuild bundles; SAM build and deploy from GitHub Actions on push to main</text><rect x="24" y="410" width="216" height="88" rx="8" fill="none" stroke="var(--edge)" stroke-width="1.25"/><text x="36" y="434" font-size="13" font-weight="600" fill="var(--ink)">DynamoDB · 17 tables</text><text x="36" y="450" fill="var(--muted)">Albums, photos, users, sessions</text><text x="36" y="466" fill="var(--muted)">Email logs, pipeline logs</text><text x="36" y="482" fill="var(--muted)">Kling in-flight slot semaphore</text><rect x="260" y="410" width="216" height="88" rx="8" fill="none" stroke="var(--edge)" stroke-width="1.25"/><text x="272" y="434" font-size="13" font-weight="600" fill="var(--ink)">S3 · 3 buckets</text><text x="272" y="450" fill="var(--muted)">Photos, 90-day lifecycle</text><text x="272" y="466" fill="var(--muted)">Clips and films, 60 days</text><text x="272" y="482" fill="var(--muted)">Soundtracks; CloudFront preview</text><rect x="496" y="410" width="216" height="88" rx="8" fill="var(--accent)" fill-opacity="0.12" stroke="var(--accent)" stroke-width="2"/><text x="508" y="434" font-size="13" font-weight="600" fill="var(--ink)">Step Functions</text><text x="508" y="450" fill="var(--ink)">Production state machine</text><text x="508" y="466" fill="var(--ink)">3 phases, Map concurrency 5 / 12</text><text x="508" y="482" fill="var(--ink)">Task token to Batch, 60-min poll</text><rect x="24" y="530" width="452" height="88" rx="8" fill="none" stroke="var(--edge)" stroke-width="1.25"/><text x="36" y="554" font-size="13" font-weight="600" fill="var(--ink)">External AI providers, called from Lambda tasks</text><text x="36" y="570" fill="var(--muted)">Images: Gemini 3 Pro Image, Grok Imagine, GPT Image 1.5</text><text x="36" y="586" fill="var(--muted)">Video: Kling v2.5 / v2.6 / v3, Grok, Veo 3.1, Sora 2, HeyGen</text><text x="36" y="602" fill="var(--muted)">Prompts and safety: GPT-4o mini; colorize: Replicate DDColor</text><rect x="496" y="530" width="216" height="88" rx="8" fill="none" stroke="var(--edge)" stroke-width="1.25"/><text x="508" y="554" font-size="13" font-weight="600" fill="var(--ink)">AWS Batch · ffmpeg</text><text x="508" y="570" fill="var(--muted)">Spot Graviton pool, 2 to 24 vCPU</text><text x="508" y="586" fill="var(--muted)">On-demand fallback queue</text><text x="508" y="602" fill="var(--muted)">Crossfade, soundtrack, watermark</text></svg><figcaption>Architecture · 3 frontends, 1 API, 140 Lambdas, 3 stores, Batch</figcaption></figure>
+<p>Four repositories on one AWS account, with no servers to manage. Every request is a Lambda, state lives in DynamoDB and S3, and the one long-running job, rendering a film, is a Step Functions workflow that hands video assembly to low-cost Spot compute.</p>
+
+<h2 id="pipeline">The AI rendering pipeline</h2>
+<figure class="viz"><svg viewBox="0 0 760 808" role="img" aria-label="From photos to film: three phases, one state machine, no human in the loop" font-size="11.5"><defs><marker id="pipe-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="var(--edge)"/></marker></defs><text x="24" y="34" font-size="15" font-weight="600" fill="var(--ink)">From photos to film: three phases, one state machine, no human in the loop</text><g fill="none" stroke="var(--edge)" stroke-width="1.25"><path d="M254 136V172" marker-end="url(#pipe-arrow)"/><path d="M254 244V280" marker-end="url(#pipe-arrow)"/><path d="M254 352V388" marker-end="url(#pipe-arrow)"/><path d="M254 460V496" marker-end="url(#pipe-arrow)"/><path d="M254 568V604" marker-end="url(#pipe-arrow)"/><path d="M254 676V712" marker-end="url(#pipe-arrow)"/><path d="M484 436H508V412H484" marker-end="url(#pipe-arrow)"/><path d="M484 532H520" marker-end="url(#pipe-arrow)"/></g><rect x="24" y="64" width="460" height="72" rx="8" fill="none" stroke="var(--edge)" stroke-width="1.25"/><text x="36" y="88" font-size="13" font-weight="600" fill="var(--ink)">Upload and checkout</text><text x="36" y="104" fill="var(--muted)">Photos go to S3 by presigned URL; incomplete uploads are pruned</text><text x="36" y="120" fill="var(--muted)">Credits debited once; album marked processing in DynamoDB</text><rect x="24" y="172" width="460" height="72" rx="8" fill="none" stroke="var(--edge)" stroke-width="1.25"/><text x="36" y="196" font-size="13" font-weight="600" fill="var(--ink)">Phase 1 · Transform (Map, 5 photos in parallel)</text><text x="36" y="212" fill="var(--muted)">Restyle each photo: Gemini, softened prompt, Grok, OpenAI, or skip</text><text x="36" y="228" fill="var(--muted)">GPT-4o mini writes the animation prompt; prepared photo saved</text><rect x="24" y="280" width="460" height="72" rx="8" fill="none" stroke="var(--edge)" stroke-width="1.25"/><text x="36" y="304" font-size="13" font-weight="600" fill="var(--ink)">Phase 2 · Submit (Map, 12 scenes in parallel)</text><text x="36" y="320" fill="var(--muted)">Each scene job (photo × scene) goes to Kling or the chosen engine</text><text x="36" y="336" fill="var(--muted)">A DynamoDB semaphore defers jobs when in-flight slots are full</text><rect x="24" y="388" width="460" height="72" rx="8" fill="var(--accent)" fill-opacity="0.12" stroke="var(--accent)" stroke-width="2"/><text x="36" y="412" font-size="13" font-weight="600" fill="var(--ink)">Phase 3 · Poll loop</text><text x="36" y="428" fill="var(--ink)">Wait 45 s, poll all jobs, decide: done, keep waiting, or give up</text><text x="36" y="444" fill="var(--ink)">Window of 80 iterations (about 60 min), stall guard, hard cap 3 h</text><text x="516" y="428" fill="var(--muted)">not done</text><rect x="24" y="496" width="460" height="72" rx="8" fill="none" stroke="var(--edge)" stroke-width="1.25"/><text x="36" y="520" font-size="13" font-weight="600" fill="var(--ink)">Collect results</text><text x="36" y="536" fill="var(--muted)">Ready clips recorded per scene; missing or failed clips flagged</text><text x="36" y="552" fill="var(--muted)">Smart re-run reuses ready clips; up to 2 automatic re-runs</text><rect x="520" y="496" width="216" height="88" rx="8" fill="var(--warn)" fill-opacity="0.12" stroke="var(--warn)" stroke-width="2"/><text x="532" y="520" font-size="13" font-weight="600" fill="var(--ink)">Failure path</text><text x="532" y="536" fill="var(--ink)">No refunds, automatic re-run</text><text x="532" y="552" fill="var(--ink)">Slow-render email at 12 min</text><text x="532" y="568" fill="var(--ink)">Failed email after 2 re-runs</text><rect x="24" y="604" width="460" height="72" rx="8" fill="none" stroke="var(--edge)" stroke-width="1.25"/><text x="36" y="628" font-size="13" font-weight="600" fill="var(--ink)">Assemble on AWS Batch (ffmpeg, Spot)</text><text x="36" y="644" fill="var(--muted)">Lambda hands a task token to Batch; job sized by clip count</text><text x="36" y="660" fill="var(--muted)">Crossfade clips, loop soundtrack, logo and QR watermark, outro</text><rect x="24" y="712" width="460" height="72" rx="8" fill="none" stroke="var(--edge)" stroke-width="1.25"/><text x="36" y="736" font-size="13" font-weight="600" fill="var(--ink)">Deliver</text><text x="36" y="752" fill="var(--muted)">Batch completion event resumes the state machine via task token</text><text x="36" y="768" fill="var(--muted)">Ready email in the user's language, de-duplicated by clip signature</text></svg><figcaption>Render pipeline · 7 stages, 1 poll loop, 1 failure path</figcaption></figure>
+<p>All photo transformations finish before any video job starts, so cheap failures surface before expensive ones. Each clip is keyed by photo and scene, so a re-run only pays for what failed. Limits such as the 60-minute wait window are code constants checked by tests, so they cannot silently drift.</p>
+
+<h2 id="ai">How AI is used</h2>
+<p>Every film uses at least three generative models, and none is trusted to be available: each step has a fallback and a cost ceiling.</p>
+<div class="tbl"><table>
+<thead><tr><th>Step</th><th>Models</th><th>Fallback</th></tr></thead>
+<tbody>
+<tr><td>Restyle each photo into the world</td><td>Gemini</td><td>Grok, then OpenAI, with a softened prompt in between</td></tr>
+<tr><td>Write the motion prompt for each clip</td><td>GPT-4o</td><td>A hand-written default</td></tr>
+<tr><td>Animate each image into a clip</td><td>Kling, with Veo, Sora and HeyGen for A/B tests</td><td>Grok</td></tr>
+<tr><td>Stitch, score and watermark the film</td><td>ffmpeg, no model</td><td>On-demand compute if Spot is unavailable</td></tr>
+</tbody></table></div>
+<p>What running this in production taught me:</p>
+<ul>
+<li><strong>Retrying the same provider rarely helps.</strong> A content-moderation rejection is deterministic, so the system switches provider or softens the prompt instead.</li>
+<li><strong>Fallbacks can quietly double your costs.</strong> Per-film cost tracking caught one fallback path doing exactly that within a day, so cost now gates every fallback.</li>
+<li><strong>Provider errors are often misleading.</strong> "Rate limited" sometimes meant "out of prepaid credit". Each error type is classified so the system retries, reroutes or alerts as appropriate.</li>
+</ul>
+
+<h2 id="worlds">One pipeline, 30 products</h2>
+<p>Each themed world is configuration and prompts, not new code, so a new world ships without touching the orchestration. Ten worlds also let users pick from a catalogue of 105 scenes.</p>
+<p>The AI models were never the weak point; configuration was. Automated checks now fail the build whenever a world is incomplete, so every world reaches customers fully wired, down to the scenes each user picks.</p>
+
+<h2 id="reliability">Making it reliable</h2>
+<p>Most of the work after launch went into making third-party AI behave like dependable infrastructure. Each fix below came from a real production incident.</p>
+<div class="tbl"><table>
+<thead><tr><th>Problem</th><th>Fix</th></tr></thead>
+<tbody>
+<tr><td>Large albums lost scenes when the video provider hit its concurrency limit</td><td>A shared slot counter that queues jobs instead of dropping them</td></tr>
+<tr><td>Slow renders were reported as failures</td><td>A longer wait window and up to two automatic re-runs that reuse finished clips, never charging twice</td></tr>
+<tr><td>The provider ran out of prepaid credit and the error looked like a rate limit</td><td>Explicit error classification plus a balance monitor that alerts before credit runs out</td></tr>
+<tr><td>A fallback path doubled the cost per photo</td><td>The fallback was removed by design, and cost is now tracked per film</td></tr>
+<tr><td>Cloud Spot capacity dried up and stalled video assembly</td><td>Automatic overflow to on-demand compute, plus a stuck-queue monitor</td></tr>
+</tbody></table></div>
+<p>The pattern: never just retry harder. Make the failure visible, classify it, cap what it can cost, and add a test so it cannot return.</p>
+
+<h2 id="growth">Monetization and growth</h2>
+<p><strong>Revenue.</strong> Users buy credit packs or a subscription through Stripe, in three currencies, with self-serve cancellation. New accounts get one free film. Prices are defined once and checked automatically across all three codebases.</p>
+<p><strong>Acquisition.</strong> The marketing site generates about 3,200 SEO pages in eight languages from the same 30 worlds, plus a keyword-driven blog. Eight free single-photo tools act as a funnel into the paid app, and every step is tracked in PostHog.</p>
+
+<h2 id="outcomes">Outcomes</h2>
+<p>In ten months, working alone, I shipped and now operate a paid consumer AI product that has delivered 3,121 films to 2,065 creators.</p>
+<ul>
+<li><strong>Shipped:</strong> 30 themed worlds, a Stripe credit and subscription business, a marketing engine in eight languages, and an admin backoffice with revenue and production dashboards.</li>
+<li><strong>Reliable:</strong> provider outages, content rejections and capacity shortages are handled automatically, and customers are never charged twice for a failed film.</li>
+<li><strong>Lean:</strong> fixed infrastructure cost stays in the tens of dollars a month. The variable cost is AI usage, which is tracked per film.</li>
+</ul>
+<p>My lessons for teams building on generative AI:</p>
+<ol>
+<li>Treat every model call as a flaky, metered external dependency, and never let a retry or fallback spend money you did not budget for.</li>
+<li>Keep prompts and product configuration in data, and test that the configuration is complete.</li>
+<li>Build the admin and debugging views early. They paid for themselves the first time a customer wrote in.</li>
+</ol>
+</article>
+
+<div class="next"><a href="../#building">← All projects</a><a href="../onsilent/">Next: OnSilent →</a></div>
+</main>
+
+<section class="contact in"><p class="label">Contact</p><p class="big">Hiring a hands-on product or engineering lead in Toulouse? Let's talk.</p><p><a class="mail" data-mail href="#">pierre.sauvignon at gmail dot com</a></p><div class="actions"><a class="btn pri" href="https://twitter.com/pierre_s">Message on X</a><a class="btn" href="https://www.linkedin.com/in/pierresauvignon">LinkedIn</a><a class="btn" href="https://github.com/pierresauvignon">GitHub</a></div></section>
+<footer class="in"><span>© Pierre Sauvignon</span><nav><a href="https://www.linkedin.com/in/pierresauvignon">LinkedIn</a><a href="https://twitter.com/pierre_s">X</a><a href="https://github.com/pierresauvignon">GitHub</a></nav></footer>
+<script>
+(function(){var a=['pierre','sauvignon'].join('.')+'@'+['gmail','com'].join('.');document.querySelectorAll('[data-mail]').forEach(function(e){e.textContent=a;if(e.tagName==='A')e.href='mailto:'+a;});})();
+</script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="How I designed and built TigerSoup solo: a free Mac app that gives a new software project its own AWS account, a private GitHub repo, keyless OIDC deploys and an agent-ready scaffold in under a minute." />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#fcfbf9" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#141210" media="(prefers-color-scheme: dark)" />
+  <meta property="og:title" content="TigerSoup case study · Pierre Sauvignon" />
+  <meta property="og:description" content="A native Mac app that turns a 797-line setup script into a five-step wizard: an AWS account, a GitHub repo, keyless deploys and guardrails for coding agents, without a terminal." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://pierresauvignon.github.io/tigersoup/" />
+  <meta property="og:image" content="https://pierresauvignon.github.io/img/pierre-hero.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@pierre_s" />
+  <link rel="canonical" href="https://pierresauvignon.github.io/tigersoup/" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%232438ff'/%3E%3Ctext x='32' y='46' font-family='Arial Black, sans-serif' font-size='36' font-weight='900' text-anchor='middle' fill='%23f4f3ee'%3EP%3C/text%3E%3C/svg%3E" />
+  <title>TigerSoup case study · Pierre Sauvignon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/case-study.css">
+  <style>
+  :root{--accent:#d97706}
+  @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--accent:#fbbf24}}
+  :root[data-theme="dark"]{--accent:#fbbf24}
+  </style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="top"><div class="in"><a href="../#building"><span>←</span>Pierre Sauvignon</a><a class="ext" href="https://www.tigersoup.com">tigersoup.com ↗</a></div></div>
+
+<main id="main" class="in">
+<header class="cs-head">
+  <div class="eyebrow"><img src="../icons/tigersoup.png" alt="" width="160" height="160">Case study · TigerSoup</div>
+  <h1>TigerSoup Case Study</h1>
+  <p class="lede">TigerSoup is a free Mac app that gives a new software project a production-grade foundation in under a minute: its own AWS account, a private GitHub repo, keyless deploys over OIDC, and a local scaffold briefed for Claude Code or Codex. I designed and built it solo from June 2026, turning a personal <code>kickoff.sh</code> script into a native app that a non-developer can run without a terminal.</p>
+</header>
+
+<article>
+<h2 id="at-a-glance">At a glance</h2>
+<div class="tbl"><table class="glance"><tbody>
+<tr><td>Role</td><td>Sole engineer and product owner</td></tr>
+<tr><td>Period</td><td>June 2026 to today, about 215 commits across 4 repositories</td></tr>
+<tr><td>Product</td><td>Native macOS app (macOS 14+), free, no account with TigerSoup needed</td></tr>
+<tr><td>Stack</td><td>Swift and SwiftUI, AWS SDK for Swift, AWS CDK (TypeScript), Lambda, API Gateway, DynamoDB, S3, CloudFront, Astro</td></tr>
+<tr><td>Integrations</td><td>AWS Organizations and IAM Identity Center, GitHub OAuth device flow and REST API, Claude Code, Codex, Gemini CLI</td></tr>
+<tr><td>Scale</td><td>7,750 lines of Swift, 215 tests, 4 CDK stacks, 12 blog articles</td></tr>
+</tbody></table></div>
+
+<h2 id="delivery">Delivery</h2>
+<p>TigerSoup ships continuously. The Mac app is on build 59, signed, notarized and delivered to users through Sparkle auto-update from releases.tigersoup.com. tigersoup.com is live with a one-click download and 12 articles.</p>
+<p>Measurement was built in from the start. The app reports setup steps and outcomes to a telemetry endpoint, and a local BackOffice dashboard shows users, projects, setup success rate and where setups fail, so every release can be judged on the funnel from install to first project.</p>
+
+<h2 id="product">The product</h2>
+<p>Every new project needs the same foundation before real code: an isolated cloud account, dev split from prod, access policies, keyless deploys, and a scaffolded repo. A seasoned team spends days on it, and most solo setups quietly skip a step. With AI agents writing a new project every week, that tax is paid more often, and the cost of an agent touching production rises.</p>
+<p>I had automated this for myself in <code>kickoff.sh</code>, a 797-line Bash script. TigerSoup turns it into a five-step wizard: sign in, name the project, press Create, and open it in your coding agent.</p>
+<ol>
+<li><strong>Connect AWS and GitHub.</strong> It detects existing <code>~/.aws</code> profiles, or signs in through IAM Identity Center or a dedicated <code>tigersoup-admin</code> user, and checks whether the account can manage an Organization. GitHub uses the OAuth device flow. Both are saved in the Keychain.</li>
+<li><strong>Set up tools.</strong> It detects and installs what is missing (Homebrew, git, AWS CLI, Claude Code, Codex) and offers LobsterOne for usage tracking.</li>
+<li><strong>Describe the project.</strong> Each field is validated as you type, a live preview lists what will be created, and the app checks that the repo name and AWS account are free.</li>
+<li><strong>Create.</strong> It creates the AWS account through Organizations (one by default, dev and prod behind an Advanced toggle), the private repo, OIDC providers and deploy roles, then writes the scaffold and pushes the first commit.</li>
+<li><strong>Build.</strong> A confetti screen offers Claude Code, Codex, Gemini CLI or a terminal, and opens Terminal in the project with that agent running.</li>
+</ol>
+<p>The scaffold is where the guardrails live. It writes <code>CLAUDE.md</code> and <code>AGENTS.md</code> describing the layout and rules, a <code>deploy.yml</code> that deploys from GitHub Actions on short-lived OIDC tokens, and an <code>aws-safe</code> wrapper with <code>use-dev</code> / <code>use-prod</code> switches so an agent cannot deploy to production by accident. Users who lack an Organization can place the project in their existing account instead; roles are then prefixed and tagged per project.</p>
+<p>Projects can also publish a site at <code>&lt;name&gt;.tigersoup.app</code> without TigerSoup touching their traffic, through the subdomain service described below.</p>
+
+<h2 id="architecture">Architecture</h2>
+<figure class="viz"><svg viewBox="0 0 760 560" role="img" aria-label="Everything a project needs lives in the user&#39;s own accounts" font-size="13"><defs><marker id="ts-arch-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="var(--edge)"/></marker></defs><text x="24" y="34" font-size="15" font-weight="600" fill="var(--ink)">Everything a project needs lives in the user's own accounts</text><rect x="24" y="64" width="340" height="316" rx="10" fill="var(--ink)" fill-opacity="0.03" stroke="var(--line)" stroke-width="1"/><text x="40" y="86" font-size="11.5" font-weight="600" fill="var(--muted)">YOUR MAC</text><rect x="396" y="64" width="340" height="316" rx="10" fill="var(--ink)" fill-opacity="0.03" stroke="var(--line)" stroke-width="1"/><text x="412" y="86" font-size="11.5" font-weight="600" fill="var(--muted)">YOUR AWS AND GITHUB ACCOUNTS</text><rect x="24" y="412" width="712" height="124" rx="10" fill="var(--ink)" fill-opacity="0.03" stroke="var(--line)" stroke-width="1"/><text x="40" y="434" font-size="11.5" font-weight="600" fill="var(--muted)">TIGERSOUP'S AWS</text><g fill="none" stroke="var(--edge)" stroke-width="1.25"><path d="M348 328H412" marker-end="url(#ts-arch-arrow)"/><path d="M348 232H412" marker-end="url(#ts-arch-arrow)"/><path d="M120 292V268" marker-end="url(#ts-arch-arrow)"/><path d="M120 172V196" marker-end="url(#ts-arch-arrow)"/><path d="M546 268V292" marker-end="url(#ts-arch-arrow)"/><path d="M680 136H704V448" marker-end="url(#ts-arch-arrow)"/><path d="M210 448V364" marker-end="url(#ts-arch-arrow)"/><path d="M312 364V448" marker-end="url(#ts-arch-arrow)"/></g><text x="380" y="320" font-size="11.5" text-anchor="middle" fill="var(--muted)">creates</text><text x="380" y="224" font-size="11.5" text-anchor="middle" fill="var(--muted)">pushes</text><text x="128" y="284" font-size="11.5" fill="var(--muted)">writes</text><text x="128" y="188" font-size="11.5" fill="var(--muted)">edits</text><text x="554" y="284" font-size="11.5" fill="var(--muted)">deploys via OIDC</text><text x="218" y="404" font-size="11.5" fill="var(--muted)">updates</text><text x="320" y="404" font-size="11.5" fill="var(--muted)">usage events</text><text x="696" y="404" font-size="11.5" text-anchor="end" fill="var(--muted)">registers</text><rect x="40" y="100" width="308" height="72" rx="8" fill="none" stroke="var(--edge)" stroke-width="1.25"/><text x="52" y="124" font-weight="600" fill="var(--ink)">Coding agent</text><text x="52" y="144" font-size="11.5" fill="var(--muted)">Claude Code, Codex or Gemini CLI</text><text x="52" y="160" font-size="11.5" fill="var(--muted)">reads CLAUDE.md or AGENTS.md first</text><rect x="40" y="196" width="308" height="72" rx="8" fill="none" stroke="var(--edge)" stroke-width="1.25"/><text x="52" y="220" font-weight="600" fill="var(--ink)">Project folder</text><text x="52" y="240" font-size="11.5" fill="var(--muted)">deploy.yml, aws-safe, use-dev / use-prod</text><text x="52" y="256" font-size="11.5" fill="var(--muted)">AWS profiles chained from your sign-in</text><rect x="40" y="292" width="308" height="72" rx="8" fill="var(--accent)" fill-opacity="0.12" stroke="var(--accent)" stroke-width="2"/><text x="52" y="316" font-weight="600" fill="var(--ink)">TigerSoup app</text><text x="52" y="336" font-size="11.5" fill="var(--ink)">SwiftUI wizard, AWS SDK for Swift</text><text x="52" y="352" font-size="11.5" fill="var(--ink)">sign-ins kept in the Keychain</text><rect x="412" y="100" width="268" height="72" rx="8" fill="none" stroke="var(--edge)" stroke-width="1.25"/><text x="424" y="124" font-weight="600" fill="var(--ink)">Project site</text><text x="424" y="144" font-size="11.5" fill="var(--muted)">its own CloudFront and certificate</text><text x="424" y="160" font-size="11.5" fill="var(--muted)">served at name.tigersoup.app</text><rect x="412" y="196" width="268" height="72" rx="8" fill="none" stroke="var(--edge)" stroke-width="1.25"/><text x="424" y="220" font-weight="600" fill="var(--ink)">GitHub</text><text x="424" y="240" font-size="11.5" fill="var(--muted)">private repo, created by the app</text><text x="424" y="256" font-size="11.5" fill="var(--muted)">Actions get short-lived OIDC tokens</text><rect x="412" y="292" width="268" height="72" rx="8" fill="none" stroke="var(--edge)" stroke-width="1.25"/><text x="424" y="316" font-weight="600" fill="var(--ink)">AWS Organization</text><text x="424" y="336" font-size="11.5" fill="var(--muted)">an account per project, or dev + prod</text><text x="424" y="352" font-size="11.5" fill="var(--muted)">OIDC provider and deploy roles</text><rect x="40" y="448" width="208" height="72" rx="8" fill="none" stroke="var(--edge)" stroke-width="1.25"/><text x="52" y="472" font-weight="600" fill="var(--ink)">Releases</text><text x="52" y="492" font-size="11.5" fill="var(--muted)">S3 + CloudFront</text><text x="52" y="508" font-size="11.5" fill="var(--muted)">signed DMG, Sparkle appcast</text><rect x="276" y="448" width="208" height="72" rx="8" fill="none" stroke="var(--edge)" stroke-width="1.25"/><text x="288" y="472" font-weight="600" fill="var(--ink)">Telemetry API</text><text x="288" y="492" font-size="11.5" fill="var(--muted)">Lambda + DynamoDB</text><text x="288" y="508" font-size="11.5" fill="var(--muted)">read by a local BackOffice</text><rect x="512" y="448" width="208" height="72" rx="8" fill="none" stroke="var(--edge)" stroke-width="1.25"/><text x="524" y="472" font-weight="600" fill="var(--ink)">Subdomains API</text><text x="524" y="492" font-size="11.5" fill="var(--muted)">Lambda + DynamoDB + Route 53</text><text x="524" y="508" font-size="11.5" fill="var(--muted)">only writes 2 DNS records</text></svg></figure>
+<p>The app calls AWS and GitHub directly from the Mac, with no <code>aws</code> or <code>gh</code> CLI and no TigerSoup server in the path, so the user's credentials never leave their machine. TigerSoup's own AWS account, defined in 4 CDK stacks, runs only what cannot live with the user: the release feed, the tigersoup.com site, an opt-in usage endpoint, and the subdomain service.</p>
+<p>The subdomain service has no shared secret. A project's agent signs an STS <code>GetCallerIdentity</code> request bound to the slug and target, and the Lambda replays it to learn the caller's real AWS account. The first account to claim a slug owns it, up to 10 per account, and the service only ever writes two DNS records: traffic goes straight to the user's CloudFront.</p>
+
+<h2 id="honest">Making it honest</h2>
+<p>A setup tool that says it succeeded when it didn't is worse than none, because the user finds out at the first deploy. I engineered every step to be real, recoverable and truthful.</p>
+<div class="tbl"><table>
+<thead><tr><th>Problem</th><th>Fix</th></tr></thead>
+<tbody>
+<tr><td>The early prototype ran on a mock engine, which could mask a missing sign-in</td><td>The mock is gone; the run fails visibly, and Done only shows when a real result is recorded</td></tr>
+<tr><td>A failure in IAM work lost everything done before it</td><td>Project files and AWS profiles are written before per-account IAM work, so they survive a later failure and Retry resumes</td></tr>
+<tr><td>A new account's access role takes minutes to become assumable, so configuration failed at random</td><td>Configuration retries for about 3 minutes; account creation times out after 20 minutes instead of polling forever</td></tr>
+<tr><td>Access-key sign-in nudged people to use root keys</td><td>Sign-in creates a dedicated <code>tigersoup-admin</code> IAM user and profile instead</td></tr>
+<tr><td>Deploys were refused for repos on GitHub's immutable OIDC subject format (<code>owner@id/name@id</code>)</td><td>The repo creator returns owner and repo ids, and trust policies accept both subject forms</td></tr>
+<tr><td>The GitHub token could end up in <code>.git/config</code> or in error messages</td><td>Pushes pass the token per call and redact it from every error</td></tr>
+<tr><td>Accounts outside an AWS Organization were turned away</td><td>"Use it as it is": projects share the signed-in account, with roles named and tagged per project</td></tr>
+</tbody></table></div>
+<p>The app is verified the way users see it: UI fixes are checked by rendering through live AppKit at 1x and 2x, which caught outline artefacts that 4x snapshot renders never showed.</p>
+
+<h2 id="growth">Distribution and growth</h2>
+<p><strong>Pricing.</strong> TigerSoup is free, with no TigerSoup account. Users pay AWS and GitHub directly, and nothing it creates costs anything until they run something. That is the pitch to a cautious first-timer, so the site's FAQ spells out the AWS Free Tier trade-offs plainly, including that Organizations moves accounts off the credit plan.</p>
+<p><strong>Shipping.</strong> Every merge to main builds, signs, notarizes and publishes the DMG and Sparkle appcast from a self-hosted Mac runner, so releases cost no GitHub macOS minutes. Updates install on launch by default and keep the user's choice.</p>
+<p><strong>Acquisition.</strong> An Astro site at tigersoup.com with a cobalt "mission control" look, mascot illustrations, dark mode, and 12 articles on topics like one AWS account per project, keyless deploys with OIDC, and keeping agents away from production. Sitemap, RSS, JSON-LD and <code>llms.txt</code> are generated at build. The app cross-sells LobsterOne, which shares its release and design conventions.</p>
+
+<h2 id="outcomes">Outcomes</h2>
+<p>In four months, working alone, I turned an 800-line script into a signed, self-updating Mac app that sets up a production-grade project without a terminal. It ships continuously, with telemetry measuring every step from install to first project.</p>
+<ul>
+<li><strong>Shipped:</strong> a five-step SwiftUI wizard with real AWS and GitHub provisioning, single-account and dev/prod modes, agent-ready scaffolds, a subdomain service, a release pipeline, a marketing site and a local analytics backoffice.</li>
+<li><strong>Safe by default:</strong> no long-lived keys anywhere in a project, production gated from agents, credentials in the Keychain, and a backoffice that only listens on localhost.</li>
+<li><strong>Honest:</strong> every step reports what really happened, partial work survives a failure, and Retry picks up where it stopped.</li>
+</ul>
+<p>My lessons for anyone building a setup tool for the AI-agent era:</p>
+<ol>
+<li>Never fake success. A mock fallback hides exactly the failures users most need to see.</li>
+<li>The audience is wider than developers now. Plain-language questions ("Do you have an AWS Organization account?") and escape hatches matter more than options.</li>
+<li>Write the rules down for the agent. <code>CLAUDE.md</code> and <code>AGENTS.md</code> are the cheapest guardrail there is, and they work from the first prompt.</li>
+</ol>
+</article>
+
+<div class="next"><a href="../#building">← All projects</a><a href="../onreplay/">Next: OnReplay →</a></div>
+</main>
+
+<section class="contact in"><p class="label">Contact</p><p class="big">Hiring a hands-on product or engineering lead in Toulouse? Let's talk.</p><p><a class="mail" data-mail href="#">pierre.sauvignon at gmail dot com</a></p><div class="actions"><a class="btn pri" href="https://twitter.com/pierre_s">Message on X</a><a class="btn" href="https://www.linkedin.com/in/pierresauvignon">LinkedIn</a><a class="btn" href="https://github.com/pierresauvignon">GitHub</a></div></section>
+<footer class="in"><span>© Pierre Sauvignon</span><nav><a href="https://www.linkedin.com/in/pierresauvignon">LinkedIn</a><a href="https://twitter.com/pierre_s">X</a><a href="https://github.com/pierresauvignon">GitHub</a></nav></footer>
+<script>
+(function(){var a=['pierre','sauvignon'].join('.')+'@'+['gmail','com'].join('.');document.querySelectorAll('[data-mail]').forEach(function(e){e.textContent=a;if(e.tagName==='A')e.href='mailto:'+a;});})();
+</script>
+</body>
+</html>
