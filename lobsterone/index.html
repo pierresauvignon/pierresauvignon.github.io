@@ -3,20 +3,25 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="description" content="How I designed, built and run LobsterOne solo: a Mac menu bar app and AWS analytics platform that tracks tokens, cost and output across Claude Code, Codex, Cursor and other AI coding tools." />
+  <meta name="description" content="How I built LobsterOne solo: a Mac menu bar app and AWS analytics platform tracking 1.93B tokens across Claude Code, Codex and Cursor for ~$80 a month." />
   <meta name="color-scheme" content="light dark" />
   <meta name="theme-color" content="#fcfbf9" media="(prefers-color-scheme: light)" />
   <meta name="theme-color" content="#141210" media="(prefers-color-scheme: dark)" />
-  <meta property="og:title" content="LobsterOne case study · Pierre Sauvignon" />
-  <meta property="og:description" content="A multi-provider analytics platform for AI coding tools, built and run solo: 1.93 billion tokens and $166k of AI spend tracked for about $80 a month in infrastructure." />
+  <meta property="og:title" content="LobsterOne case study: AI coding analytics on AWS" />
+  <meta property="og:description" content="How I built LobsterOne solo: a Mac menu bar app and AWS analytics platform tracking 1.93B tokens across Claude Code, Codex and Cursor for ~$80 a month." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://pierresauvignon.github.io/lobsterone/" />
-  <meta property="og:image" content="https://pierresauvignon.github.io/img/pierre-hero.jpg" />
+  <meta property="og:image" content="https://pierresauvignon.github.io/img/cases/og-lobsterone.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="The LobsterOne web dashboard" />
+  <meta property="og:site_name" content="Pierre Sauvignon" />
+  <meta name="author" content="Pierre Sauvignon" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@pierre_s" />
   <link rel="canonical" href="https://pierresauvignon.github.io/lobsterone/" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%232438ff'/%3E%3Ctext x='32' y='46' font-family='Arial Black, sans-serif' font-size='36' font-weight='900' text-anchor='middle' fill='%23f4f3ee'%3EP%3C/text%3E%3C/svg%3E" />
-  <title>LobsterOne case study · Pierre Sauvignon</title>
+  <title>LobsterOne case study: AI coding analytics · Pierre Sauvignon</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/case-study.css">
@@ -25,6 +30,61 @@
   @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--accent:#f87171}}
   :root[data-theme="dark"]{--accent:#f87171}
   </style>
+  <script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Article",
+   "@id": "https://pierresauvignon.github.io/lobsterone/#article",
+   "headline": "LobsterOne case study: AI coding analytics on AWS",
+   "description": "How I built LobsterOne solo: a Mac menu bar app and AWS analytics platform tracking 1.93B tokens across Claude Code, Codex and Cursor for ~$80 a month.",
+   "url": "https://pierresauvignon.github.io/lobsterone/",
+   "mainEntityOfPage": "https://pierresauvignon.github.io/lobsterone/",
+   "image": "https://pierresauvignon.github.io/img/cases/og-lobsterone.jpg",
+   "datePublished": "2026-10-16",
+   "dateModified": "2026-10-16",
+   "inLanguage": "en",
+   "author": {
+    "@type": "Person",
+    "@id": "https://pierresauvignon.github.io/#person",
+    "name": "Pierre Sauvignon",
+    "url": "https://pierresauvignon.github.io/"
+   },
+   "publisher": {
+    "@id": "https://pierresauvignon.github.io/#person"
+   },
+   "about": {
+    "@type": "SoftwareApplication",
+    "name": "LobsterOne"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Pierre Sauvignon",
+     "item": "https://pierresauvignon.github.io/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Projects",
+     "item": "https://pierresauvignon.github.io/#building"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "LobsterOne case study",
+     "item": "https://pierresauvignon.github.io/lobsterone/"
+    }
+   ]
+  }
+ ]
+}
+  </script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>

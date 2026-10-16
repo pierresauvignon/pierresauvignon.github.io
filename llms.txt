@@ -1,0 +1,16 @@
+# Pierre Sauvignon
+
+> Founder and product engineer. Nearly two decades of startups across Sydney and Perth: Head of Product at Pollenizer, founder of Heyscape, now designing, building and running four software products solo. Moving to Toulouse in early 2027 and open to lead product or engineering roles.
+
+## Case studies
+
+- [LobsterOne](https://pierresauvignon.github.io/lobsterone/): a Mac menu bar app and AWS analytics platform that tracks tokens, cost and output across Claude Code, Codex, Cursor and Mistral Vibe. 1.93 billion tokens tracked for about $80 a month in infrastructure.
+- [TigerSoup](https://pierresauvignon.github.io/tigersoup/): a free Swift Mac app that gives a new project its own AWS account, a private GitHub repo, keyless OIDC deploys and guardrails for coding agents in under a minute.
+- [OnReplay](https://pierresauvignon.github.io/onreplay/): a paid consumer AI app that turns photos into themed short films, orchestrating several generative AI providers on AWS Step Functions. 3,121 films delivered to 2,065 creators.
+- [OnSilent](https://pierresauvignon.github.io/onsilent/): an AI receptionist for Australian tradespeople and real-estate agents, bridging Twilio to OpenAI Realtime on AWS. 9,457 calls handled, 2024 to 2026.
+
+## Profile
+
+- [Home page and experience](https://pierresauvignon.github.io/)
+- [LinkedIn](https://www.linkedin.com/in/pierresauvignon)
+- [GitHub](https://github.com/pierresauvignon)

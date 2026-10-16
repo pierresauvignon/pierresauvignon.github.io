@@ -3,20 +3,25 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="description" content="How I designed, built, ran and cleanly retired OnSilent solo: an AI receptionist for Australian tradespeople and real-estate agents, bridging the phone network to OpenAI Realtime on AWS." />
+  <meta name="description" content="How I built OnSilent solo: an AI receptionist on Twilio, OpenAI Realtime and AWS that handled 9,457 calls for Australian trades and agents." />
   <meta name="color-scheme" content="light dark" />
   <meta name="theme-color" content="#fcfbf9" media="(prefers-color-scheme: light)" />
   <meta name="theme-color" content="#141210" media="(prefers-color-scheme: dark)" />
-  <meta property="og:title" content="OnSilent case study · Pierre Sauvignon" />
-  <meta property="og:description" content="A production AI receptionist, built and run solo for two and a half years: 9,457 calls handled and 3,929 AI calls placed for Australian small businesses." />
+  <meta property="og:title" content="OnSilent case study: live voice AI on a real phone line" />
+  <meta property="og:description" content="How I built OnSilent solo: an AI receptionist on Twilio, OpenAI Realtime and AWS that handled 9,457 calls for Australian trades and agents." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://pierresauvignon.github.io/onsilent/" />
-  <meta property="og:image" content="https://pierresauvignon.github.io/img/pierre-hero.jpg" />
+  <meta property="og:image" content="https://pierresauvignon.github.io/img/cases/og-onsilent.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="The OnSilent homepage" />
+  <meta property="og:site_name" content="Pierre Sauvignon" />
+  <meta name="author" content="Pierre Sauvignon" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@pierre_s" />
   <link rel="canonical" href="https://pierresauvignon.github.io/onsilent/" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%232438ff'/%3E%3Ctext x='32' y='46' font-family='Arial Black, sans-serif' font-size='36' font-weight='900' text-anchor='middle' fill='%23f4f3ee'%3EP%3C/text%3E%3C/svg%3E" />
-  <title>OnSilent case study · Pierre Sauvignon</title>
+  <title>OnSilent case study: AI voice receptionist · Pierre Sauvignon</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/case-study.css">
@@ -25,6 +30,61 @@
   @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--accent:#60a5fa}}
   :root[data-theme="dark"]{--accent:#60a5fa}
   </style>
+  <script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Article",
+   "@id": "https://pierresauvignon.github.io/onsilent/#article",
+   "headline": "OnSilent case study: live voice AI on a real phone line",
+   "description": "How I built OnSilent solo: an AI receptionist on Twilio, OpenAI Realtime and AWS that handled 9,457 calls for Australian trades and agents.",
+   "url": "https://pierresauvignon.github.io/onsilent/",
+   "mainEntityOfPage": "https://pierresauvignon.github.io/onsilent/",
+   "image": "https://pierresauvignon.github.io/img/cases/og-onsilent.jpg",
+   "datePublished": "2026-10-16",
+   "dateModified": "2026-10-16",
+   "inLanguage": "en",
+   "author": {
+    "@type": "Person",
+    "@id": "https://pierresauvignon.github.io/#person",
+    "name": "Pierre Sauvignon",
+    "url": "https://pierresauvignon.github.io/"
+   },
+   "publisher": {
+    "@id": "https://pierresauvignon.github.io/#person"
+   },
+   "about": {
+    "@type": "SoftwareApplication",
+    "name": "OnSilent"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Pierre Sauvignon",
+     "item": "https://pierresauvignon.github.io/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Projects",
+     "item": "https://pierresauvignon.github.io/#building"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "OnSilent case study",
+     "item": "https://pierresauvignon.github.io/onsilent/"
+    }
+   ]
+  }
+ ]
+}
+  </script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
