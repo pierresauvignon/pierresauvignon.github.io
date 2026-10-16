@@ -58,3 +58,6 @@ footer nav{display:flex;gap:1.2rem}footer a{color:var(--muted)}footer a:hover{co
 @media (max-width:640px){.top .ext{display:none}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 article code,.lede code{font-family:var(--mono);font-size:.86em;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:.3rem;padding:.05rem .3rem;white-space:nowrap}
+.shot{margin:2rem 0 0;background:var(--surface);border:1px solid var(--line);border-radius:.9rem;overflow:hidden}
+.shot img{display:block;width:100%;height:auto}
+.shot figcaption{font-family:var(--mono);font-size:.75rem;color:var(--muted);padding:.65rem 1rem;border-top:1px solid var(--line);line-height:1.4}
