@@ -3,7 +3,7 @@
 
 :root{--bg:#15101a;--surface:#201927;--raise:#2a2132;--ink:#f8eee4;--body:#d9ccc6;--muted:#a6969d;--line:#372b3e;--edge:#5a4a5f;--bar:#5e4c66;--warn:#fbbf24;--accent:#ff8a5b;
 --coral:#ff8a5b;--pink:#f4a7c4;--grad:linear-gradient(135deg,#ff8a5b,#e0517e);--on-grad:#1a1014;
---col:44rem;--wide:52rem;--top:4rem;
+--col:48rem;--wide:64rem;--top:4rem;
 --display:"DM Serif Display",Georgia,serif;--sans:"DM Sans",ui-sans-serif,system-ui,sans-serif;--mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,monospace;--hand:"Caveat","Bradley Hand",cursive;
 color-scheme:dark}
 *{box-sizing:border-box}

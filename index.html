@@ -29,7 +29,7 @@
   --bg:#15101a;--surface:#201927;--raise:#2a2132;--ink:#f8eee4;--body:#d9ccc6;--muted:#a6969d;--line:#372b3e;
   --coral:#ff8a5b;--pink:#f4a7c4;--grad:linear-gradient(135deg,#ff8a5b,#e0517e);--on-grad:#1a1014;--paper:#f6efe4;--paper-ink:#1d1418;
   --display:"DM Serif Display",Georgia,serif;--sans:"DM Sans",ui-sans-serif,system-ui,sans-serif;--hand:"Caveat","Bradley Hand",cursive;--mono:"IBM Plex Mono",ui-monospace,monospace;
-  --col:42rem;--wide:70rem;--pad:clamp(0px,5vw,4.5rem);--r:1.1rem;--top:4.25rem;
+  --col:44rem;--wide:82rem;--pad:clamp(0px,3vw,2rem);--r:1.1rem;--top:4.25rem;
   color-scheme:dark;
 }
 *{box-sizing:border-box}
@@ -82,7 +82,7 @@ mark{background:none;color:var(--ink);background-image:linear-gradient(transpare
 .u svg{position:absolute;left:-2%;width:104%;bottom:-.1em;height:.32em;overflow:visible}
 .u path{stroke:var(--pink);stroke-width:3.5;fill:none;stroke-linecap:round;stroke-dasharray:240;stroke-dashoffset:0;animation:draw 1s .5s cubic-bezier(.6,0,.2,1) backwards}
 @keyframes draw{from{stroke-dashoffset:240}}
-.lede{margin-top:1.6rem;font-size:1.12em;max-width:36ch}
+.lede{margin-top:1.6rem;font-size:1.12em;max-width:42ch}
 .avail{display:flex;align-items:center;gap:.65rem;margin-top:1.4rem;color:var(--ink);font-weight:500;font-size:.95rem}
 .avail i{flex:none;width:.6rem;height:.6rem;border-radius:50%;background:#5ee0a0;animation:ping 2.4s infinite}
 @keyframes ping{0%{box-shadow:0 0 0 0 rgba(94,224,160,.5)}70%,100%{box-shadow:0 0 0 .55rem rgba(94,224,160,0)}}
@@ -91,12 +91,12 @@ mark{background:none;color:var(--ink);background-image:linear-gradient(transpare
 
 
 /* ---------- 1 · Receipt hero ---------- */
-.hero{display:grid;grid-template-columns:minmax(0,19rem) minmax(0,1fr);gap:clamp(2rem,6vw,5.5rem);align-items:center;padding-block:clamp(2.5rem,8vw,6.5rem) clamp(3rem,8vw,6rem)}
+.hero{display:grid;grid-template-columns:minmax(0,24rem) minmax(0,1fr);gap:clamp(2rem,6vw,5.5rem);align-items:center;padding-block:clamp(2.5rem,8vw,6.5rem) clamp(3rem,8vw,6rem)}
 .portrait{position:relative;isolation:isolate;margin:0}
 .portrait::before{content:"";position:absolute;inset:-10%;z-index:-1;background:radial-gradient(closest-side,rgba(255,138,91,.4),rgba(224,81,126,.15) 62%,transparent);filter:blur(14px)}
 .portrait img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 30%;border-radius:999px 999px 1.6rem 1.6rem}
 .portrait .note{margin-top:.9rem;margin-left:.4rem;transform:rotate(-3deg)}
-.hero h1{font-size:clamp(2.5rem,5.6vw,4.6rem);line-height:1.02;letter-spacing:-.02em;max-width:15ch}
+.hero h1{font-size:clamp(2.5rem,5.6vw,5.4rem);line-height:1.02;letter-spacing:-.02em;max-width:15ch}
 .hero h1 em{display:block;font-style:italic;color:var(--coral);margin-top:.15em;font-size:.72em;letter-spacing:-.01em}
 @media (max-width:780px){.hero{grid-template-columns:1fr}.portrait{max-width:14rem}}
 
