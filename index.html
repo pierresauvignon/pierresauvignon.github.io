@@ -4,9 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="description" content="Pierre Sauvignon, founder and product engineer: ex-Head of Product at Pollenizer, founder of Heyscape, building AI products solo. Open to lead roles anywhere." />
-  <meta name="color-scheme" content="light dark" />
-  <meta name="theme-color" content="#fcfbf9" media="(prefers-color-scheme: light)" />
-  <meta name="theme-color" content="#141210" media="(prefers-color-scheme: dark)" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="theme-color" content="#15101a" />
   <meta property="og:title" content="Pierre Sauvignon · Founder & product engineer" />
   <meta property="og:description" content="Pierre Sauvignon, founder and product engineer: ex-Head of Product at Pollenizer, founder of Heyscape, building AI products solo. Open to lead roles anywhere." />
   <meta property="og:type" content="website" />
@@ -18,87 +17,226 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@pierre_s" />
   <link rel="canonical" href="https://pierresauvignon.github.io/" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%232438ff'/%3E%3Ctext x='32' y='46' font-family='Arial Black, sans-serif' font-size='36' font-weight='900' text-anchor='middle' fill='%23f4f3ee'%3EP%3C/text%3E%3C/svg%3E" />
-  <title>Pierre Sauvignon · Founder & product engineer</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet"><style>
-/* Iteration 1: the typeset CV, with the four apps as a featured showcase and the photos as a full-width strip you scroll sideways. */
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23ff8a5b'/%3E%3Cstop offset='1' stop-color='%23e0517e'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='url(%23g)'/%3E%3Ctext x='32' y='45' font-family='Georgia, serif' font-size='38' text-anchor='middle' fill='%231a1014'%3EP%3C/text%3E%3C/svg%3E" />
+  <title>Pierre Sauvignon · Founder & product engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Caveat:wght@500;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+  <style>
+/* Dusk · Stack, editorial pass, with results itemised as a till receipt of skills.
+   Layout: one narrow reading column (42rem) inside generous margins; products and photos break out to 70rem.
+   Dark by design: it stays dark in both host themes. */
+:root{
+  --bg:#15101a;--surface:#201927;--raise:#2a2132;--ink:#f8eee4;--body:#d9ccc6;--muted:#a6969d;--line:#372b3e;
+  --coral:#ff8a5b;--pink:#f4a7c4;--grad:linear-gradient(135deg,#ff8a5b,#e0517e);--on-grad:#1a1014;--paper:#f6efe4;--paper-ink:#1d1418;
+  --display:"DM Serif Display",Georgia,serif;--sans:"DM Sans",ui-sans-serif,system-ui,sans-serif;--hand:"Caveat","Bradley Hand",cursive;--mono:"IBM Plex Mono",ui-monospace,monospace;
+  --col:42rem;--wide:70rem;--pad:clamp(0px,5vw,4.5rem);--r:1.1rem;--top:4.25rem;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--top) + 1.5rem)}
+body{background:var(--bg);color:var(--body);margin:0;font-family:var(--sans);font-size:clamp(1.05rem,.98rem + .3vw,1.2rem);line-height:1.62;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bg)}
+img{max-width:100%;display:block}
+button{font:inherit;cursor:pointer;color:inherit}
+a{text-decoration:none;color:inherit}
+:focus-visible{outline:2px solid var(--pink);outline-offset:3px;border-radius:6px}
+::selection{background:var(--coral);color:var(--on-grad)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
+html{padding-block:env(safe-area-inset-top,0px) env(safe-area-inset-bottom,0px)}
+.skip{position:absolute;left:-999px;top:0}.skip:focus{left:1rem;top:calc(1rem + env(safe-area-inset-top,0px));z-index:99;background:var(--ink);color:var(--bg);padding:.6rem 1rem;border-radius:.5rem}
 
-:root{--bg:#fcfbf9;--surface:#ffffff;--ink:#1c1917;--body:#44403c;--muted:#78716c;--line:#e7e3dd;--ok:#15803d;--col:44rem;--wide:66rem;
---sans:"Onest",ui-sans-serif,system-ui,sans-serif;--mono:"Geist Mono",ui-monospace,SFMono-Regular,monospace}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#141210;--surface:#1c1917;--ink:#f5f3ef;--body:#d3cec6;--muted:#8f8880;--line:#2c2825;--ok:#4ade80;color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#141210;--surface:#1c1917;--ink:#f5f3ef;--body:#d3cec6;--muted:#8f8880;--line:#2c2825;--ok:#4ade80;color-scheme:dark}
-*{box-sizing:border-box}html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--body);font-family:var(--sans);font-size:1.02rem;line-height:1.7;-webkit-font-smoothing:antialiased;
-padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-a{color:var(--ink);text-decoration:none}
-:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:3px}
-.skip{position:absolute;left:-999px}.skip:focus{left:1rem;top:1rem;background:var(--ink);color:var(--bg);padding:.5rem .8rem;z-index:9}
-.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);margin-inline:calc(-1 * max(16px,env(safe-area-inset-left,0px)));padding-inline:max(16px,env(safe-area-inset-left,0px))}
-.top .in{display:flex;justify-content:space-between;align-items:center;gap:1rem;height:3.4rem;font-size:.9rem}
-.top b{font-weight:600;color:var(--ink)}
-.top nav{display:flex;gap:1.3rem}.top nav a{color:var(--muted)}.top nav a:hover,.top nav a[aria-current]{color:var(--ink)}
-.in{max-width:var(--col);margin:0 auto}.wide{max-width:var(--wide);margin:0 auto}
-h1{font-size:clamp(2rem,5vw,3.1rem);font-weight:600;letter-spacing:-.03em;line-height:1.12;margin:0;color:var(--ink);text-wrap:balance}
-h1 em{font-style:normal;color:var(--muted)}
-.sub{font-size:1.12rem;margin:1.4rem 0 0;max-width:56ch}
-.avail{display:inline-flex;align-items:center;gap:.5rem;margin-top:1.6rem;font-size:.9rem;color:var(--ink);font-weight:500}
-.avail i{width:.55rem;height:.55rem;border-radius:50%;background:var(--ok)}
-.actions{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1.6rem}
-.btn{display:inline-flex;align-items:center;font-weight:500;font-size:.92rem;padding:.6rem 1rem;border-radius:.55rem;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;font-family:inherit;transition:border-color .15s}
-.btn:hover{border-color:var(--ink)}.btn.pri{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.5rem;padding:1.8rem 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.stats b{display:block;font-size:1.5rem;font-weight:600;letter-spacing:-.03em;color:var(--ink);font-variant-numeric:tabular-nums}.stats span{font-size:.85rem;color:var(--muted);line-height:1.4;display:block;margin-top:.15rem}
-section{padding-block:clamp(2.5rem,6vw,4rem);scroll-margin-top:4rem}
-h2{font-size:.78rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 1.6rem;font-family:var(--mono)}
-.row{display:grid;grid-template-columns:7.5rem minmax(0,1fr);gap:1rem;padding:1.3rem 0;border-top:1px solid var(--line)}
-.row:last-of-type{border-bottom:1px solid var(--line)}
-.when{font-family:var(--mono);font-size:.8rem;color:var(--muted);padding-top:.25rem;display:block}
-.hd{display:flex;flex-wrap:wrap;gap:.2rem .7rem;align-items:baseline}
-h3{font-size:1.02rem;font-weight:600;margin:0;color:var(--ink)}.org{font-size:.9rem;color:var(--muted)}
-.row p{margin:.4rem 0 0;max-width:58ch}
-.xl{display:inline-flex;gap:.9rem;margin-left:.3rem}.xl a{font-size:.88rem;color:var(--ink);border-bottom:1px solid var(--line)}.xl a:hover{border-color:var(--ink)}
-.prose{max-width:58ch;margin:0}
-.ph{margin:0;min-width:0}.ph img{display:block;width:100%;object-fit:cover;border-radius:.6rem}
-.ph figcaption{font-size:.85rem;color:var(--muted);margin-top:.6rem;line-height:1.4}
-.ph figcaption::before{content:"";display:inline-block;width:.9rem;height:1px;background:var(--line);vertical-align:middle;margin-right:.5rem}
-.contact{padding-block:clamp(3rem,8vw,5rem)}
-.contact p.big{font-size:clamp(1.4rem,3vw,2rem);font-weight:600;letter-spacing:-.02em;line-height:1.25;color:var(--ink);margin:0 0 1.2rem;max-width:26ch;text-wrap:balance}
-.mail{font-family:var(--mono);font-size:1rem;color:var(--ink)}
-footer{border-top:1px solid var(--line);padding-block:1.5rem 3rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.85rem;color:var(--muted)}
-footer nav{display:flex;gap:1.2rem}footer a{color:var(--muted)}footer a:hover{color:var(--ink)}
-@media (max-width:640px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.row{grid-template-columns:1fr;gap:.1rem}.top nav{display:none}}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+.w{max-width:var(--wide);margin:0 auto;padding-inline:var(--pad)}
+h1,h2,h3{font-family:var(--display);font-weight:400;color:var(--ink);letter-spacing:-.012em;text-wrap:balance;margin:0}
+p{margin:0}
+mark{background:none;color:var(--ink);background-image:linear-gradient(transparent 62%,rgba(255,138,91,.38) 62%,rgba(255,138,91,.38) 92%,transparent 92%);padding:0 .08em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.note{font-family:var(--hand);font-weight:500;color:var(--pink);font-size:1.45rem;line-height:1.1;display:inline-flex;align-items:center;gap:.35rem}
+.note svg{width:2.6rem;height:1.8rem;flex:none}
 
-.hero{padding-block:clamp(3.5rem,9vw,7rem) clamp(2.5rem,6vw,4rem)}
-.id{display:flex;align-items:center;gap:1.2rem;margin-bottom:2rem}.id img{width:4.2rem;height:4.2rem;border-radius:50%;object-fit:cover;object-position:50% 68%}
-.id b{display:block;font-size:1.05rem;color:var(--ink);font-weight:600}.id span{font-size:.9rem;color:var(--muted)}
-.apps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.2rem}
-.app{position:relative;display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:1.1rem;overflow:hidden;min-width:0;transition:border-color .15s,transform .2s}
-.app:hover{border-color:var(--c);transform:translateY(-2px)}
-.app:has(.cover:focus-visible){outline:2px solid var(--ink);outline-offset:3px}
-.app .body{display:flex;flex-direction:column;gap:.9rem;padding:1.5rem;flex:1}
-.ah{display:flex;align-items:center;gap:.9rem}.ah .nm{flex:1;min-width:0}
-.mark{width:3rem;height:3rem;border-radius:.75rem;display:block;object-fit:cover;border:1px solid var(--line);background:var(--surface)}
-.app h3{font-size:1.2rem;font-weight:600;letter-spacing:-.02em;line-height:1.3}
-.cover{color:inherit}.cover::after{content:"";position:absolute;inset:0}.cover:focus-visible{outline:none}
-.cat{display:block;font-size:.75rem;color:var(--muted);font-family:var(--mono)}
-.live{display:inline-flex;align-items:center;gap:.4rem;font-size:.72rem;font-weight:500;color:var(--ok);font-family:var(--mono);white-space:nowrap}.live i{width:.45rem;height:.45rem;border-radius:50%;background:var(--ok)}
-.st-parked .live{color:var(--muted)}.st-parked .live i{background:transparent;border:1.5px solid var(--muted)}
-.st-parked .mark{filter:grayscale(1);opacity:.75}.st-parked h3{color:var(--body)}
-.hook{margin:0;font-size:1.2rem;font-weight:600;letter-spacing:-.02em;line-height:1.3;color:var(--ink);text-wrap:pretty}
-.app .two{margin:-.4rem 0 0;font-size:.93rem;line-height:1.55}
-.metric{display:flex;align-items:baseline;gap:.5rem}.metric b{font-size:1.9rem;font-weight:600;letter-spacing:-.035em;line-height:1;color:var(--ink);font-variant-numeric:tabular-nums}.metric span{font-size:.85rem;color:var(--muted)}
-.stack{margin-top:auto;padding-top:1rem;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:.6rem}
-.scale{font-family:var(--mono);font-size:.78rem;color:var(--muted)}
-.chips{display:flex;flex-wrap:wrap;gap:.35rem}.chips span{font-family:var(--mono);font-size:.74rem;line-height:1.5;color:var(--body);background:color-mix(in srgb,var(--c) 6%,var(--bg));border:1px solid var(--line);border-radius:.35rem;padding:.1rem .5rem}
-.foot{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:.8rem 1.5rem;background:color-mix(in srgb,var(--c) 7%,var(--surface));border-top:1px solid var(--line);font-size:.85rem}
-.foot .cs{font-weight:600;color:var(--ink)}.foot .host{position:relative;z-index:1;color:var(--muted)}.foot .host:hover{color:var(--ink)}
-.st-parked .foot{background:var(--bg)}
-@media (max-width:760px){.apps{grid-template-columns:1fr}}
-.strip{display:grid;grid-auto-flow:column;grid-auto-columns:clamp(15rem,24vw,20rem);gap:1.2rem;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 0 1rem;scrollbar-width:thin;margin-inline:calc(-1 * max(16px,env(safe-area-inset-left,0px)));padding-inline:max(16px,env(safe-area-inset-left,0px))}
-.strip .ph{scroll-snap-align:start}.strip img{aspect-ratio:4/5!important}
-.note{display:flex;justify-content:space-between;gap:1rem;align-items:baseline;max-width:var(--col);margin:0 auto 1.6rem}
-.note p{margin:0;max-width:48ch}.note span{font-family:var(--mono);font-size:.78rem;color:var(--muted);white-space:nowrap}
+/* ---------- top bar ---------- */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;margin-inline:calc(-1 * max(16px,env(safe-area-inset-left,0px)));padding-inline:max(16px,env(safe-area-inset-left,0px));background:rgba(21,16,26,.84);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color .2s}
+.top.scrolled{border-bottom-color:var(--line)}
+.top .w{display:flex;align-items:center;gap:1rem;min-height:var(--top)}
+.me{display:flex;align-items:center;gap:.6rem;font-family:var(--display);font-size:1.2rem;color:var(--ink);margin-right:auto;white-space:nowrap}
+.me img{width:2rem;height:2rem;border-radius:50%;object-fit:cover;object-position:50% 30%;opacity:0;transform:scale(.7);transition:.25s;margin-right:-2.6rem}
+.top.scrolled .me img{opacity:1;transform:none;margin-right:0}
+.nav{display:flex;gap:.15rem}
+.nav a{padding:.45rem .8rem;border-radius:999px;color:var(--muted);font-size:.9rem;font-weight:500;white-space:nowrap;transition:color .15s,background .15s}
+.nav a:hover{color:var(--ink)}
+.nav a[aria-current="true"]{color:var(--ink);background:var(--raise)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.45rem;min-height:3rem;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:.6rem 1.3rem;font-weight:600;font-size:.95rem;transition:border-color .15s,transform .15s,filter .15s;white-space:nowrap}
+.btn:hover{border-color:var(--coral)}.btn:active{transform:scale(.97)}
+.btn.pri{background:var(--grad);border:0;color:var(--on-grad)}.btn.pri:hover{filter:brightness(1.07)}
+.btn.sm{min-height:2.4rem;padding:.4rem 1rem;font-size:.86rem}
+@media (max-width:880px){
+  .top .w{flex-wrap:wrap;gap:0 1rem;padding-inline:0}
+  .nav{order:3;width:calc(100% + 2 * max(16px,env(safe-area-inset-left,0px)));margin-inline:calc(-1 * max(16px,env(safe-area-inset-left,0px)));padding:0 max(16px,env(safe-area-inset-left,0px)) .6rem;overflow-x:auto;scrollbar-width:none}
+  .nav::-webkit-scrollbar{display:none}
+}
+
+/* ---------- shared hero bits ---------- */
+.kick em{display:block;font-family:var(--hand);font-style:normal;font-size:1.6rem;letter-spacing:0;text-transform:none;color:var(--coral);margin-top:.35rem;transform:rotate(-2deg);transform-origin:left}
+.kick{display:block;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:500;margin-bottom:1.3rem}
+.u{position:relative;white-space:nowrap}
+.u svg{position:absolute;left:-2%;width:104%;bottom:-.1em;height:.32em;overflow:visible}
+.u path{stroke:var(--pink);stroke-width:3.5;fill:none;stroke-linecap:round;stroke-dasharray:240;stroke-dashoffset:0;animation:draw 1s .5s cubic-bezier(.6,0,.2,1) backwards}
+@keyframes draw{from{stroke-dashoffset:240}}
+.lede{margin-top:1.6rem;font-size:1.12em;max-width:36ch}
+.avail{display:flex;align-items:center;gap:.65rem;margin-top:1.4rem;color:var(--ink);font-weight:500;font-size:.95rem}
+.avail i{flex:none;width:.6rem;height:.6rem;border-radius:50%;background:#5ee0a0;animation:ping 2.4s infinite}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(94,224,160,.5)}70%,100%{box-shadow:0 0 0 .55rem rgba(94,224,160,0)}}
+.cta{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;margin-top:1.8rem}
+.cta .note{flex-basis:100%;margin:.2rem 0 0 1.4rem;transform:rotate(-3deg)}
+
+
+/* ---------- 1 · Receipt hero ---------- */
+.hero{display:grid;grid-template-columns:minmax(0,19rem) minmax(0,1fr);gap:clamp(2rem,6vw,5.5rem);align-items:center;padding-block:clamp(2.5rem,8vw,6.5rem) clamp(3rem,8vw,6rem)}
+.portrait{position:relative;isolation:isolate;margin:0}
+.portrait::before{content:"";position:absolute;inset:-10%;z-index:-1;background:radial-gradient(closest-side,rgba(255,138,91,.4),rgba(224,81,126,.15) 62%,transparent);filter:blur(14px)}
+.portrait img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 30%;border-radius:999px 999px 1.6rem 1.6rem}
+.portrait .note{margin-top:.9rem;margin-left:.4rem;transform:rotate(-3deg)}
+.hero h1{font-size:clamp(2.5rem,5.6vw,4.6rem);line-height:1.02;letter-spacing:-.02em;max-width:15ch}
+.hero h1 em{display:block;font-style:italic;color:var(--coral);margin-top:.15em;font-size:.72em;letter-spacing:-.01em}
+@media (max-width:780px){.hero{grid-template-columns:1fr}.portrait{max-width:14rem}}
+
+/* ---------- sections ---------- */
+section{padding-block:clamp(3.5rem,9vw,7rem);border-top:1px solid var(--line)}
+.sh{display:flex;align-items:baseline;gap:.4rem 1.1rem;flex-wrap:wrap;margin-bottom:clamp(1.8rem,4vw,2.8rem)}
+.sh h2{font-size:clamp(2.3rem,5vw,3.6rem);line-height:1}
+.sh .note{transform:rotate(-4deg) translateY(-.2rem)}
+
+/* career + receipt */
+.career{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,21rem);gap:clamp(2rem,6vw,5rem);align-items:start}
+.story{font-family:var(--display);font-size:clamp(1.45rem,2.6vw,2rem);line-height:1.38;color:var(--ink);max-width:var(--col);text-wrap:pretty}
+.story a{text-decoration:underline;text-decoration-color:var(--coral);text-decoration-thickness:2px;text-underline-offset:.17em;transition:color .15s}
+.story a:hover{color:var(--coral)}
+.receipt{position:relative;background:var(--paper);color:var(--paper-ink);font-family:var(--mono);font-size:.8rem;line-height:1.5;padding:1.6rem 1.4rem 1.8rem;transform:rotate(2.2deg);box-shadow:0 22px 40px rgba(0,0,0,.45);transition:transform .35s cubic-bezier(.2,.8,.2,1);margin-top:.6rem}
+.receipt:hover{transform:rotate(0) translateY(-4px)}
+.receipt::before,.receipt::after{content:"";position:absolute;left:0;right:0;height:9px;background:conic-gradient(from -45deg at bottom,var(--paper) 90deg,transparent 0) 50%/14px 100%}
+.receipt::after{bottom:-9px}
+.receipt::before{top:-9px;transform:scaleY(-1)}
+.receipt .rh{text-align:center;text-transform:uppercase;letter-spacing:.14em;font-weight:600}
+.receipt .rs{text-align:center;color:#6c5b62;font-size:.72rem;margin-top:.2rem}
+.receipt hr{border:0;border-top:1.5px dashed #b9a9a3;margin:.9rem 0}
+.receipt .dept{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:#8a767e;margin:.9rem 0 .35rem}.receipt .dept:first-of-type{margin-top:0}
+.receipt .items{list-style:none;margin:0;padding:0;display:grid;gap:.7rem}
+.receipt .items li{display:grid;grid-template-columns:auto minmax(1rem,1fr) auto;align-items:baseline;gap:0 .4rem}
+.receipt .items b{font-weight:600}
+.receipt .items i{border-bottom:1.5px dotted #b9a9a3;transform:translateY(-.25em)}
+.receipt .items .ok{font-weight:600;color:#c2410c}
+.receipt .items small{grid-column:1/-1;font-size:.7rem;color:#6c5b62;line-height:1.4;margin-top:.1rem}
+.receipt dl{margin:0;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.5rem .8rem}
+.receipt dt{min-width:0}.receipt dd{margin:0;text-align:right;font-weight:600;font-variant-numeric:tabular-nums}
+.receipt .tot{display:flex;justify-content:space-between;gap:1rem;font-weight:600;font-size:.9rem;text-transform:uppercase}
+.receipt .stamp{display:inline-block;margin-top:.9rem;border:2px solid #c2410c;color:#c2410c;padding:.15rem .6rem;border-radius:.3rem;transform:rotate(-6deg);font-weight:600;letter-spacing:.12em;font-size:.78rem}
+.receipt .bar{height:2.4rem;margin-top:1rem;background:repeating-linear-gradient(90deg,var(--paper-ink) 0 2px,transparent 2px 4px,var(--paper-ink) 4px 5px,transparent 5px 8px,var(--paper-ink) 8px 11px,transparent 11px 12px,var(--paper-ink) 12px 13px,transparent 13px 17px)}
+.receipt .ty{text-align:center;margin-top:.5rem;font-size:.72rem;color:#6c5b62}
+/* receipt spans the header row too, so its top lines up with the Career heading */
+@media (min-width:861px){#experience{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,21rem);column-gap:clamp(2rem,6vw,5rem);align-items:start}
+  #experience .career{display:contents}#experience .sh,#experience .story{grid-column:1}#experience .receipt{grid-column:2;grid-row:1 / span 2;margin-top:.6rem}}
+@media (max-width:860px){.career{grid-template-columns:1fr}.receipt{max-width:21rem;width:100%;margin-inline:auto}}
+
+/* profile */
+.prof{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(2rem,6vw,5rem)}
+.prof h3{font-family:var(--sans);font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:500;margin-bottom:1.3rem}
+.does{display:grid;gap:1.4rem}
+.does div{display:grid;gap:.2rem}
+.does b{font-family:var(--display);font-weight:400;font-size:clamp(1.7rem,3vw,2.2rem);color:var(--ink);line-height:1.1}
+.does b::after{content:".";color:var(--coral)}
+.facts{list-style:none;margin:0;padding:0;display:grid;gap:1.05rem}
+.facts li{position:relative;padding-left:1.6rem}
+.facts li::before{content:"";position:absolute;left:0;top:.75em;width:.85rem;height:2px;border-radius:2px;background:var(--grad)}
+.facts b{color:var(--ink);font-weight:600}
+@media (max-width:760px){.prof{grid-template-columns:1fr}}
+
+/* products */
+.wide-head{display:flex;justify-content:space-between;align-items:end;gap:1rem 2rem;flex-wrap:wrap;margin-bottom:clamp(1.8rem,4vw,2.6rem)}
+.wide-head .sh{margin:0}
+.wide-head p{color:var(--muted);max-width:40ch;margin-top:.9rem}
+.arrows{display:flex;gap:.5rem}
+.rnd{width:3rem;height:3rem;border-radius:50%;border:1px solid var(--line);background:var(--surface);color:var(--ink);font-size:1.1rem;display:grid;place-items:center;transition:border-color .15s,opacity .15s}
+.rnd:hover:not(:disabled){border-color:var(--coral)}.rnd:disabled{opacity:.3;cursor:default}
+.rail{display:grid;grid-auto-flow:column;grid-auto-columns:min(86%,27rem);gap:1.2rem;overflow-x:auto;scroll-snap-type:x mandatory;padding:.5rem .3rem 1.2rem;margin:-.5rem -.3rem 0;scrollbar-width:none;overscroll-behavior-x:contain}
+.rail::-webkit-scrollbar{display:none}
+.pc{position:relative;scroll-snap-align:start;display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;min-width:0;transition:border-color .2s,transform .25s}
+.pc:hover{border-color:var(--coral);transform:translateY(-4px)}
+.pc:has(.cover:focus-visible){outline:2px solid var(--pink);outline-offset:3px}
+.pc .img{aspect-ratio:16/9;overflow:hidden;background:var(--pcol)}
+.pc .img img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .45s}
+.pc:hover .img img{transform:scale(1.035)}
+.pc .bd{padding:1.3rem 1.4rem 1.4rem;display:flex;flex-direction:column;gap:.55rem;flex:1;font-size:.95rem}
+.pc .nm{display:flex;align-items:center;gap:.65rem}
+.pc .nm img{width:2.1rem;height:2.1rem;border-radius:.55rem}
+.pc h3{font-size:1.5rem;flex:1}
+.cover{outline:none}.cover::after{content:"";position:absolute;inset:0;z-index:1}
+.tag{font-size:.74rem;font-weight:600;padding:.2rem .6rem;border-radius:999px;background:rgba(94,224,160,.13);color:#7fe8b5;white-space:nowrap}
+.tag.parked{background:var(--raise);color:var(--muted)}
+.pc .hk{color:var(--ink);font-weight:600;font-size:1.02rem}
+.pc .num{margin-top:auto;padding-top:1rem;border-top:1px solid var(--line)}
+.pc .num b{font-family:var(--display);font-weight:400;font-size:1.9rem;color:var(--ink);line-height:1}.pc .num span{color:var(--muted);font-size:.86rem}
+.pc .foot{display:flex;justify-content:space-between;align-items:center;gap:.6rem 1rem;flex-wrap:wrap;margin-top:.4rem}
+.pc .go{display:inline-flex;align-items:center;gap:.55rem;min-height:2.9rem;padding:.6rem 1.25rem;border-radius:999px;background:var(--grad);color:var(--on-grad);font-weight:700;font-size:.95rem;box-shadow:0 8px 22px rgba(224,81,126,.25);transition:filter .15s,box-shadow .2s}
+.pc .go b{display:inline-block;transition:transform .25s cubic-bezier(.2,.8,.2,1)}
+.pc:hover .go{filter:brightness(1.07);box-shadow:0 10px 28px rgba(224,81,126,.4)}
+.pc:hover .go b{transform:translateX(4px)}
+.pc .host{font-size:.88rem}
+.pc .img{position:relative}
+.pc .peek{position:absolute;inset:0;display:grid;place-items:center;background:rgba(21,16,26,.62);color:var(--ink);font-weight:600;font-size:1rem;opacity:0;transition:opacity .25s}
+.pc .peek span{border:1.5px solid rgba(248,238,228,.6);border-radius:999px;padding:.55rem 1.1rem;backdrop-filter:blur(4px)}
+.pc:hover .peek,.pc:has(.cover:focus-visible) .peek{opacity:1}
+@media (hover:none){.pc .peek{display:none}}
+.pc .host{position:relative;z-index:2;color:var(--muted)}.pc .host:hover{color:var(--ink);text-decoration:underline}
+.dots{display:flex;justify-content:center;gap:.4rem;margin-top:.3rem}
+.dots i{width:.45rem;height:.45rem;border-radius:999px;background:var(--line);transition:width .2s,background .2s}
+.dots i.on{width:1.5rem;background:var(--coral)}
+
+/* off the clock */
+.mos{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:12.5rem;grid-auto-flow:dense;gap:.9rem}
+.mos button{all:unset;box-sizing:border-box;cursor:zoom-in;position:relative;border-radius:var(--r);overflow:hidden;background:var(--raise);min-width:0;transition:transform .3s cubic-bezier(.2,.8,.2,1)}
+.mos button:nth-child(odd):hover{transform:rotate(-1.2deg) scale(1.02)}.mos button:nth-child(even):hover{transform:rotate(1.2deg) scale(1.02)}
+.mos button.t{grid-row:span 2}.mos button.w2{grid-column:span 2}
+.mos button:focus-visible{outline:2px solid var(--pink);outline-offset:3px}
+.mos img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+.mos button::after{content:"";position:absolute;inset:auto 0 0;height:55%;background:linear-gradient(transparent,rgba(15,10,18,.78))}
+.mos span{position:absolute;left:.85rem;right:.85rem;bottom:.55rem;z-index:1;font-family:var(--hand);font-weight:700;font-size:1.4rem;line-height:1.05;color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.4)}
+@media (max-width:900px){.mos{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:10rem}}
+.lb{position:fixed;inset:0;z-index:70;background:rgba(10,7,12,.95);display:grid;grid-template-rows:minmax(0,1fr) auto;place-items:center;gap:1rem;
+  padding:calc(4rem + env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) calc(1.5rem + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));animation:fade .2s}
+@keyframes fade{from{opacity:0}}
+.lb img{max-height:100%;max-width:100%;border-radius:.9rem;object-fit:contain}
+.lb .cap{color:var(--ink);font-family:var(--hand);font-size:1.7rem;display:flex;align-items:center;gap:1rem;text-align:center;line-height:1.1}
+.lb .cap small{display:block;font-family:var(--sans);font-size:.78rem;color:var(--muted);margin-top:.2rem}
+.lb .rnd{background:transparent;color:#fff;border-color:rgba(255,255,255,.25);flex:none}
+.lb .x{position:absolute;top:calc(1rem + env(safe-area-inset-top,0px));right:max(1rem,env(safe-area-inset-right,0px))}
+
+/* contact */
+#contact{border-top:0;padding-top:clamp(1rem,4vw,2rem)}
+.contact{background:var(--grad);color:var(--on-grad);border-radius:2rem;padding:clamp(2rem,6vw,4.5rem);display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:clamp(1.5rem,4vw,3rem);align-items:center;overflow:hidden}
+.ct-text{min-width:0}
+.ct-art{width:100%;height:auto;max-width:30rem;justify-self:end;overflow:visible}
+.ct-art .kite{transform-origin:320px 238px;animation:kite 5s ease-in-out infinite}
+.ct-art .rider{animation:bob 3.2s ease-in-out infinite}
+.ct-art .waves{animation:drift 6s ease-in-out infinite alternate}
+@keyframes kite{50%{transform:rotate(-6deg)}}
+@keyframes bob{50%{transform:translateY(3px)}}
+@keyframes drift{to{transform:translateX(-12px)}}
+@media (max-width:760px){.contact{grid-template-columns:1fr}.ct-art{order:-1;max-width:15rem;justify-self:start;margin-bottom:-.5rem}}
+.contact h2{color:var(--on-grad);font-size:clamp(2.1rem,4.2vw,3.4rem);line-height:1.04;max-width:16ch}
+.contact h2.giant{font-size:clamp(3.6rem,11vw,8.5rem);line-height:.9;letter-spacing:-.03em}
+.contact p{color:#3b1b26;margin-top:1.2rem;max-width:40ch;font-size:1.05em}
+.mailrow{display:flex;flex-direction:column;align-items:center;gap:.5rem;width:fit-content;max-width:100%;margin-top:2rem}
+.mailbox{display:flex;align-items:center;gap:.5rem;background:rgba(26,16,20,.13);border-radius:999px;padding:.35rem .35rem .35rem 1.2rem;max-width:100%;min-width:0}
+.mailbox code{font-family:var(--sans);font-weight:600;font-size:1.05rem;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;user-select:all}
+.mailbox button{flex:none;border:0;background:var(--on-grad);color:var(--ink);border-radius:999px;padding:.6rem 1.15rem;font-weight:600;font-size:.9rem;min-height:2.75rem}
+.contact .note{color:var(--on-grad);transform:rotate(-4deg)}
+.contact .links{display:flex;gap:.55rem;flex-wrap:wrap;margin-top:1.2rem}
+.contact .btn{background:transparent;border:1.5px solid rgba(26,16,20,.35);color:var(--on-grad);min-height:2.75rem}.contact .btn:hover{border-color:var(--on-grad)}
+footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;padding-block:2rem 2.5rem;color:var(--muted);font-size:.88rem}
+footer nav{display:flex;gap:1.2rem}footer a:hover{color:var(--ink)}
+.toast{position:fixed;left:50%;bottom:calc(1.5rem + env(safe-area-inset-bottom,0px));transform:translate(-50%,10px);opacity:0;background:var(--ink);color:var(--bg);font-size:.9rem;font-weight:500;padding:.6rem 1.1rem;border-radius:999px;transition:.2s;z-index:80;pointer-events:none;white-space:nowrap}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
 </style>
   <script type="application/ld+json">
   {
@@ -129,24 +267,130 @@ footer nav{display:flex;gap:1.2rem}footer a{color:var(--muted)}footer a:hover{co
 </head>
 <body>
 <a class="skip" href="#experience">Skip to content</a>
-<div class="top"><div class="in"><b>Pierre Sauvignon</b><nav data-spy aria-label="Sections"><a href=#experience>Experience</a><a href=#building>Building</a><a href=#offclock>Off the clock</a><a href=#contact>Contact</a></nav></div></div>
-<header class="hero in"><div class="id"><img src="img/pierre-hero.jpg" alt="Pierre Sauvignon" width="880" height="1100" fetchpriority="high"><div><b>Pierre Sauvignon</b><span>Founder & product engineer · Perth</span></div></div><h1>I turn early-stage ideas into products people use and pay for. <em>Entrepreneur with a product bias.</em></h1>
-<p class="sub">Nearly two decades across Sydney and Perth: incubating 100+ startups, growing a cabin business from idea to profit, and now shipping four software products solo.</p>
-<span class="avail"><i></i>Open to lead product or engineering roles, remote or on-site</span>
-<div class="actions"><a class="btn pri" data-mail href="#">pierre.sauvignon at gmail dot com</a><button class="btn" id="copy" type="button">Copy email</button><a class="btn" href="https://www.linkedin.com/in/pierresauvignon">LinkedIn</a></div></header>
-<div class="in"><div class="stats"><div><b>100+</b><span>startups launched at Pollenizer</span></div><div><b>AU$40M</b><span>exit to Yahoo!7</span></div><div><b>25</b><span>cabins built across 7 sites</span></div><div><b>4</b><span>products live, built solo</span></div></div></div>
-<main>
-<section id="experience" class="in"><h2>Experience</h2><div class="row"><div class="l"><span class="when">Now</span></div><div class="r"><div class="hd"><h3>Founder, building solo</h3><span class="org">LobsterOne · TigerSoup · OnReplay · OnSilent</span></div><p>A small portfolio of consumer apps and developer tools, designed, built, shipped and grown by one person. I also contract with established businesses to put AI to work where it counts.</p></div></div><div class="row"><div class="l"><span class="when">Recent</span></div><div class="r"><div class="hd"><h3>AI Tech Lead, contract</h3><span class="org">Respondent.io</span></div><p>Took the supply-side platform from zero to a production back-office, autonomous AI agent included, in under three months. <span class="xl"><a href="https://www.respondent.io">Respondent.io ↗</a></span></p></div></div><div class="row"><div class="l"><span class="when">2016–20</span></div><div class="r"><div class="hd"><h3>Founder & General Manager, Heyscape</h3><span class="org">RAC innovation arm, Perth</span></div><p>Off-grid tiny-cabin stays in remote Western Australia, incubated inside RAC. Grown from idea to profitability in four years: 25 cabins across 7 sites. <span class="xl"><a href="https://heyscape.com.au">Heyscape ↗</a> <a href="https://www.youtube.com/watch?v=ZKadr02tapA">Brand story ↗</a></span></p></div></div><div class="row"><div class="l"><span class="when">2016</span></div><div class="r"><div class="hd"><h3>Startup coach</h3><span class="org">Sydney</span></div><p>Moved back to Sydney to coach startups, before relocating to Perth.</p></div></div><div class="row"><div class="l"><span class="when">2015</span></div><div class="r"><div class="hd"><h3>Product Manager & Designer</h3><span class="org">Evergiving</span></div><p>Led a platform, brand and design reboot for a Pollenizer alumni company, after a breather restoring a 200-year-old house in the south of France. <span class="xl"><a href="https://www.evergiving.com/">Evergiving ↗</a></span></p></div></div><div class="row"><div class="l"><span class="when">2008–13</span></div><div class="r"><div class="hd"><h3>Head of Product</h3><span class="org">Pollenizer, Sydney</span></div><p>Joined in the earliest days and helped build Australia's first and biggest web incubator: 100+ startups launched, ~30 businesses co-founded, the "Startup Science" method codified and published as a book. One venture sold to Yahoo!7 for AU$40M. <span class="xl"><a href="https://www.afr.com/technology/end-of-an-era-as-aussie-startup-pioneers-pollenizer-call-it-a-day-20170228-gun90e">Pollenizer ↗</a> <a href="http://www.amazon.com/Startup-Focus-Mick-Liubinskas/dp/0980809746/">The book ↗</a> <a href="http://anthillonline.com/spreets-sold-for-40-million-in-the-biggest-and-fastest-group-buying-deal-of-the-year-so-far/">The exit ↗</a></span></p></div></div><div class="row"><div class="l"><span class="when">Before 2008</span></div><div class="r"><div class="hd"><h3>First venture</h3><span class="org">France</span></div><p>Started straight out of high school, back when Internet access came in the mail. Finished a Masters of IT while moving to Australia.</p></div></div></section>
-<section id="building" class="wide"><div class="in"><h2>Building now</h2><p class="prose" style="margin-bottom:1.8rem;color:var(--ink);font-size:1.1rem">Four products, designed, built and run by one person. Three live, one parked.</p></div><div class="apps"><div class="app st-live" style="--c:#dc2626"><div class="body"><div class="ah"><img class="mark" src="icons/lobsterone.png" alt="" width="160" height="160"><div class="nm"><h3><a class="cover" href="lobsterone/">LobsterOne</a></h3><span class="cat">macOS + web · solo · 2026 → now</span></div><span class="live"><i></i>Live</span></div><p class="hook">Made AI coding usage measurable across every tool.</p><p class="two">A Mac menu bar app and web dashboard that track tokens, cost and output across Claude Code, Codex, Cursor and Mistral Vibe.</p><div class="metric"><b>1.93B</b><span>tokens tracked</span></div><div class="stack"><span class="scale">176M telemetry rows · 32 Lambdas · ~$80/month</span><div class="chips"><span>Swift</span><span>OpenTelemetry</span><span>Lambda</span><span>SQS FIFO</span><span>PostgreSQL</span><span>RDS Proxy</span><span>CDK</span><span>Next.js</span><span>Astro</span></div></div></div><div class="foot"><span class="cs">Read the case study →</span><a class="host" href="https://lobsterone.ai">lobsterone.ai ↗</a></div></div><div class="app st-live" style="--c:#d97706"><div class="body"><div class="ah"><img class="mark" src="icons/tigersoup.png" alt="" width="160" height="160"><div class="nm"><h3><a class="cover" href="tigersoup/">TigerSoup</a></h3><span class="cat">macOS app · solo · 2026 → now</span></div><span class="live"><i></i>Live</span></div><p class="hook">Made production-grade setup a one-minute job.</p><p class="two">A free Mac app that gives each new project its own AWS account, GitHub repo, keyless deploys and agent guardrails.</p><div class="metric"><b>&lt;1 min</b><span>from idea to a deployable project</span></div><div class="stack"><span class="scale">7,750 lines of Swift · 215 tests · 4 CDK stacks</span><div class="chips"><span>Swift</span><span>SwiftUI</span><span>AWS SDK</span><span>Organizations</span><span>IAM Identity Center</span><span>GitHub OIDC</span><span>CDK</span><span>Lambda</span><span>Astro</span></div></div></div><div class="foot"><span class="cs">Read the case study →</span><a class="host" href="https://www.tigersoup.com">tigersoup.com ↗</a></div></div><div class="app st-live" style="--c:#7c3aed"><div class="body"><div class="ah"><img class="mark" src="icons/onreplay.png" alt="" width="160" height="160"><div class="nm"><h3><a class="cover" href="onreplay/">OnReplay</a></h3><span class="cat">Consumer AI app · solo</span></div><span class="live"><i></i>Live</span></div><p class="hook">Made flaky, metered AI video reliable enough to sell.</p><p class="two">Turns a handful of photos into a cinematic short film in minutes.</p><div class="metric"><b>3,121</b><span>films delivered</span></div><div class="stack"><span class="scale">140 Lambdas · 30 themed worlds · 8 languages</span><div class="chips"><span>Step Functions</span><span>Lambda</span><span>DynamoDB</span><span>AWS Batch</span><span>Expo</span><span>Astro</span><span>Stripe</span><span>Kling</span><span>Gemini</span></div></div></div><div class="foot"><span class="cs">Read the case study →</span><a class="host" href="https://onreplay.ai">onreplay.ai ↗</a></div></div><div class="app st-parked" style="--c:#2563eb"><div class="body"><div class="ah"><img class="mark" src="icons/onsilent.png" alt="" width="160" height="160"><div class="nm"><h3><a class="cover" href="onsilent/">OnSilent</a></h3><span class="cat">AI receptionist · solo · 2024–26</span></div><span class="live"><i></i>Parked</span></div><p class="hook">Made live voice AI hold up on a real phone line.</p><p class="two">An AI receptionist for Australian tradespeople and real-estate agents: it answered missed calls, triaged every message and called people back.</p><div class="metric"><b>9,457</b><span>calls handled</span></div><div class="stack"><span class="scale">83 Lambdas · 2 realtime voice services · 22 tables</span><div class="chips"><span>OpenAI Realtime</span><span>Twilio</span><span>ECS Fargate</span><span>Lambda</span><span>SQS / SNS</span><span>DynamoDB</span><span>Expo</span><span>Next.js</span><span>GPT-4.1</span></div></div></div><div class="foot"><span class="cs">Read the case study →</span><a class="host" href="https://onsilent.com">onsilent.com ↗</a></div></div></div></section>
-<section id="skills" class="in"><h2>Skills</h2><p class="prose">Product management, 0 → 1 products, AI-first engineering, macOS & web apps, Growth, Brand & design, Startup coaching, Operations.</p></section>
-<section id="offclock" class="wide"><div class="in"><h2>Off the clock</h2></div><div class="note"><p>It all looks very serious up there. Here is the rest of the team.</p><span>Scroll →</span></div><div class="strip" tabindex="0" aria-label="Photos"><figure class="ph "><img src="img/pierre-kitesurf.jpg" alt="Pierre kitesurfing through the spray" loading="lazy" style="aspect-ratio:3/2;"><figcaption>Weekends, wind permitting</figcaption></figure><figure class="ph "><img src="img/pierre-family-sunset.jpg" alt="Pierre at sunset with his youngest son on his shoulders" loading="lazy" style="aspect-ratio:3/4;object-position:50% 30%"><figcaption>Sunset shift, Perth</figcaption></figure><figure class="ph "><img src="img/pierre-kitchen.jpg" alt="Pierre holding the baby at the kitchen table" loading="lazy" style="aspect-ratio:3/4;object-position:50% 35%"><figcaption>The morning standup</figcaption></figure><figure class="ph "><img src="img/pierre-highchair.jpg" alt="Breakfast with the baby in a high chair" loading="lazy" style="aspect-ratio:4/3;"><figcaption>The breakfast meeting</figcaption></figure><figure class="ph "><img src="img/pierre-reading.jpg" alt="Pierre reading a picture book with his son" loading="lazy" style="aspect-ratio:4/3;"><figcaption>Documentation review</figcaption></figure><figure class="ph "><img src="img/pierre-cafe.jpg" alt="Pierre bottle-feeding the baby at a cafe" loading="lazy" style="aspect-ratio:3/4;object-position:50% 25%"><figcaption>On call</figcaption></figure><figure class="ph "><img src="img/pierre-crab.jpg" alt="Pierre pretending to eat a small crab" loading="lazy" style="aspect-ratio:3/4;object-position:50% 25%"><figcaption>Negotiating with a local stakeholder</figcaption></figure><figure class="ph "><img src="img/pierre-team.jpg" alt="Family selfie above a coastline" loading="lazy" style="aspect-ratio:4/3;"><figcaption>The whole team, offsite</figcaption></figure><figure class="ph "><img src="img/pierre-pier.jpg" alt="Pierre on a pier with his two sons" loading="lazy" style="aspect-ratio:3/4;object-position:50% 20%"><figcaption>The two little startups, on tour</figcaption></figure></div></section>
-<section id="contact" class="contact in"><h2>Contact</h2><p class="big">Hiring a hands-on product or engineering lead? Let's talk.</p><p><a class="mail" data-mail href="#">pierre.sauvignon at gmail dot com</a></p><div class="actions"><a class="btn pri" href="https://twitter.com/pierre_s">Message on X</a><a class="btn" href="https://www.linkedin.com/in/pierresauvignon">LinkedIn</a><a class="btn" href="https://github.com/pierresauvignon">GitHub</a></div></section>
-<footer class="in"><span>© Pierre Sauvignon</span><nav><a class="" href="https://www.linkedin.com/in/pierresauvignon">LinkedIn</a><a class="" href="https://twitter.com/pierre_s">X</a><a class="" href="https://github.com/pierresauvignon">GitHub</a></nav></footer></main><script>
-(function(){var a=['pierre','sauvignon'].join('.')+'@'+['gmail','com'].join('.');document.querySelectorAll('[data-mail]').forEach(function(e){e.textContent=a;if(e.tagName==='A')e.href='mailto:'+a;});
-var b=document.getElementById('copy');if(b)b.addEventListener('click',function(){function ok(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy email'},1600)}
-try{navigator.clipboard.writeText(a).then(ok,function(){window.getSelection().selectAllChildren(document.querySelector('[data-mail]'))})}catch(e){}});
-var links=document.querySelectorAll('[data-spy] a[href^="#"]');if(links.length){var map={};links.forEach(function(l){var s=document.querySelector(l.getAttribute('href'));if(s)map[s.id]=l});
-var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(l){l.removeAttribute('aria-current')});var l=map[e.target.id];if(l)l.setAttribute('aria-current','true')}})},{rootMargin:'-30% 0px -60% 0px'});Object.keys(map).forEach(function(id){io.observe(document.getElementById(id))});}
-})();</script>
+<div class="top"><div class="w"><a class="me" href="#" data-totop><img src="img/pierre-hero.jpg" alt="">Pierre Sauvignon</a>
+ <nav class="nav" aria-label="Sections"><a href="#experience">Career</a><a href="#profile">Profile</a><a href="#building">Building now</a><a href="#offclock">Off the clock</a><a href="#contact">Get in touch</a></nav>
+ <button class="btn sm pri" type="button" data-copy>Copy email</button></div></div>
+<div class="w">
+ <header class="hero">
+   <figure class="portrait"><img src="img/pierre-hero.jpg" alt="Pierre with his youngest son on his shoulders" width="880" height="1100" fetchpriority="high"></figure>
+   <div><span class="kick">Pierre Sauvignon · Entrepreneur with a product bias.</span>
+    <h1>I turn ideas into products people <span class="u">pay for.<svg viewBox="0 0 200 20" preserveAspectRatio="none" aria-hidden="true"><path d="M3 13C40 6 90 4 130 8S185 15 197 9"/></svg></span></h1><p class="lede">Nearly two decades across Sydney and Perth: incubating <mark>100+ startups</mark>, growing a cabin business from idea to profit and now <mark>shipping with AI</mark>.</p><span class="avail"><i></i>Open to lead product or engineering roles, remote or on-site</span><div class="cta"><button class="btn pri" type="button" data-copy>Copy my email</button><a class="btn" href="https://www.linkedin.com/in/pierresauvignon">LinkedIn ↗</a></div></div></header>
+ <section id="experience"><div class="sh"><h2>Career</h2><span class="note">the short version</span></div><div class="career"><p class="story">I started my first business in France straight out of high school. In Sydney I was Head of Product at <a href="https://www.afr.com/technology/end-of-an-era-as-aussie-startup-pioneers-pollenizer-call-it-a-day-20170228-gun90e">Pollenizer</a>, where we launched 100+ startups and <a href="http://anthillonline.com/spreets-sold-for-40-million-in-the-biggest-and-fastest-group-buying-deal-of-the-year-so-far/">sold one to Yahoo!7 for AU$40M</a>. In Perth I grew <a href="https://heyscape.com.au">Heyscape</a> from an idea to a profitable business with 25 off-grid cabins. Now I <a href="#building">build AI products on my own</a> and lead AI projects on contract for companies like <a href="https://www.respondent.io">Respondent.io</a>.</p><aside class="receipt" aria-label="Skills, with where each was proven">
+   <div class="rh">Pierre Sauvignon</div><div class="rs">Tech skills, used in production</div><hr>
+   <ul class="items"><li><b>AWS serverless</b><i aria-hidden="true"></i><span class="ok" aria-label="yes">✓</span><small>Lambda · Step Functions · SQS · API Gateway</small></li><li><b>Infrastructure as code</b><i aria-hidden="true"></i><span class="ok" aria-label="yes">✓</span><small>CDK · CloudFormation · GitHub OIDC</small></li><li><b>AI &amp; LLMs</b><i aria-hidden="true"></i><span class="ok" aria-label="yes">✓</span><small>Claude · OpenAI · Gemini · Kling</small></li><li><b>Realtime voice</b><i aria-hidden="true"></i><span class="ok" aria-label="yes">✓</span><small>OpenAI Realtime · Twilio · ECS Fargate</small></li><li><b>Native apps</b><i aria-hidden="true"></i><span class="ok" aria-label="yes">✓</span><small>Swift · SwiftUI · Expo · React Native</small></li></ul><hr>
+   <div style="text-align:center"><span class="stamp">Available</span></div>
+   <div class="bar" aria-hidden="true"></div><div class="ty">Thank you for scrolling</div></aside></div></section>
+ <section id="profile"><div class="sh"><h2>Profile</h2><span class="note">who you’d be hiring</span></div>
+  <div class="prof">
+   <div><h3>What I do</h3><div class="does">
+    <div><b>Product</b><span>Product management, 0 → 1 products, brand and design.</span></div>
+    <div><b>Build</b><span>AI-first engineering, macOS and web apps, AWS serverless.</span></div>
+    <div><b>Grow</b><span>Growth, startup coaching, operations.</span></div></div></div>
+   <div><h3>Who I am</h3><ul class="facts">
+    <li><b>French, at home in Perth.</b> Nearly two decades in Australia, between Sydney and Perth.</li>
+    <li><b>Hands-on.</b> I design, build, ship and grow products.</li>
+    <li><b>From log room to boardroom.</b> As comfortable debugging in the logs as reporting the numbers to a board.</li>
+    <li><b>Can’t not start things.</b> My first business came straight out of high school.</li>
+    <li><b>Restored a 200-year-old house</b> in the south of France, on a break between jobs.</li>
+    <li><b>Dad of two</b>, and a kitesurfer on weekends, wind permitting.</li></ul></div>
+  </div></section>
+ <section id="building"><div class="wide-head"><div><div class="sh"><h2>Building now</h2><span class="note">Always Be Shipping</span></div>
+   <p>Four products, designed, built and run by one person. Each has a full case study: architecture, numbers and lessons learned.</p></div>
+  <div class="arrows"><button class="rnd" type="button" data-rail="-1" aria-label="Previous product">←</button><button class="rnd" type="button" data-rail="1" aria-label="Next product">→</button></div></div>
+  <div class="rail" aria-label="Products"><article class="pc" style="--pcol:#dc2626"><div class="img"><img src="img/cases/lobsterone.webp" alt="" loading="lazy" width="1600" height="900"><div class="peek" aria-hidden="true"><span>Open the case study</span></div></div><div class="bd">
+ <div class="nm"><img src="icons/lobsterone.png" alt="" width="64" height="64"><h3><a class="cover" href="lobsterone/">LobsterOne</a></h3><span class="tag ">Live</span></div>
+ <p class="hk">Made AI coding usage measurable across every tool.</p><p>A Mac menu bar app and web dashboard that track tokens, cost and output across Claude Code, Codex, Cursor and Mistral Vibe.</p>
+ <div class="num"><b>1.93B</b> <span>tokens tracked</span></div>
+ <div class="foot"><span class="go">Read the case study <b>→</b></span><a class="host" href="https://lobsterone.ai">lobsterone.ai ↗</a></div></div></article><article class="pc" style="--pcol:#d97706"><div class="img"><img src="img/cases/tigersoup.webp" alt="" loading="lazy" width="1600" height="900"><div class="peek" aria-hidden="true"><span>Open the case study</span></div></div><div class="bd">
+ <div class="nm"><img src="icons/tigersoup.png" alt="" width="64" height="64"><h3><a class="cover" href="tigersoup/">TigerSoup</a></h3><span class="tag ">Live</span></div>
+ <p class="hk">Made production-grade setup a one-minute job.</p><p>A free Mac app that gives each new project its own AWS account, GitHub repo, keyless deploys and agent guardrails.</p>
+ <div class="num"><b>&lt;1 min</b> <span>idea to deployable project</span></div>
+ <div class="foot"><span class="go">Read the case study <b>→</b></span><a class="host" href="https://www.tigersoup.com">tigersoup.com ↗</a></div></div></article><article class="pc" style="--pcol:#7c3aed"><div class="img"><img src="img/cases/onreplay.webp" alt="" loading="lazy" width="1600" height="900"><div class="peek" aria-hidden="true"><span>Open the case study</span></div></div><div class="bd">
+ <div class="nm"><img src="icons/onreplay.png" alt="" width="64" height="64"><h3><a class="cover" href="onreplay/">OnReplay</a></h3><span class="tag ">Live</span></div>
+ <p class="hk">Made flaky, metered AI video reliable enough to sell.</p><p>Turns a handful of photos into a cinematic short film in minutes.</p>
+ <div class="num"><b>3,121</b> <span>films delivered</span></div>
+ <div class="foot"><span class="go">Read the case study <b>→</b></span><a class="host" href="https://onreplay.ai">onreplay.ai ↗</a></div></div></article><article class="pc" style="--pcol:#2563eb"><div class="img"><img src="img/cases/onsilent.webp" alt="" loading="lazy" width="1600" height="900"><div class="peek" aria-hidden="true"><span>Open the case study</span></div></div><div class="bd">
+ <div class="nm"><img src="icons/onsilent.png" alt="" width="64" height="64"><h3><a class="cover" href="onsilent/">OnSilent</a></h3><span class="tag parked">Parked</span></div>
+ <p class="hk">Made live voice AI hold up on a real phone line.</p><p>An AI receptionist for Australian tradespeople and real-estate agents: it answered missed calls, triaged every message and called people back.</p>
+ <div class="num"><b>9,457</b> <span>calls handled</span></div>
+ <div class="foot"><span class="go">Read the case study <b>→</b></span><a class="host" href="https://onsilent.com">onsilent.com ↗</a></div></div></article></div><div class="dots" aria-hidden="true"><i></i><i></i><i></i><i></i></div></section>
+ <section id="offclock"><div class="sh"><h2>Off the clock</h2><span class="note">the rest of the team</span></div>
+  <div class="mos"><button type="button" class="w2" data-ph="0" aria-label="Open photo: Weekends, wind permitting"><img src="img/pierre-kitesurf.jpg" alt="Pierre kitesurfing through the spray" loading="lazy" width="1100" height="733"><span>Weekends, wind permitting</span></button><button type="button" class="t" data-ph="1" aria-label="Open photo: Sunset shift, Perth"><img src="img/pierre-family-sunset.jpg" alt="Pierre at sunset with his youngest son on his shoulders" loading="lazy" width="825" height="1100"><span>Sunset shift, Perth</span></button><button type="button" class="t" data-ph="2" aria-label="Open photo: The morning standup"><img src="img/pierre-kitchen.jpg" alt="Pierre holding the baby at the kitchen table" loading="lazy" width="825" height="1100"><span>The morning standup</span></button><button type="button" class="" data-ph="3" aria-label="Open photo: The breakfast meeting"><img src="img/pierre-highchair.jpg" alt="Breakfast with the baby in a high chair" loading="lazy" width="1100" height="825"><span>The breakfast meeting</span></button><button type="button" class="" data-ph="4" aria-label="Open photo: Documentation review"><img src="img/pierre-reading.jpg" alt="Pierre reading a picture book with his son" loading="lazy" width="1100" height="825"><span>Documentation review</span></button><button type="button" class="t" data-ph="5" aria-label="Open photo: On call"><img src="img/pierre-cafe.jpg" alt="Pierre bottle-feeding the baby at a cafe" loading="lazy" width="825" height="1100"><span>On call</span></button><button type="button" class="t" data-ph="6" aria-label="Open photo: Negotiating with a local stakeholder"><img src="img/pierre-crab.jpg" alt="Pierre pretending to eat a small crab" loading="lazy" width="618" height="1100"><span>Negotiating with a local stakeholder</span></button><button type="button" class="w2" data-ph="7" aria-label="Open photo: The whole team, offsite"><img src="img/pierre-team.jpg" alt="Family selfie above a coastline" loading="lazy" width="1100" height="825"><span>The whole team, offsite</span></button><button type="button" class="w2" data-ph="8" aria-label="Open photo: The two little startups, on tour"><img src="img/pierre-pier.jpg" alt="Pierre on a pier with his two sons" loading="lazy" width="825" height="1100"><span>The two little startups, on tour</span></button></div></section>
+
+ <section id="contact"><div class="contact"><div class="ct-text"><h2>Hiring a hands-on product or engineering lead? Let’s talk.</h2><p>Based in Perth, happy to work remote or on-site.</p>
+  <div class="mailrow"><div class="mailbox"><code data-mail>pierre.sauvignon at gmail dot com</code><button type="button" data-copy>Copy</button></div><span class="note"><svg viewBox="0 0 60 40" aria-hidden="true" style="width:2rem"><path d="M40 38C38 24 30 12 18 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M16 16L17 5L28 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>go on, say hi</span></div>
+  <div class="links"><a class="btn" href="https://www.linkedin.com/in/pierresauvignon">LinkedIn ↗</a><a class="btn" href="https://twitter.com/pierre_s">X ↗</a><a class="btn" href="https://github.com/pierresauvignon">GitHub ↗</a></div>
+ </div><svg class="ct-art" viewBox="0 0 400 360" role="img" aria-label="Illustration of a kitesurfer riding at sunset over the ocean">
+ <defs><mask id="slices"><rect width="400" height="360" fill="#fff"/><rect x="0" y="196" width="400" height="5" fill="#000"/><rect x="0" y="214" width="400" height="7" fill="#000"/><rect x="0" y="234" width="400" height="9" fill="#000"/></mask>
+  <clipPath id="sky"><rect width="400" height="252"/></clipPath></defs>
+ <g clip-path="url(#sky)"><circle cx="150" cy="214" r="108" fill="#1a1014" fill-opacity=".9" mask="url(#slices)"/></g>
+ <line x1="8" y1="252" x2="392" y2="252" stroke="#1a1014" stroke-width="2.5" stroke-linecap="round"/>
+ <g class="waves" fill="none" stroke="#1a1014" stroke-linecap="round">
+  <path d="M30 276q14-8 28 0t28 0 28 0 28 0M200 276q14-8 28 0t28 0 28 0" stroke-width="2.5" stroke-opacity=".7"/>
+  <path d="M70 302q14-8 28 0t28 0 28 0M230 302q14-8 28 0t28 0 28 0 28 0" stroke-width="2.5" stroke-opacity=".5"/>
+  <path d="M20 328q14-8 28 0t28 0M150 328q14-8 28 0t28 0 28 0 28 0" stroke-width="2.5" stroke-opacity=".32"/>
+ </g>
+ <g class="rider" stroke="#1a1014" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none">
+  <g class="kite"><path d="M268 58Q318 14 372 82Q322 50 268 58Z" fill="#1a1014" stroke-width="2"/>
+   <path d="M270 60L318 238M370 82L322 238" stroke-width="1" stroke-opacity=".7"/></g>
+  <path d="M296 266L330 261"/>
+  <path d="M305 264L309 248L304 236M320 262L314 248L309 236"/>
+  <path d="M304 236L300 220"/><circle cx="298" cy="213" r="5" fill="#1a1014" stroke="none"/>
+  <path d="M301 226L318 236M300 230L322 238"/><path d="M314 233L326 241"/>
+  <path d="M286 270q8 4 18 0M332 264q8 3 14-2" stroke-width="2" stroke-opacity=".6"/>
+ </g>
+ <g fill="none" stroke="#1a1014" stroke-width="2" stroke-linecap="round" stroke-opacity=".75"><path d="M70 92q7-7 14 0q7-7 14 0"/><path d="M104 70q5-5 10 0q5-5 10 0"/></g>
+</svg></div></section>
+ <footer><span>© Pierre Sauvignon · Made in Perth, between kitesurf sessions</span><nav><a href="https://www.linkedin.com/in/pierresauvignon">LinkedIn</a><a href="https://twitter.com/pierre_s">X</a><a href="https://github.com/pierresauvignon">GitHub</a></nav></footer>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+const EMAIL=['pierre','sauvignon'].join('.')+'@'+['gmail','com'].join('.');
+const PH=[["pierre-kitesurf","Weekends, wind permitting","Pierre kitesurfing through the spray","w2",1100,733],["pierre-family-sunset","Sunset shift, Perth","Pierre at sunset with his youngest son on his shoulders","t",825,1100],["pierre-kitchen","The morning standup","Pierre holding the baby at the kitchen table","t",825,1100],["pierre-highchair","The breakfast meeting","Breakfast with the baby in a high chair","",1100,825],["pierre-reading","Documentation review","Pierre reading a picture book with his son","",1100,825],["pierre-cafe","On call","Pierre bottle-feeding the baby at a cafe","t",825,1100],["pierre-crab","Negotiating with a local stakeholder","Pierre pretending to eat a small crab","t",618,1100],["pierre-team","The whole team, offsite","Family selfie above a coastline","w2",1100,825],["pierre-pier","The two little startups, on tour","Pierre on a pier with his two sons","w2",825,1100]];
+const P={length:4};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+document.querySelectorAll('[data-mail]').forEach(e=>{e.textContent=EMAIL});
+let io=null;
+function toast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');clearTimeout(t._h);t._h=setTimeout(()=>t.classList.remove('show'),1800)}
+function copyEmail(btn){const done=()=>{toast('Copied. Talk soon!');if(btn&&!btn._o){btn._o=btn.textContent;btn.textContent='Copied ✓';setTimeout(()=>{btn.textContent=btn._o;btn._o=null},1600)}};
+ try{navigator.clipboard.writeText(EMAIL).then(done,()=>toast(EMAIL))}catch(e){toast(EMAIL)}}
+let rail,dots,prev,next;
+const step=()=>rail.firstElementChild.getBoundingClientRect().width+19;
+function upd(){if(!rail)return;const max=rail.scrollWidth-rail.clientWidth;prev.disabled=rail.scrollLeft<8;next.disabled=rail.scrollLeft>max-8;
+ const i=rail.scrollLeft>max-8?P.length-1:Math.min(P.length-1,Math.round(rail.scrollLeft/step()));dots.forEach((d,j)=>d.classList.toggle('on',j===i))}
+addEventListener('resize',upd);
+let topBar;const onScroll=()=>topBar&&topBar.classList.toggle('scrolled',scrollY>60);addEventListener('scroll',onScroll,{passive:true});
+
+function bind(){
+ const links=[...document.querySelectorAll('.nav a')];
+ io=new IntersectionObserver(es=>es.forEach(en=>{if(!en.isIntersecting)return;links.forEach(l=>{const on=l.getAttribute('href')==='#'+en.target.id;if(on){l.setAttribute('aria-current','true');const n=l.parentElement;if(n.scrollWidth>n.clientWidth)n.scrollTo({left:l.offsetLeft-24,behavior:'smooth'})}else l.removeAttribute('aria-current')})}),{rootMargin:'-35% 0px -55% 0px'});
+ links.forEach(l=>{const el=document.querySelector(l.getAttribute('href'));if(el)io.observe(el)});
+ topBar=document.querySelector('.top');onScroll();
+ rail=document.querySelector('.rail');dots=[...document.querySelectorAll('.dots i')];prev=document.querySelector('[data-rail="-1"]');next=document.querySelector('[data-rail="1"]');
+ rail.addEventListener('scroll',upd,{passive:true});upd();
+}
+
+const lb=document.createElement('div');lb.className='lb';lb.hidden=true;lb.setAttribute('role','dialog');lb.setAttribute('aria-modal','true');lb.setAttribute('aria-label','Photo');document.body.appendChild(lb);
+let pi=0,last=null,tx=0;
+function ph(i){pi=(i+PH.length)%PH.length;const p=PH[pi];
+ lb.innerHTML=`<button class="rnd x" type="button" data-lbx aria-label="Close photo">×</button><img src="img/${p[0]}.jpg" alt="${esc(p[2])}"><div class="cap"><button class="rnd" type="button" data-lbs="-1" aria-label="Previous photo">←</button><span>${esc(p[1])}<small>${pi+1} of ${PH.length}</small></span><button class="rnd" type="button" data-lbs="1" aria-label="Next photo">→</button></div>`;
+ if(lb.hidden){lb.hidden=false;document.documentElement.style.overflow='hidden'}lb.querySelector('.x').focus()}
+function closeLb(){lb.hidden=true;document.documentElement.style.overflow='';if(last)last.focus()}
+lb.addEventListener('touchstart',e=>{tx=e.touches[0].clientX},{passive:true});
+lb.addEventListener('touchend',e=>{const d=e.changedTouches[0].clientX-tx;if(Math.abs(d)>50)ph(pi+(d<0?1:-1))});
+
+document.addEventListener('click',e=>{let t;
+ if(t=e.target.closest('[data-copy]'))copyEmail(t);
+ if(e.target.closest('[data-totop]')){e.preventDefault();scrollTo({top:0,behavior:'smooth'})}
+ if(t=e.target.closest('[data-rail]'))rail.scrollBy({left:+t.dataset.rail*step(),behavior:'smooth'});
+ if(t=e.target.closest('[data-ph]')){last=t;ph(+t.dataset.ph)}
+ if(t=e.target.closest('[data-lbs]'))ph(pi+ +t.dataset.lbs);
+ if(e.target.closest('[data-lbx]')||e.target===lb)closeLb();});
+document.addEventListener('keydown',e=>{if(lb.hidden)return;
+ if(e.key==='Escape')closeLb();if(e.key==='ArrowRight')ph(pi+1);if(e.key==='ArrowLeft')ph(pi-1);
+ if(e.key==='Tab'){const f=[...lb.querySelectorAll('button')];const i=f.indexOf(document.activeElement);if(e.shiftKey&&i<=0){e.preventDefault();f[f.length-1].focus()}else if(!e.shiftKey&&i===f.length-1){e.preventDefault();f[0].focus()}}});
+
+bind();
+</script>
 </body>
 </html>
