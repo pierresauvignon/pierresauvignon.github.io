@@ -10,10 +10,10 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23ff8a5b'/%3E%3Cstop offset='1' stop-color='%23e0517e'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='url(%23g)'/%3E%3Ctext x='32' y='45' font-family='Georgia, serif' font-size='38' text-anchor='middle' fill='%231a1014'%3EP%3C/text%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Caveat:wght@500;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
-  <link rel="stylesheet" href="/css/case-study.css">
+  <link rel="stylesheet" href="/css/case-study.css?v=3">
 </head>
 <body>
-<div class="top"><div class="in"><a href="/"><span>←</span>Pierre Sauvignon</a></div></div>
+<div class="top"><div class="in"><a href="/"><span>←</span>Pierre Sauvignon</a><button class="copy" type="button" data-copy>Copy email</button></div></div>
 <main id="main" class="in">
 <header class="cs-head">
   <div class="eyebrow">404</div>
@@ -21,5 +21,16 @@
   <p class="lede">The link may be old or mistyped. Start from the <a href="/">home page</a>, or jump to a case study: <a href="/lobsterone/">LobsterOne</a>, <a href="/tigersoup/">TigerSoup</a>, <a href="/onreplay/">OnReplay</a> or <a href="/onsilent/">OnSilent</a>.</p>
 </header>
 </main>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+(function(){var a=['pierre','sauvignon'].join('.')+'@'+['gmail','com'].join('.');
+document.querySelectorAll('[data-mail]').forEach(function(e){e.textContent=a;if(e.tagName==='A')e.href='mailto:'+a;});
+var t=document.getElementById('toast'),h;function toast(m){t.textContent=m;t.classList.add('show');clearTimeout(h);h=setTimeout(function(){t.classList.remove('show')},1800)}
+document.addEventListener('click',function(e){var b=e.target.closest('[data-copy]');if(!b)return;
+ function done(){toast('Copied. Talk soon!');if(!b._o){b._o=b.textContent;b.textContent='Copied ✓';setTimeout(function(){b.textContent=b._o;b._o=null},1600)}}
+ try{navigator.clipboard.writeText(a).then(done,function(){toast(a)})}catch(err){toast(a)}});
+var top=document.querySelector('.top');if(top){var f=function(){top.classList.toggle('scrolled',scrollY>40)};f();addEventListener('scroll',f,{passive:true})}
+})();
+</script>
 </body>
 </html>

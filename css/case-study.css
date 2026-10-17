@@ -71,15 +71,48 @@ article code,.lede code{font-family:var(--mono);font-size:.84em;color:var(--ink)
 .next a:hover{border-color:var(--coral)}
 .next a:last-child{background:var(--grad);border:0;color:var(--on-grad)}
 
-/* contact */
-.contact{margin-top:clamp(3rem,7vw,5rem);margin-bottom:1rem;max-width:var(--wide);background:var(--grad);color:var(--on-grad);border-radius:2rem;padding:clamp(2rem,6vw,4rem)}
-.contact .label{font-family:var(--hand);font-size:1.5rem;color:var(--on-grad);margin:0 0 .6rem;transform:rotate(-3deg);transform-origin:left}
-.contact p.big{font-family:var(--display);font-size:clamp(2rem,4.6vw,3.2rem);font-weight:400;letter-spacing:-.01em;line-height:1.05;color:var(--on-grad);margin:0 0 1.4rem;max-width:18ch;text-wrap:balance}
-.mail{display:inline-block;font-weight:600;font-size:1.05rem;color:var(--on-grad);background:rgba(26,16,20,.13);border-radius:999px;padding:.65rem 1.2rem;word-break:break-all}
-.actions{display:flex;gap:.55rem;flex-wrap:wrap;margin-top:1.2rem}
+/* contact card, same as the homepage */
+.contact-wrap{max-width:var(--wide);margin:clamp(3rem,7vw,5rem) auto 0}
+.contact{background:var(--grad);color:var(--on-grad);border-radius:2rem;padding:clamp(2rem,6vw,4.5rem);display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:clamp(1.5rem,4vw,3rem);align-items:center;overflow:hidden}
+.ct-text{min-width:0}
+.contact h2{font-family:var(--display);font-weight:400;color:var(--on-grad);font-size:clamp(2.1rem,4.2vw,3.4rem);line-height:1.04;letter-spacing:-.01em;max-width:16ch;margin:0;text-wrap:balance}
+.contact p{color:#3b1b26;margin:1.2rem 0 0;max-width:40ch;font-size:1.05em}
+.mailrow{display:flex;flex-direction:column;align-items:center;gap:.5rem;width:fit-content;max-width:100%;margin-top:2rem}
+.mailbox{display:flex;align-items:center;gap:.5rem;background:rgba(26,16,20,.13);border-radius:999px;padding:.35rem .35rem .35rem 1.2rem;max-width:100%;min-width:0}
+.mailbox code{font-family:var(--sans);font-weight:600;font-size:1.05rem;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;user-select:all}
+.mailbox button{flex:none;border:0;background:var(--on-grad);color:var(--ink);border-radius:999px;padding:.6rem 1.15rem;font:inherit;font-weight:600;font-size:.9rem;min-height:2.75rem;cursor:pointer}
+.note{font-family:var(--hand);font-weight:500;font-size:1.45rem;line-height:1.1;display:inline-flex;align-items:center;gap:.35rem;color:var(--on-grad);transform:rotate(-4deg)}
+.note svg{width:2rem;height:1.8rem;flex:none}
+.links{display:flex;gap:.55rem;flex-wrap:wrap;margin-top:1.2rem}
 .btn{display:inline-flex;align-items:center;min-height:2.75rem;font-weight:600;font-size:.92rem;padding:.55rem 1.15rem;border-radius:999px;border:1.5px solid rgba(26,16,20,.35);background:transparent;color:var(--on-grad);transition:border-color .15s}
-.btn:hover{border-color:var(--on-grad)}.btn.pri{background:var(--on-grad);color:var(--ink);border-color:var(--on-grad)}
-footer{max-width:var(--wide);padding-block:1.8rem 3rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.86rem;color:var(--muted)}
-footer nav{display:flex;gap:1.2rem}footer a{color:var(--muted)}footer a:hover{color:var(--ink)}
+.btn:hover{border-color:var(--on-grad)}
+.ct-art{width:100%;height:auto;max-width:30rem;justify-self:end;overflow:visible}
+.ct-art .kite{transform-origin:320px 238px;animation:kite 5s ease-in-out infinite}
+.ct-art .rider{animation:bob 3.2s ease-in-out infinite}
+.ct-art .waves{animation:drift 6s ease-in-out infinite alternate}
+@keyframes kite{50%{transform:rotate(-6deg)}}@keyframes bob{50%{transform:translateY(3px)}}@keyframes drift{to{transform:translateX(-12px)}}
+@media (max-width:760px){.contact{grid-template-columns:1fr}.ct-art{order:-1;max-width:15rem;justify-self:start;margin-bottom:-.5rem}}
+.foot{max-width:var(--wide);margin:0 auto;padding-block:2rem 2.5rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.86rem;color:var(--muted)}
+.foot nav{display:flex;gap:1.2rem}.foot a{color:var(--muted)}.foot a:hover{color:var(--ink)}
+.toast{position:fixed;left:50%;bottom:calc(1.5rem + env(safe-area-inset-bottom,0px));transform:translate(-50%,10px);opacity:0;background:var(--ink);color:var(--bg);font-size:.9rem;font-weight:500;padding:.6rem 1.1rem;border-radius:999px;transition:.2s;z-index:80;pointer-events:none;white-space:nowrap}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+/* top bar copy button */
+.top .in>a:first-child{margin-right:auto}
+.top .copy{border:0;cursor:pointer;font:inherit;font-size:.86rem;font-weight:600;color:var(--on-grad);background:var(--grad);border-radius:999px;padding:.45rem 1rem;min-height:2.4rem}
+.top .copy:hover{filter:brightness(1.07)}
+.top .ext{background:var(--surface);color:var(--ink);border:1px solid var(--line)}
+.top .ext:hover{border-color:var(--coral);filter:none}
+.top.scrolled{border-bottom-color:var(--line)}
+
+/* "At a glance" printed as a till receipt, like the homepage */
+.tbl:has(.glance){position:relative;background:var(--paper,#f6efe4);padding:1.2rem 1.4rem 1.4rem;margin:1.6rem .4rem 2.4rem;transform:rotate(-.6deg);box-shadow:0 22px 40px rgba(0,0,0,.45);overflow:visible;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.tbl:has(.glance):hover{transform:none}
+.tbl:has(.glance)::before,.tbl:has(.glance)::after{content:"";position:absolute;left:0;right:0;height:9px;background:conic-gradient(from -45deg at bottom,#f6efe4 90deg,transparent 0) 50%/14px 100%}
+.tbl:has(.glance)::before{top:-9px;transform:scaleY(-1)}.tbl:has(.glance)::after{bottom:-9px}
+.glance{background:none;border:0;border-radius:0;font-family:var(--mono);font-size:.84rem;color:#1d1418}
+.glance td{color:#1d1418;border-bottom:1.5px dashed #c9bab3;padding:.6rem .4rem}
+.glance td:first-child{color:#6c5b62;width:8.5rem;font-size:.72rem;padding-top:.75rem}
+.glance tr:last-child td{border-bottom:0}
 @media (max-width:640px){.top .ext{display:none}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
