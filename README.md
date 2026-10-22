@@ -33,6 +33,7 @@ img/                  Photos, plus img/cases/ for product screenshots
 
 1. Copy `bugle/ai-bill-coming-due/` to `bugle/<new-slug>/` and replace the title, date, issue number, meta tags and body.
 2. Add a `<li>` at the top of the list in `bugle/index.html`.
+   Link the issues to each other with the previous/next buttons at the bottom of each post.
 3. Point the clipping in the `#bugle` section of `index.html` at the new issue.
 4. Add the URL to `sitemap.xml` and `llms.txt`.
 

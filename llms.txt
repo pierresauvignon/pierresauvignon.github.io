@@ -14,6 +14,7 @@
 Weekly posts on my opinions and the state of things in the industry. [All issues](https://pierresauvignon.github.io/bugle/)
 
 - [The AI bill is coming due, and a few other things I noticed this week](https://pierresauvignon.github.io/bugle/ai-bill-coming-due/) (22 October 2026)
+- [Funny numbers, polite agents and a rocket company that wants to be a phone carrier](https://pierresauvignon.github.io/bugle/funny-numbers-polite-agents/) (15 October 2026)
 
 ## Profile
 
