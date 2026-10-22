@@ -22,7 +22,7 @@ def render(site):
         % (s, n, datetime.date.fromisoformat(dt).day, datetime.date.fromisoformat(dt).strftime('%b'), t)
         for s, n, dt, t in earlier)
     block = '''<article class="fp">
-   <div class="fp-mast"><span>No. %s</span><b>Le Bugle</b><span>Perth, WA</span></div>
+   <div class="fp-mast"><span>No. %s</span><span>Perth, WA</span></div>
    <div class="fp-strap"><time datetime="%s">%s %d %s</time><span>Weekly · tech &amp; AI</span></div>
    <div class="fp-body">
     <div class="fp-lead">
