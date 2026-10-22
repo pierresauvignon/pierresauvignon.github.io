@@ -20,6 +20,7 @@ Weekly posts on my opinions and the state of things in the industry. [All issues
 - [Earnings before bad stuff, a watch that listens, and the week everyone hacked everyone](https://pierresauvignon.github.io/bugle/earnings-before-bad-stuff/) (23 September 2026)
 - [Everyone agrees to slow down, nobody slows down, and a $2 Murakami](https://pierresauvignon.github.io/bugle/everyone-agrees-to-slow-down/) (16 September 2026)
 - [Welcome to the AGI era, apparently](https://pierresauvignon.github.io/bugle/welcome-to-the-agi-era/) (10 September 2026)
+- [Seven hundred rogue agents, a turbine-blade foundry, and a settlement that costs Meta nothing much](https://pierresauvignon.github.io/bugle/seven-hundred-rogue-agents/) (2 September 2026)
 
 ## Profile
 
