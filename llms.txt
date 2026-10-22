@@ -22,6 +22,7 @@ Weekly posts on my opinions and the state of things in the industry. [All issues
 - [Welcome to the AGI era, apparently](https://pierresauvignon.github.io/bugle/welcome-to-the-agi-era/) (10 September 2026)
 - [Seven hundred rogue agents, a turbine-blade foundry, and a settlement that costs Meta nothing much](https://pierresauvignon.github.io/bugle/seven-hundred-rogue-agents/) (2 September 2026)
 - [Real numbers at last, three deals from the Bank of Jensen, and a robot stock that rose 600% before lunch](https://pierresauvignon.github.io/bugle/real-numbers-at-last/) (26 August 2026)
+- [Three trillion, say people who own the shares; Meta goes open again; and a gym-booking agent in Melbourne commits a small crime](https://pierresauvignon.github.io/bugle/three-trillion-meta-goes-open/) (20 August 2026)
 
 ## Profile
 
