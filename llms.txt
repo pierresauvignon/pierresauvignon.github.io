@@ -9,6 +9,12 @@
 - [OnReplay](https://pierresauvignon.github.io/onreplay/): a paid consumer AI app that turns photos into themed short films, orchestrating several generative AI providers on AWS Step Functions. 3,121 films delivered to 2,065 creators.
 - [OnSilent](https://pierresauvignon.github.io/onsilent/): an AI receptionist for Australian tradespeople and real-estate agents, bridging Twilio to OpenAI Realtime on AWS. 9,457 calls handled, 2024 to 2026.
 
+## Le Bugle
+
+Weekly posts on my opinions and the state of things in the industry. [All issues](https://pierresauvignon.github.io/bugle/)
+
+- [The AI bill is coming due, and a few other things I noticed this week](https://pierresauvignon.github.io/bugle/ai-bill-coming-due/) (22 October 2026)
+
 ## Profile
 
 - [Home page and experience](https://pierresauvignon.github.io/)

@@ -16,9 +16,11 @@ A one-page résumé plus a case study for each product I've designed, built and 
 Plain static HTML and CSS, served by GitHub Pages from `master`. There is no build step, framework or JavaScript dependency.
 
 ```
-index.html            Homepage: intro, experience, "Building now" cards, photos, contact
+index.html            Homepage: intro, experience, "Building now" cards, Le Bugle, photos, contact
 css/case-study.css    Shared styles for the case-study pages
 <product>/index.html  One case study per product
+bugle/index.html      Le Bugle archive, newest issue first
+bugle/<slug>/         One page per weekly post
 icons/                Product icons
 img/                  Photos, plus img/cases/ for product screenshots
 ```
@@ -26,6 +28,13 @@ img/                  Photos, plus img/cases/ for product screenshots
 - **Theming:** colours are CSS custom properties on `:root`, with a dark mode that follows the system setting. Each case study sets its own `--accent`.
 - **Diagrams and charts:** inline SVG that uses the same colour tokens, so they switch with dark mode.
 - **Fonts:** Onest and Geist Mono from Google Fonts.
+
+## Publishing a Le Bugle issue
+
+1. Copy `bugle/ai-bill-coming-due/` to `bugle/<new-slug>/` and replace the title, date, issue number, meta tags and body.
+2. Add a `<li>` at the top of the list in `bugle/index.html`.
+3. Point the clipping in the `#bugle` section of `index.html` at the new issue.
+4. Add the URL to `sitemap.xml` and `llms.txt`.
 
 ## Run locally
 

@@ -191,6 +191,23 @@ section{padding-block:clamp(3.5rem,9vw,7rem);border-top:1px solid var(--line)}
 .dots i{width:.45rem;height:.45rem;border-radius:999px;background:var(--line);transition:width .2s,background .2s}
 .dots i.on{width:1.5rem;background:var(--coral)}
 
+/* le bugle: the latest issue as a newspaper clipping, on the same paper as the receipt */
+.clip{position:relative;background:var(--paper);color:var(--paper-ink);padding:clamp(1.3rem,4vw,2.4rem);border-radius:.25rem;transform:rotate(-.6deg);box-shadow:0 22px 40px rgba(0,0,0,.45);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.clip:hover{transform:rotate(0) translateY(-4px)}
+.clip:has(.cover:focus-visible){outline:2px solid var(--pink);outline-offset:4px}
+.mast{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:.3rem 1rem;border-top:4px double var(--paper-ink);border-bottom:1.5px solid var(--paper-ink);padding:.45rem 0;font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:#6c5b62}
+.mast b{font-family:var(--display);font-weight:400;font-size:clamp(1.6rem,3.4vw,2.2rem);line-height:1.1;letter-spacing:0;text-transform:none;color:var(--paper-ink);text-align:center}
+.mast time{text-align:right}
+.clip h3{color:var(--paper-ink);font-size:clamp(1.7rem,3.6vw,2.6rem);line-height:1.1;margin-top:1.4rem;max-width:24ch}
+.clip p{margin-top:1rem;color:#4a3a40;max-width:62ch}
+.clip-foot{display:flex;align-items:center;justify-content:space-between;gap:.8rem 1rem;flex-wrap:wrap;margin-top:1.6rem;font-family:var(--mono);font-size:.76rem;color:#6c5b62}
+.clip .go{display:inline-flex;align-items:center;gap:.55rem;min-height:2.9rem;padding:.6rem 1.25rem;border-radius:999px;background:var(--grad);color:var(--on-grad);font-family:var(--sans);font-weight:700;font-size:.95rem;transition:filter .15s}
+.clip .go b{display:inline-block;transition:transform .25s cubic-bezier(.2,.8,.2,1)}
+.clip:hover .go{filter:brightness(1.07)}.clip:hover .go b{transform:translateX(4px)}
+@media (min-width:861px){.clip{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);grid-template-rows:auto auto 1fr;column-gap:clamp(2rem,5vw,4rem)}
+  .mast{grid-column:1/-1}.clip h3{grid-row:2 / span 2;padding-bottom:.4rem}.clip p{margin-top:1.6rem}.clip-foot{align-self:end}}
+@media (max-width:520px){.mast{grid-template-columns:1fr 1fr}.mast b{grid-column:1/-1;grid-row:1}}
+
 /* off the clock */
 .mos{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:12.5rem;grid-auto-flow:dense;gap:.9rem}
 .mos button{all:unset;box-sizing:border-box;cursor:zoom-in;position:relative;border-radius:var(--r);overflow:hidden;background:var(--raise);min-width:0;transition:transform .3s cubic-bezier(.2,.8,.2,1)}
@@ -268,7 +285,7 @@ footer nav{display:flex;gap:1.2rem}footer a:hover{color:var(--ink)}
 <body>
 <a class="skip" href="#experience">Skip to content</a>
 <div class="top"><div class="w"><a class="me" href="#" data-totop><img src="img/pierre-hero.jpg" alt="">Pierre Sauvignon</a>
- <nav class="nav" aria-label="Sections"><a href="#experience">Career</a><a href="#profile">Profile</a><a href="#building">Building now</a><a href="#offclock">Off the clock</a><a href="#contact">Get in touch</a></nav>
+ <nav class="nav" aria-label="Sections"><a href="#experience">Career</a><a href="#profile">Profile</a><a href="#building">Building now</a><a href="#bugle">Le Bugle</a><a href="#offclock">Off the clock</a><a href="#contact">Get in touch</a></nav>
  <button class="btn sm pri" type="button" data-copy>Copy email</button></div></div>
 <div class="w">
  <header class="hero">
@@ -315,6 +332,13 @@ footer nav{display:flex;gap:1.2rem}footer a:hover{color:var(--ink)}
  <p class="hk">Made live voice AI hold up on a real phone line.</p><p>An AI receptionist for Australian tradespeople and real-estate agents: it answered missed calls, triaged every message and called people back.</p>
  <div class="num"><b>9,457</b> <span>calls handled</span></div>
  <div class="foot"><span class="go">Read the case study <b>→</b></span><a class="host" href="https://onsilent.com">onsilent.com ↗</a></div></div></article></div><div class="dots" aria-hidden="true"><i></i><i></i><i></i><i></i></div></section>
+ <section id="bugle"><div class="wide-head"><div><div class="sh"><h2>Le Bugle</h2><span class="note">hot off the press</span></div>
+   <p>Weekly posts on my opinions and the state of things in the industry.</p></div>
+  <a class="btn" href="bugle/">All issues →</a></div>
+  <article class="clip"><div class="mast"><span>No. 1</span><b>Le Bugle</b><time datetime="2026-10-22">22 Oct 2026</time></div>
+   <h3><a class="cover" href="bugle/ai-bill-coming-due/">The AI bill is coming due, and a few other things I noticed this week</a></h3>
+   <p>I have been building software with AI tools all year, and the thing I did not expect is how quickly the conversation moved from "what can this do" to "who is paying for it".</p>
+   <div class="clip-foot"><span class="go">Read this week’s issue <b>→</b></span><span>3 min read</span></div></article></section>
  <section id="offclock"><div class="sh"><h2>Off the clock</h2><span class="note">the rest of the team</span></div>
   <div class="mos"><button type="button" class="w2" data-ph="0" aria-label="Open photo: Weekends, wind permitting"><img src="img/pierre-kitesurf.jpg" alt="Pierre kitesurfing through the spray" loading="lazy" width="1100" height="733"><span>Weekends, wind permitting</span></button><button type="button" class="t" data-ph="1" aria-label="Open photo: Sunset shift, Perth"><img src="img/pierre-family-sunset.jpg" alt="Pierre at sunset with his youngest son on his shoulders" loading="lazy" width="825" height="1100"><span>Sunset shift, Perth</span></button><button type="button" class="t" data-ph="2" aria-label="Open photo: The morning standup"><img src="img/pierre-kitchen.jpg" alt="Pierre holding the baby at the kitchen table" loading="lazy" width="825" height="1100"><span>The morning standup</span></button><button type="button" class="" data-ph="3" aria-label="Open photo: The breakfast meeting"><img src="img/pierre-highchair.jpg" alt="Breakfast with the baby in a high chair" loading="lazy" width="1100" height="825"><span>The breakfast meeting</span></button><button type="button" class="" data-ph="4" aria-label="Open photo: Documentation review"><img src="img/pierre-reading.jpg" alt="Pierre reading a picture book with his son" loading="lazy" width="1100" height="825"><span>Documentation review</span></button><button type="button" class="t" data-ph="5" aria-label="Open photo: On call"><img src="img/pierre-cafe.jpg" alt="Pierre bottle-feeding the baby at a cafe" loading="lazy" width="825" height="1100"><span>On call</span></button><button type="button" class="t" data-ph="6" aria-label="Open photo: Negotiating with a local stakeholder"><img src="img/pierre-crab.jpg" alt="Pierre pretending to eat a small crab" loading="lazy" width="618" height="1100"><span>Negotiating with a local stakeholder</span></button><button type="button" class="w2" data-ph="7" aria-label="Open photo: The whole team, offsite"><img src="img/pierre-team.jpg" alt="Family selfie above a coastline" loading="lazy" width="1100" height="825"><span>The whole team, offsite</span></button><button type="button" class="w2" data-ph="8" aria-label="Open photo: The two little startups, on tour"><img src="img/pierre-pier.jpg" alt="Pierre on a pier with his two sons" loading="lazy" width="825" height="1100"><span>The two little startups, on tour</span></button></div></section>
 
