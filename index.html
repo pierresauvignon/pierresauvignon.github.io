@@ -208,6 +208,13 @@ section{padding-block:clamp(3.5rem,9vw,7rem);border-top:1px solid var(--line)}
   .mast{grid-column:1/-1}.clip h3{grid-row:2 / span 2;padding-bottom:.4rem}.clip p{margin-top:1.6rem}.clip-foot{align-self:end}}
 @media (max-width:520px){.mast{grid-template-columns:1fr 1fr}.mast b{grid-column:1/-1;grid-row:1}}
 
+/* opinions: X's official embeds; the blockquotes are the no-JS fallback */
+.tweets{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,19rem),1fr));gap:1.2rem;align-items:start}
+.tweets>*{margin:0!important;min-width:0}
+.tweets blockquote{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:1.2rem 1.3rem;color:var(--muted);font-size:.92rem}
+.tweets blockquote p{color:var(--ink);font-size:1.05rem;margin-bottom:.8rem}
+.tweets blockquote a{color:var(--coral)}
+
 /* off the clock */
 .mos{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:12.5rem;grid-auto-flow:dense;gap:.9rem}
 .mos button{all:unset;box-sizing:border-box;cursor:zoom-in;position:relative;border-radius:var(--r);overflow:hidden;background:var(--raise);min-width:0;transition:transform .3s cubic-bezier(.2,.8,.2,1)}
@@ -285,7 +292,7 @@ footer nav{display:flex;gap:1.2rem}footer a:hover{color:var(--ink)}
 <body>
 <a class="skip" href="#experience">Skip to content</a>
 <div class="top"><div class="w"><a class="me" href="#" data-totop><img src="img/pierre-hero.jpg" alt="">Pierre Sauvignon</a>
- <nav class="nav" aria-label="Sections"><a href="#experience">Career</a><a href="#profile">Profile</a><a href="#building">Building now</a><a href="#bugle">Le Bugle</a><a href="#offclock">Off the clock</a><a href="#contact">Get in touch</a></nav>
+ <nav class="nav" aria-label="Sections"><a href="#experience">Career</a><a href="#profile">Profile</a><a href="#bugle">Le Bugle</a><a href="#building">Building now</a><a href="#opinions">Opinions</a><a href="#offclock">Off the clock</a><a href="#contact">Get in touch</a></nav>
  <button class="btn sm pri" type="button" data-copy>Copy email</button></div></div>
 <div class="w">
  <header class="hero">
@@ -312,6 +319,13 @@ footer nav{display:flex;gap:1.2rem}footer a:hover{color:var(--ink)}
     <li><b>Restored a 200-year-old house</b> in the south of France, on a break between jobs.</li>
     <li><b>Dad of two</b>, and a kitesurfer on weekends, wind permitting.</li></ul></div>
   </div></section>
+ <section id="bugle"><div class="wide-head"><div><div class="sh"><h2>Le Bugle</h2><span class="note">hot off the press</span></div>
+   <p>Weekly gatherings of things I read on the state of the industry.</p></div>
+  <a class="btn" href="bugle/">All issues →</a></div>
+  <article class="clip"><div class="mast"><span>No. 10</span><b>Le Bugle</b><time datetime="2026-10-22">22 Oct 2026</time></div>
+   <h3><a class="cover" href="bugle/ai-bill-coming-due/">The AI bill is coming due, and a few other things I noticed this week</a></h3>
+   <p>I have been building software with AI tools all year, and the thing I did not expect is how quickly the conversation moved from "what can this do" to "who is paying for it".</p>
+   <div class="clip-foot"><span class="go">Read this week’s issue <b>→</b></span><span>3 min read</span></div></article></section>
  <section id="building"><div class="wide-head"><div><div class="sh"><h2>Building now</h2><span class="note">Always Be Shipping</span></div>
    <p>Four products I designed, built and run on my own. Each case study covers the architecture, the numbers and what I learned.</p></div>
   <div class="arrows"><button class="rnd" type="button" data-rail="-1" aria-label="Previous product">←</button><button class="rnd" type="button" data-rail="1" aria-label="Next product">→</button></div></div>
@@ -332,13 +346,10 @@ footer nav{display:flex;gap:1.2rem}footer a:hover{color:var(--ink)}
  <p class="hk">Made live voice AI hold up on a real phone line.</p><p>An AI receptionist for Australian tradespeople and real-estate agents: it answered missed calls, triaged every message and called people back.</p>
  <div class="num"><b>9,457</b> <span>calls handled</span></div>
  <div class="foot"><span class="go">Read the case study <b>→</b></span><a class="host" href="https://onsilent.com">onsilent.com ↗</a></div></div></article></div><div class="dots" aria-hidden="true"><i></i><i></i><i></i><i></i></div></section>
- <section id="bugle"><div class="wide-head"><div><div class="sh"><h2>Le Bugle</h2><span class="note">hot off the press</span></div>
-   <p>Weekly gatherings of things I read on the state of the industry.</p></div>
-  <a class="btn" href="bugle/">All issues →</a></div>
-  <article class="clip"><div class="mast"><span>No. 10</span><b>Le Bugle</b><time datetime="2026-10-22">22 Oct 2026</time></div>
-   <h3><a class="cover" href="bugle/ai-bill-coming-due/">The AI bill is coming due, and a few other things I noticed this week</a></h3>
-   <p>I have been building software with AI tools all year, and the thing I did not expect is how quickly the conversation moved from "what can this do" to "who is paying for it".</p>
-   <div class="clip-foot"><span class="go">Read this week’s issue <b>→</b></span><span>3 min read</span></div></article></section>
+ <section id="opinions"><div class="wide-head"><div><div class="sh"><h2>Opinions</h2><span class="note">latest from X</span></div>
+   <p>My last three posts on X.</p></div>
+  <a class="btn" href="https://x.com/pierre_s">Follow @pierre_s ↗</a></div>
+  <div class="tweets"><blockquote class="twitter-tweet" data-theme="dark" data-dnt="true" data-conversation="none"><p lang="en">That kinda of visualisation UI reminds me of the Winamp’s skins (skins.webamp.org). Completely useless but somewhat desirable :D</p>&mdash; Pierre (@pierre_s) <a href="https://twitter.com/pierre_s/status/2107989517668094351">October 8, 2026</a></blockquote><blockquote class="twitter-tweet" data-theme="dark" data-dnt="true" data-conversation="none"><p lang="en">Shit is about to hit the fan.</p>&mdash; Pierre (@pierre_s) <a href="https://twitter.com/pierre_s/status/2100725690123571486">September 17, 2026</a></blockquote><blockquote class="twitter-tweet" data-theme="dark" data-dnt="true" data-conversation="none"><p lang="en">@Scobleizer I don’t understand how/why this👇 is not a thing in VR yet? Seems to me like an obvious banger for Apple (and others) yet no signs of it.</p>&mdash; Pierre (@pierre_s) <a href="https://twitter.com/pierre_s/status/2095321984737702101">September 3, 2026</a></blockquote></div></section>
  <section id="offclock"><div class="sh"><h2>Off the clock</h2><span class="note">the rest of the team</span></div>
   <div class="mos"><button type="button" class="w2" data-ph="0" aria-label="Open photo: Weekends, wind permitting"><img src="img/pierre-kitesurf.jpg" alt="Pierre kitesurfing through the spray" loading="lazy" width="1100" height="733"><span>Weekends, wind permitting</span></button><button type="button" class="t" data-ph="1" aria-label="Open photo: Sunset shift, Perth"><img src="img/pierre-family-sunset.jpg" alt="Pierre at sunset with his youngest son on his shoulders" loading="lazy" width="825" height="1100"><span>Sunset shift, Perth</span></button><button type="button" class="t" data-ph="2" aria-label="Open photo: The morning standup"><img src="img/pierre-kitchen.jpg" alt="Pierre holding the baby at the kitchen table" loading="lazy" width="825" height="1100"><span>The morning standup</span></button><button type="button" class="" data-ph="3" aria-label="Open photo: The breakfast meeting"><img src="img/pierre-highchair.jpg" alt="Breakfast with the baby in a high chair" loading="lazy" width="1100" height="825"><span>The breakfast meeting</span></button><button type="button" class="" data-ph="4" aria-label="Open photo: Documentation review"><img src="img/pierre-reading.jpg" alt="Pierre reading a picture book with his son" loading="lazy" width="1100" height="825"><span>Documentation review</span></button><button type="button" class="t" data-ph="5" aria-label="Open photo: On call"><img src="img/pierre-cafe.jpg" alt="Pierre bottle-feeding the baby at a cafe" loading="lazy" width="825" height="1100"><span>On call</span></button><button type="button" class="t" data-ph="6" aria-label="Open photo: Negotiating with a local stakeholder"><img src="img/pierre-crab.jpg" alt="Pierre pretending to eat a small crab" loading="lazy" width="618" height="1100"><span>Negotiating with a local stakeholder</span></button><button type="button" class="w2" data-ph="7" aria-label="Open photo: The whole team, offsite"><img src="img/pierre-team.jpg" alt="Family selfie above a coastline" loading="lazy" width="1100" height="825"><span>The whole team, offsite</span></button><button type="button" class="w2" data-ph="8" aria-label="Open photo: The two little startups, on tour"><img src="img/pierre-pier.jpg" alt="Pierre on a pier with his two sons" loading="lazy" width="825" height="1100"><span>The two little startups, on tour</span></button></div></section>
 
@@ -416,6 +427,9 @@ document.addEventListener('keydown',e=>{if(lb.hidden)return;
  if(e.key==='Tab'){const f=[...lb.querySelectorAll('button')];const i=f.indexOf(document.activeElement);if(e.shiftKey&&i<=0){e.preventDefault();f[f.length-1].focus()}else if(!e.shiftKey&&i===f.length-1){e.preventDefault();f[0].focus()}}});
 
 bind();
+const tw=document.querySelector('.tweets');
+if(tw){const load=()=>{if(document.getElementById('xw'))return;const sc=document.createElement('script');sc.id='xw';sc.async=true;sc.src='https://platform.twitter.com/widgets.js';document.body.appendChild(sc)};
+ if('IntersectionObserver' in window){const o=new IntersectionObserver(es=>{if(es.some(e=>e.isIntersecting)){load();o.disconnect()}},{rootMargin:'600px 0px'});o.observe(tw)}else load()}
 </script>
 </body>
 </html>
