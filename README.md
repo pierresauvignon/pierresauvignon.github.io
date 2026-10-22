@@ -21,6 +21,7 @@ css/case-study.css    Shared styles for the case-study pages
 <product>/index.html  One case study per product
 bugle/index.html      Le Bugle archive, newest issue first
 bugle/<slug>/         One page per weekly post
+tools/                Scripts to publish a Le Bugle issue
 icons/                Product icons
 img/                  Photos, plus img/cases/ for product screenshots
 ```
@@ -31,11 +32,13 @@ img/                  Photos, plus img/cases/ for product screenshots
 
 ## Publishing a Le Bugle issue
 
-1. Copy `bugle/ai-bill-coming-due/` to `bugle/<new-slug>/` and replace the title, date, issue number, meta tags and body.
-2. Add a `<li>` at the top of the list in `bugle/index.html`.
-   Link the issues to each other with the previous/next buttons at the bottom of each post.
-3. Point the clipping in the `#bugle` section of `index.html` at the new issue.
-4. Add the URL to `sitemap.xml` and `llms.txt`.
+Save the post body as Markdown (paragraphs with `[text](url)` links), then run:
+
+```sh
+python3 tools/add_issue.py . post.md <slug> <YYYY-MM-DD> "Full title" "Short title" "One-sentence summary."
+```
+
+It creates `bugle/<slug>/`, renumbers every issue by date (oldest is No. 1), relinks the previous/next buttons, adds the issue to the archive, `sitemap.xml` and `llms.txt`, and rebuilds the homepage front page (latest issue as the lead story, three earlier issues beside it) with `tools/render_home.py`.
 
 ## Run locally
 
