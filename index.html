@@ -190,16 +190,42 @@ section{padding-block:clamp(3.5rem,9vw,7rem);border-top:1px solid var(--line)}
 .dots{display:flex;justify-content:center;gap:.4rem;margin-top:.3rem}
 .dots i{width:.45rem;height:.45rem;border-radius:999px;background:var(--line);transition:width .2s,background .2s}
 .dots i.on{width:1.5rem;background:var(--coral)}
-/* open source: smaller repo cards under the product rail; the grid takes more repos as they come */
-.oss{margin-top:clamp(2.5rem,6vw,3.5rem)}
-.oss h3{font-family:var(--sans);font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:500;margin-bottom:1rem}
-.repos{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,19rem),1fr));gap:1.2rem}
-.repo{display:flex;flex-direction:column;gap:.5rem;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:1.2rem 1.4rem;font-size:.95rem;transition:border-color .2s,transform .25s}
-.repo:hover{border-color:var(--coral);transform:translateY(-4px)}
-.repo .rn{font-family:var(--mono);font-weight:600;font-size:1rem;color:var(--ink)}
-.repo .rn::before{content:"~/";color:var(--coral)}
-.repo .rm{margin-top:auto;padding-top:.8rem;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:1rem;font-family:var(--mono);font-size:.78rem;color:var(--muted)}
-.repo .rm b{font-weight:500;color:var(--ink)}
+/* work bench: a pegboard. My repos are paper tags taped to it; other people's hang from hooks and swing on hover */
+.bench{position:relative;border:1px solid var(--line);border-radius:var(--r);padding:clamp(1.4rem,4vw,2.6rem) clamp(1rem,3.5vw,2.4rem) clamp(2rem,5vw,3rem);
+  background:radial-gradient(circle,rgba(0,0,0,.5) 2.2px,rgba(255,255,255,.05) 2.8px,transparent 3.4px) 11px 11px/26px 26px,linear-gradient(180deg,#241c2b,#1b1521);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.04),0 30px 60px rgba(0,0,0,.35)}
+.bench::after{content:"";position:absolute;left:-1px;right:-1px;bottom:-1px;height:.9rem;border-radius:0 0 var(--r) var(--r);background:linear-gradient(180deg,#3a2c40,#2a2132);border-top:2px solid var(--coral)}
+.bench-grid{display:grid;grid-template-columns:minmax(0,21rem) minmax(0,1fr);gap:clamp(2rem,4vw,3rem)}
+.bench h3{display:flex;align-items:center;min-height:2.1rem;gap:.6rem;font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:500;margin-bottom:1.6rem}
+.bench h3 img{width:1.7rem;height:1.7rem;border-radius:50%;border:2px solid var(--coral)}
+.bench h3 .note{font-size:1.2rem;letter-spacing:0;text-transform:none;transform:rotate(-3deg)}
+.mine{display:grid;gap:2rem;align-content:start}
+.tag-card{position:relative;display:flex;flex-direction:column;gap:.7rem;background:var(--paper);color:var(--paper-ink);padding:1.6rem 1.4rem 1.3rem;border-radius:.25rem;transform:rotate(-1.6deg);box-shadow:0 18px 34px rgba(0,0,0,.5);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.tag-card:hover{transform:rotate(0) translateY(-4px)}
+.tag-card::before{content:"";position:absolute;top:-.8rem;left:50%;width:6.5rem;height:1.6rem;transform:translateX(-50%) rotate(-3deg);background:rgba(244,167,196,.55);box-shadow:0 1px 2px rgba(0,0,0,.15)}
+.tag-card .who{display:flex;align-items:center;gap:.7rem}
+.tag-card .who img{width:2.8rem;height:2.8rem;border-radius:50%}
+.tag-card .who small{display:block;font-family:var(--mono);font-size:.72rem;color:#6c5b62}
+.tag-card .who strong{display:block;font-family:var(--mono);font-size:1.15rem;font-weight:600;line-height:1.2}
+.tag-card p{font-size:.95rem;color:#4a3a40}
+.tag-card .stamp{position:absolute;top:1rem;right:1rem;border:2px solid #c2410c;color:#c2410c;padding:.1rem .5rem;border-radius:.3rem;transform:rotate(8deg);font-family:var(--mono);font-weight:600;letter-spacing:.12em;font-size:.68rem}
+.tag-card .ft{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-top:.3rem;padding-top:.8rem;border-top:1.5px dashed #b9a9a3;font-family:var(--mono);font-size:.74rem;color:#6c5b62}
+.tag-card .ft b{font-weight:600;color:#c2410c}
+.hooks{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,15rem),1fr));gap:2.6rem 1.4rem;align-items:start;padding-top:.6rem}
+.hang{position:relative;display:flex;flex-direction:column;gap:.6rem;background:var(--raise);border:1px solid #43354a;border-radius:.8rem;padding:1.3rem 1.2rem 1.1rem;transform-origin:50% -1.4rem;transition:border-color .2s,transform .5s cubic-bezier(.3,1.6,.5,1)}
+.hang::before{content:"";position:absolute;top:-1.4rem;left:50%;width:.9rem;height:.9rem;margin-left:-.45rem;border-radius:50%;background:#0d0a10;box-shadow:inset 0 1px 2px rgba(0,0,0,.8)}
+.hang::after{content:"";position:absolute;top:-1rem;left:50%;width:.55rem;height:1.5rem;margin-left:-.275rem;border:2px solid #8d7d86;border-top:0;border-radius:0 0 .4rem .4rem}
+.hang:hover{border-color:var(--coral);transform:rotate(2.5deg)}
+.hang:nth-child(even):hover{transform:rotate(-2.5deg)}
+.hang .who{display:flex;align-items:center;gap:.6rem;min-width:0}
+.hang .who img{width:2rem;height:2rem;border-radius:.45rem;flex:none}
+.hang .who span{font-family:var(--mono);font-size:.8rem;color:var(--muted);min-width:0;overflow-wrap:anywhere;line-height:1.3}
+.hang .who b{display:block;font-size:.98rem;font-weight:600;color:var(--ink)}
+.hang p{font-size:.88rem;line-height:1.5;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.hang .ft{display:flex;justify-content:space-between;gap:.8rem;margin-top:auto;padding-top:.7rem;border-top:1px solid #43354a;font-family:var(--mono);font-size:.74rem;color:var(--muted)}
+.hang .ft i{display:inline-block;width:.6rem;height:.6rem;border-radius:50%;background:var(--lc);margin-right:.35rem}
+.hang .ft b{font-weight:500;color:var(--ink)}
+@media (max-width:860px){.bench-grid{grid-template-columns:1fr}.mine{max-width:24rem}}
 
 /* le bugle: a front page on the receipt's paper, latest issue as the lead story, earlier issues in a side column */
 .fp{background:var(--paper);color:var(--paper-ink);border-radius:.3rem;padding:clamp(1.2rem,3.5vw,2.4rem);box-shadow:0 22px 40px rgba(0,0,0,.45)}
@@ -318,7 +344,7 @@ footer nav{display:flex;gap:1.2rem}footer a:hover{color:var(--ink)}
 <body>
 <a class="skip" href="#experience">Skip to content</a>
 <div class="top"><div class="w"><a class="me" href="#" data-totop><img src="img/pierre-hero.jpg" alt="">Pierre Sauvignon</a>
- <nav class="nav" aria-label="Sections"><a href="#experience">Career</a><a href="#profile">Profile</a><a href="#bugle">Le Bugle</a><a href="#building">Building now</a><a href="#offclock">Off the clock</a><a href="#opinions">Opinions</a><a href="#contact">Get in touch</a></nav>
+ <nav class="nav" aria-label="Sections"><a href="#experience">Career</a><a href="#profile">Profile</a><a href="#bugle">Le Bugle</a><a href="#building">Building now</a><a href="#workbench">Work bench</a><a href="#offclock">Off the clock</a><a href="#opinions">Opinions</a><a href="#contact">Get in touch</a></nav>
  <button class="btn sm pri" type="button" data-copy>Copy email</button></div></div>
 <div class="w">
  <header class="hero">
@@ -384,9 +410,24 @@ footer nav{display:flex;gap:1.2rem}footer a:hover{color:var(--ink)}
  <div class="nm"><img src="icons/onsilent.png" alt="" width="64" height="64"><h3><a class="cover" href="onsilent/">OnSilent</a></h3><span class="tag parked">Parked</span></div>
  <p class="hk">Made live voice AI hold up on a real phone line.</p><p>An AI receptionist for Australian tradespeople and real-estate agents: it answered missed calls, triaged every message and called people back.</p>
  <div class="num"><b>9,457</b> <span>calls handled</span></div>
- <div class="foot"><span class="go">Read the case study <b>→</b></span><a class="host" href="https://onsilent.com">onsilent.com ↗</a></div></div></article></div><div class="dots" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-  <div class="oss"><h3>Open source</h3><div class="repos">
-   <a class="repo" href="https://github.com/pierresauvignon/house-rules"><span class="rn">house-rules</span><p>Nine house rules for AI coding agents: sound human, aim high, tell the truth, keep it cheap, delegate well, cut friction, respect the code, stay secure.</p><span class="rm">Markdown · CC0 <b>GitHub ↗</b></span></a>
+ <div class="foot"><span class="go">Read the case study <b>→</b></span><a class="host" href="https://onsilent.com">onsilent.com ↗</a></div></div></article></div><div class="dots" aria-hidden="true"><i></i><i></i><i></i><i></i></div></section>
+ <section id="workbench"><div class="wide-head"><div><div class="sh"><h2>On the work bench</h2><span class="note">the tinkering zone</span></div>
+   <p>Open-source things I’ve made, and other people’s projects I keep picking up.</p></div></div>
+  <div class="bench"><div class="bench-grid">
+   <div><h3><img src="img/bench/pierresauvignon.png" alt="" width="64" height="64">Made here</h3><div class="mine">
+    <a class="tag-card" href="https://github.com/pierresauvignon/house-rules"><span class="stamp">CC0</span>
+     <span class="who"><img src="img/bench/pierresauvignon.png" alt="" width="64" height="64" loading="lazy"><span><small>pierresauvignon /</small><strong>house-rules</strong></span></span>
+     <p>Nine house rules for AI coding agents: sound human, aim high, tell the truth, keep it cheap, delegate well, cut friction, respect the code, stay secure.</p>
+     <span class="ft">Markdown <b>GitHub ↗</b></span></a>
+   </div></div>
+   <div><h3>Borrowed from other benches</h3><div class="hooks">
+    <a class="hang" href="https://github.com/pollen-robotics/microduck"><span class="who"><img src="img/bench/pollen-robotics.png" alt="" width="64" height="64" loading="lazy"><span>pollen-robotics /<b>microduck</b></span></span>
+     <p>A tiny biped duck robot.</p><span class="ft"><span><i style="--lc:#dea584"></i>Rust</span><b>★ 11.7k</b></span></a>
+    <a class="hang" href="https://github.com/crosspoint-reader/crosspoint-reader"><span class="who"><img src="img/bench/crosspoint-reader.png" alt="" width="64" height="64" loading="lazy"><span>crosspoint-reader /<b>crosspoint-reader</b></span></span>
+     <p>Open-source e-reader firmware.</p><span class="ft"><span><i style="--lc:#a8b9cc"></i>C</span><b>★ 8.5k</b></span></a>
+    <a class="hang" href="https://github.com/Comfy-Org/ComfyUI"><span class="who"><img src="img/bench/comfy-org.png" alt="" width="64" height="64" loading="lazy"><span>Comfy-Org /<b>ComfyUI</b></span></span>
+     <p>The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface.</p><span class="ft"><span><i style="--lc:#3572a5"></i>Python</span><b>★ 143k</b></span></a>
+   </div></div>
   </div></div></section>
  <section id="offclock"><div class="sh"><h2>Off the clock</h2><span class="note">the rest of the team</span></div>
   <div class="mos"><button type="button" class="w2" data-ph="0" aria-label="Open photo: Weekends, wind permitting"><img src="img/pierre-kitesurf.jpg" alt="Pierre kitesurfing through the spray" loading="lazy" width="1100" height="733"><span>Weekends, wind permitting</span></button><button type="button" class="t" data-ph="1" aria-label="Open photo: Sunset shift, Perth"><img src="img/pierre-family-sunset.jpg" alt="Pierre at sunset with his youngest son on his shoulders" loading="lazy" width="825" height="1100"><span>Sunset shift, Perth</span></button><button type="button" class="t" data-ph="2" aria-label="Open photo: The morning standup"><img src="img/pierre-kitchen.jpg" alt="Pierre holding the baby at the kitchen table" loading="lazy" width="825" height="1100"><span>The morning standup</span></button><button type="button" class="" data-ph="3" aria-label="Open photo: The breakfast meeting"><img src="img/pierre-highchair.jpg" alt="Breakfast with the baby in a high chair" loading="lazy" width="1100" height="825"><span>The breakfast meeting</span></button><button type="button" class="" data-ph="4" aria-label="Open photo: Documentation review"><img src="img/pierre-reading.jpg" alt="Pierre reading a picture book with his son" loading="lazy" width="1100" height="825"><span>Documentation review</span></button><button type="button" class="t" data-ph="5" aria-label="Open photo: On call"><img src="img/pierre-cafe.jpg" alt="Pierre bottle-feeding the baby at a cafe" loading="lazy" width="825" height="1100"><span>On call</span></button><button type="button" class="t" data-ph="6" aria-label="Open photo: Negotiating with a local stakeholder"><img src="img/pierre-crab.jpg" alt="Pierre pretending to eat a small crab" loading="lazy" width="618" height="1100"><span>Negotiating with a local stakeholder</span></button><button type="button" class="w2" data-ph="7" aria-label="Open photo: The whole team, offsite"><img src="img/pierre-team.jpg" alt="Family selfie above a coastline" loading="lazy" width="1100" height="825"><span>The whole team, offsite</span></button><button type="button" class="w2" data-ph="8" aria-label="Open photo: The two little startups, on tour"><img src="img/pierre-pier.jpg" alt="Pierre on a pier with his two sons" loading="lazy" width="825" height="1100"><span>The two little startups, on tour</span></button></div></section>

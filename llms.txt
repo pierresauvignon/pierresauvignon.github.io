@@ -9,9 +9,17 @@
 - [OnReplay](https://pierresauvignon.github.io/onreplay/): a paid consumer AI app that turns photos into themed short films, orchestrating several generative AI providers on AWS Step Functions. 3,121 films delivered to 2,065 creators.
 - [OnSilent](https://pierresauvignon.github.io/onsilent/): an AI receptionist for Australian tradespeople and real-estate agents, bridging Twilio to OpenAI Realtime on AWS. 9,457 calls handled, 2024 to 2026.
 
-## Open source
+## On the work bench
+
+My open-source projects:
 
 - [house-rules](https://github.com/pierresauvignon/house-rules): nine short principles for AI coding agents, covering voice, ambition, truth, cost, delegation, efficiency, craft and security. Public domain (CC0).
+
+Other people's projects I follow:
+
+- [microduck](https://github.com/pollen-robotics/microduck) by Pollen Robotics: a tiny biped duck robot.
+- [CrossPoint Reader](https://github.com/crosspoint-reader/crosspoint-reader): open-source e-reader firmware.
+- [ComfyUI](https://github.com/Comfy-Org/ComfyUI) by Comfy Org: a node-based diffusion model GUI, API and backend.
 
 ## Le Bugle
 
