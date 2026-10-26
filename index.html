@@ -190,6 +190,16 @@ section{padding-block:clamp(3.5rem,9vw,7rem);border-top:1px solid var(--line)}
 .dots{display:flex;justify-content:center;gap:.4rem;margin-top:.3rem}
 .dots i{width:.45rem;height:.45rem;border-radius:999px;background:var(--line);transition:width .2s,background .2s}
 .dots i.on{width:1.5rem;background:var(--coral)}
+/* open source: smaller repo cards under the product rail; the grid takes more repos as they come */
+.oss{margin-top:clamp(2.5rem,6vw,3.5rem)}
+.oss h3{font-family:var(--sans);font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:500;margin-bottom:1rem}
+.repos{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,19rem),1fr));gap:1.2rem}
+.repo{display:flex;flex-direction:column;gap:.5rem;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:1.2rem 1.4rem;font-size:.95rem;transition:border-color .2s,transform .25s}
+.repo:hover{border-color:var(--coral);transform:translateY(-4px)}
+.repo .rn{font-family:var(--mono);font-weight:600;font-size:1rem;color:var(--ink)}
+.repo .rn::before{content:"~/";color:var(--coral)}
+.repo .rm{margin-top:auto;padding-top:.8rem;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:1rem;font-family:var(--mono);font-size:.78rem;color:var(--muted)}
+.repo .rm b{font-weight:500;color:var(--ink)}
 
 /* le bugle: a front page on the receipt's paper, latest issue as the lead story, earlier issues in a side column */
 .fp{background:var(--paper);color:var(--paper-ink);border-radius:.3rem;padding:clamp(1.2rem,3.5vw,2.4rem);box-shadow:0 22px 40px rgba(0,0,0,.45)}
@@ -374,7 +384,10 @@ footer nav{display:flex;gap:1.2rem}footer a:hover{color:var(--ink)}
  <div class="nm"><img src="icons/onsilent.png" alt="" width="64" height="64"><h3><a class="cover" href="onsilent/">OnSilent</a></h3><span class="tag parked">Parked</span></div>
  <p class="hk">Made live voice AI hold up on a real phone line.</p><p>An AI receptionist for Australian tradespeople and real-estate agents: it answered missed calls, triaged every message and called people back.</p>
  <div class="num"><b>9,457</b> <span>calls handled</span></div>
- <div class="foot"><span class="go">Read the case study <b>→</b></span><a class="host" href="https://onsilent.com">onsilent.com ↗</a></div></div></article></div><div class="dots" aria-hidden="true"><i></i><i></i><i></i><i></i></div></section>
+ <div class="foot"><span class="go">Read the case study <b>→</b></span><a class="host" href="https://onsilent.com">onsilent.com ↗</a></div></div></article></div><div class="dots" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+  <div class="oss"><h3>Open source</h3><div class="repos">
+   <a class="repo" href="https://github.com/pierresauvignon/house-rules"><span class="rn">house-rules</span><p>Nine house rules for AI coding agents: sound human, aim high, tell the truth, keep it cheap, delegate well, cut friction, respect the code, stay secure.</p><span class="rm">Markdown · CC0 <b>GitHub ↗</b></span></a>
+  </div></div></section>
  <section id="offclock"><div class="sh"><h2>Off the clock</h2><span class="note">the rest of the team</span></div>
   <div class="mos"><button type="button" class="w2" data-ph="0" aria-label="Open photo: Weekends, wind permitting"><img src="img/pierre-kitesurf.jpg" alt="Pierre kitesurfing through the spray" loading="lazy" width="1100" height="733"><span>Weekends, wind permitting</span></button><button type="button" class="t" data-ph="1" aria-label="Open photo: Sunset shift, Perth"><img src="img/pierre-family-sunset.jpg" alt="Pierre at sunset with his youngest son on his shoulders" loading="lazy" width="825" height="1100"><span>Sunset shift, Perth</span></button><button type="button" class="t" data-ph="2" aria-label="Open photo: The morning standup"><img src="img/pierre-kitchen.jpg" alt="Pierre holding the baby at the kitchen table" loading="lazy" width="825" height="1100"><span>The morning standup</span></button><button type="button" class="" data-ph="3" aria-label="Open photo: The breakfast meeting"><img src="img/pierre-highchair.jpg" alt="Breakfast with the baby in a high chair" loading="lazy" width="1100" height="825"><span>The breakfast meeting</span></button><button type="button" class="" data-ph="4" aria-label="Open photo: Documentation review"><img src="img/pierre-reading.jpg" alt="Pierre reading a picture book with his son" loading="lazy" width="1100" height="825"><span>Documentation review</span></button><button type="button" class="t" data-ph="5" aria-label="Open photo: On call"><img src="img/pierre-cafe.jpg" alt="Pierre bottle-feeding the baby at a cafe" loading="lazy" width="825" height="1100"><span>On call</span></button><button type="button" class="t" data-ph="6" aria-label="Open photo: Negotiating with a local stakeholder"><img src="img/pierre-crab.jpg" alt="Pierre pretending to eat a small crab" loading="lazy" width="618" height="1100"><span>Negotiating with a local stakeholder</span></button><button type="button" class="w2" data-ph="7" aria-label="Open photo: The whole team, offsite"><img src="img/pierre-team.jpg" alt="Family selfie above a coastline" loading="lazy" width="1100" height="825"><span>The whole team, offsite</span></button><button type="button" class="w2" data-ph="8" aria-label="Open photo: The two little startups, on tour"><img src="img/pierre-pier.jpg" alt="Pierre on a pier with his two sons" loading="lazy" width="825" height="1100"><span>The two little startups, on tour</span></button></div></section>
  <section id="opinions"><div class="wide-head"><div><div class="sh"><h2>Opinions</h2><span class="note">latest from X</span></div>
