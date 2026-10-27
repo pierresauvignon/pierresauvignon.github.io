@@ -25,7 +25,7 @@ Other people's projects I follow:
 
 Weekly gatherings of things I read on the state of the industry. [All issues](https://pierresauvignon.github.io/bugle/)
 
-- [Black October, a private key that was literally the number 4, and an agent that costs too much to give away](https://pierresauvignon.github.io/bugle/black-october/) (28 October 2026)
+- [Black October](https://pierresauvignon.github.io/bugle/black-october/) (28 October 2026)
 - [The AI bill is coming due, and a few other things I noticed this week](https://pierresauvignon.github.io/bugle/ai-bill-coming-due/) (22 October 2026)
 - [Funny numbers, polite agents and a rocket company that wants to be a phone carrier](https://pierresauvignon.github.io/bugle/funny-numbers-polite-agents/) (15 October 2026)
 - [Old numbers, loose agents and a Chinese SUV at the top of the British charts](https://pierresauvignon.github.io/bugle/old-numbers-loose-agents/) (7 October 2026)
