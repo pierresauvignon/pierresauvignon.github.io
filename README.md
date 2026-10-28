@@ -13,7 +13,7 @@ A one-page résumé plus a case study for each product I've designed, built and 
 
 ## How it's built
 
-Plain static HTML and CSS, served by GitHub Pages from `master`. There is no build step, framework or JavaScript dependency.
+Plain static HTML and CSS, served by GitHub Pages from `master`. There is no build step, framework or JavaScript dependency; the only third-party script is the Google Analytics tag (G-61V7EQQ5S0) in each page head.
 
 ```
 index.html            Homepage: intro, experience, "Building now" cards, Le Bugle, photos, contact
