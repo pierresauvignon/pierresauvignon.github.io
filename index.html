@@ -210,7 +210,8 @@ section{padding-block:clamp(3.5rem,9vw,7rem);border-top:1px solid var(--line)}
 .bench h3 .note{font-size:1.2rem;letter-spacing:0;text-transform:none;transform:rotate(-3deg)}
 .mine{display:grid;gap:2rem;align-content:start}
 .tag-card{position:relative;display:flex;flex-direction:column;gap:.7rem;background:var(--paper);color:var(--paper-ink);padding:1.6rem 1.4rem 1.3rem;border-radius:.25rem;transform:rotate(-1.6deg);box-shadow:0 18px 34px rgba(0,0,0,.5);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
-.tag-card:hover{transform:rotate(0) translateY(-4px)}
+.tag-card:nth-child(even){transform:rotate(1.4deg)}
+.tag-card:hover,.tag-card:nth-child(even):hover{transform:rotate(0) translateY(-4px)}
 .tag-card::before{content:"";position:absolute;top:-.8rem;left:50%;width:6.5rem;height:1.6rem;transform:translateX(-50%) rotate(-3deg);background:rgba(244,167,196,.55);box-shadow:0 1px 2px rgba(0,0,0,.15)}
 .tag-card .who{display:flex;align-items:center;gap:.7rem}
 .tag-card .who img{width:2.8rem;height:2.8rem;border-radius:50%}
@@ -438,6 +439,10 @@ footer nav{display:flex;gap:1.2rem}footer a:hover{color:var(--ink)}
      <span class="who"><img src="img/bench/pierresauvignon.png" alt="" width="64" height="64" loading="lazy"><span><small>pierresauvignon /</small><strong>house-rules</strong></span></span>
      <p>Nine house rules for AI coding agents: sound human, aim high, tell the truth, keep it cheap, delegate well, cut friction, respect the code, stay secure.</p>
      <span class="ft">Markdown <b>GitHub ↗</b></span></a>
+    <a class="tag-card" href="https://github.com/pierresauvignon/Property-map"><span class="stamp">MIT</span>
+     <span class="who"><img src="img/bench/pierresauvignon.png" alt="" width="64" height="64" loading="lazy"><span><small>pierresauvignon /</small><strong>Property-map</strong></span></span>
+     <p>A shared notebook for two people buying a house together: every place you’re considering on one map, with both your scores, comments, photos and visits.</p>
+     <span class="ft">JavaScript <b>GitHub ↗</b></span></a>
    </div></div>
    <div><h3>Borrowed from other benches</h3><div class="hooks">
     <a class="hang" href="https://github.com/pollen-robotics/microduck"><span class="who"><img src="img/bench/pollen-robotics.png" alt="" width="64" height="64" loading="lazy"><span>pollen-robotics /<b>microduck</b></span></span>

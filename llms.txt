@@ -14,6 +14,7 @@
 My open-source projects:
 
 - [house-rules](https://github.com/pierresauvignon/house-rules): nine short principles for AI coding agents, covering voice, ambition, truth, cost, delegation, efficiency, craft and security. Public domain (CC0).
+- [Property-map](https://github.com/pierresauvignon/Property-map): a shared notebook for two people buying a house together, with every property on one map, both people's scores, comments, photos, documents and visits. Plain HTML/JS front end and a single AWS Lambda. MIT licence.
 
 Other people's projects I follow:
 
