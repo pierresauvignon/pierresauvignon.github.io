@@ -212,13 +212,12 @@ section{padding-block:clamp(3.5rem,9vw,7rem);border-top:1px solid var(--line)}
 .tag-card{position:relative;display:flex;flex-direction:column;gap:.7rem;background:var(--paper);color:var(--paper-ink);padding:1.6rem 1.4rem 1.3rem;border-radius:.25rem;transform:rotate(-1.6deg);box-shadow:0 18px 34px rgba(0,0,0,.5);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
 .tag-card:nth-child(even){transform:rotate(1.4deg)}
 .tag-card:hover,.tag-card:nth-child(even):hover{transform:rotate(0) translateY(-4px)}
-/* made here as a pile: JS measures each card's offset (--dy) and the two heights, hover/focus/tap spreads it */
-.made .mine{position:relative}
-.made.js .mine{height:var(--full);transition:height .5s cubic-bezier(.2,.8,.2,1)}
-.made.js .tag-card{z-index:calc(20 - var(--i));transition:transform .5s cubic-bezier(.2,.8,.2,1),filter .5s}
-.made.pile .mine{height:var(--pile)}
-.made.pile .tag-card{transform:translate(calc(var(--i)*8px),calc(var(--i)*14px - var(--dy))) rotate(calc(var(--i)*3deg - 1.6deg));filter:brightness(calc(1 - var(--i)*.08))}
-.made h3 .note{opacity:0;transition:opacity .3s}.made.pile h3 .note{opacity:1}
+/* made here as a pile: cards share one grid cell, --o is the place in the pile (0 = top); hovering, tapping or tabbing to a card behind pulls it out and puts it on top */
+.made.js .mine{padding-bottom:calc(var(--n)*22px)}
+.made.js .tag-card{grid-area:1/1;z-index:calc(20 - var(--o));transform:translate(calc(var(--o)*10px),calc(var(--o)*22px)) rotate(calc(var(--o)*3deg - 1.6deg));filter:brightness(calc(1 - var(--o)*.08));transition:transform .45s cubic-bezier(.2,.8,.2,1),filter .45s}
+.made.js .tag-card.top:hover{transform:rotate(0) translateY(-4px)}
+.made.js .tag-card.pull{animation:pull .6s cubic-bezier(.3,.7,.3,1)}
+@keyframes pull{0%{transform:var(--was);z-index:1}45%{z-index:1}50%{transform:translate(58%,-10px) rotate(6deg)}55%,100%{z-index:40}}
 .tag-card::before{content:"";position:absolute;top:-.8rem;left:50%;width:6.5rem;height:1.6rem;transform:translateX(-50%) rotate(-3deg);background:rgba(244,167,196,.55);box-shadow:0 1px 2px rgba(0,0,0,.15)}
 .tag-card .who{display:flex;align-items:center;gap:.7rem}
 .tag-card .who img{width:2.8rem;height:2.8rem;border-radius:50%}
@@ -546,18 +545,21 @@ document.addEventListener('keydown',e=>{if(lb.hidden)return;
 
 bind();
 const made=document.querySelector('.made'),cards=made?[...made.querySelectorAll('.tag-card')]:[];
-if(cards.length>1){const mine=made.querySelector('.mine'),set=o=>made.classList.toggle('pile',!o);
- const fit=()=>{let p=0;cards.forEach((c,i)=>{c.style.setProperty('--i',i);c.style.setProperty('--dy',c.offsetTop-cards[0].offsetTop+'px');p=Math.max(p,c.offsetHeight+i*14)});
-  const l=cards[cards.length-1];mine.style.setProperty('--full',l.offsetTop+l.offsetHeight+'px');mine.style.setProperty('--pile',p+'px')};
- fit();if('ResizeObserver' in window){const ro=new ResizeObserver(fit);cards.forEach(c=>ro.observe(c))};addEventListener('resize',fit);
- made.querySelector('h3 .note').textContent=(matchMedia('(hover:hover)').matches?'hover':'tap')+' to spread them';
- made.classList.add('js','pile');
- made.addEventListener('pointerenter',e=>{if(e.pointerType==='mouse')set(1)});
- made.addEventListener('pointerleave',e=>{if(e.pointerType==='mouse'&&!made.contains(document.activeElement))set(0)});
- made.addEventListener('focusin',()=>set(1));
- made.addEventListener('focusout',e=>{if(!made.contains(e.relatedTarget))set(0)});
- made.addEventListener('click',e=>{if(made.classList.contains('pile')){e.preventDefault();set(1)}});
- document.addEventListener('click',e=>{if(!made.contains(e.target))set(0)});
+if(cards.length>1){const order=cards.slice(),pos=o=>`translate(${o*10}px,${o*22}px) rotate(${o*3-1.6}deg)`;let lock=false;
+ const place=()=>order.forEach((c,o)=>{c.style.setProperty('--o',o);c.classList.toggle('top',!o)});
+ const promote=c=>{const o=order.indexOf(c);if(o<1)return;c.style.setProperty('--was',pos(o));order.splice(o,1);order.unshift(c);place();c.classList.remove('pull');void c.offsetWidth;c.classList.add('pull')};
+ made.querySelector('.mine').style.setProperty('--n',cards.length-1);place();made.classList.add('js');
+ made.querySelector('h3 .note').textContent=(matchMedia('(hover:hover)').matches?'hover':'tap')+' the one behind';
+ cards.forEach(c=>{
+  c.addEventListener('animationend',()=>c.classList.remove('pull'));
+  // mouse: one swap per visit, or the card that drops behind would come straight back under a still cursor
+  c.addEventListener('pointerenter',e=>{if(e.pointerType==='mouse'&&!lock&&order.indexOf(c)>0){promote(c);lock=true}});
+  c.addEventListener('click',e=>{if(order.indexOf(c)>0){e.preventDefault();if(!lock)promote(c)}});
+  c.addEventListener('focus',()=>{if(c.matches(':focus-visible'))promote(c)});
+ });
+ // unlock only once the cursor is clearly away from the pile; a plain pointerleave fires when the swap itself moves the cards off a cursor at the edge
+ const mine=made.querySelector('.mine');
+ document.addEventListener('pointermove',e=>{if(!lock)return;const r=mine.getBoundingClientRect(),m=30;if(e.clientX<r.left-m||e.clientX>r.right+m||e.clientY<r.top-m||e.clientY>r.bottom+m)lock=false},{passive:true});
 }
 const tw=document.querySelector('.tweets');
 if(tw){const load=()=>{if(document.getElementById('xw'))return;const sc=document.createElement('script');sc.id='xw';sc.async=true;sc.src='https://platform.twitter.com/widgets.js';document.body.appendChild(sc)};
