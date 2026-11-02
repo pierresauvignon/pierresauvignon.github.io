@@ -212,6 +212,13 @@ section{padding-block:clamp(3.5rem,9vw,7rem);border-top:1px solid var(--line)}
 .tag-card{position:relative;display:flex;flex-direction:column;gap:.7rem;background:var(--paper);color:var(--paper-ink);padding:1.6rem 1.4rem 1.3rem;border-radius:.25rem;transform:rotate(-1.6deg);box-shadow:0 18px 34px rgba(0,0,0,.5);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
 .tag-card:nth-child(even){transform:rotate(1.4deg)}
 .tag-card:hover,.tag-card:nth-child(even):hover{transform:rotate(0) translateY(-4px)}
+/* made here as a pile: JS measures each card's offset (--dy) and the two heights, hover/focus/tap spreads it */
+.made .mine{position:relative}
+.made.js .mine{height:var(--full);transition:height .5s cubic-bezier(.2,.8,.2,1)}
+.made.js .tag-card{z-index:calc(20 - var(--i));transition:transform .5s cubic-bezier(.2,.8,.2,1),filter .5s}
+.made.pile .mine{height:var(--pile)}
+.made.pile .tag-card{transform:translate(calc(var(--i)*8px),calc(var(--i)*14px - var(--dy))) rotate(calc(var(--i)*3deg - 1.6deg));filter:brightness(calc(1 - var(--i)*.08))}
+.made h3 .note{opacity:0;transition:opacity .3s}.made.pile h3 .note{opacity:1}
 .tag-card::before{content:"";position:absolute;top:-.8rem;left:50%;width:6.5rem;height:1.6rem;transform:translateX(-50%) rotate(-3deg);background:rgba(244,167,196,.55);box-shadow:0 1px 2px rgba(0,0,0,.15)}
 .tag-card .who{display:flex;align-items:center;gap:.7rem}
 .tag-card .who img{width:2.8rem;height:2.8rem;border-radius:50%}
@@ -434,7 +441,7 @@ footer nav{display:flex;gap:1.2rem}footer a:hover{color:var(--ink)}
  <section id="workbench"><div class="wide-head"><div><div class="sh"><h2>On the work bench</h2><span class="note">the tinkering zone</span></div>
    <p>Open-source things I’ve made, and other people’s projects I keep picking up.</p></div></div>
   <div class="bench"><div class="bench-grid">
-   <div><h3><img src="img/bench/pierresauvignon.png" alt="" width="64" height="64">Made here</h3><div class="mine">
+   <div class="made"><h3><img src="img/bench/pierresauvignon.png" alt="" width="64" height="64">Made here<span class="note" aria-hidden="true"></span></h3><div class="mine">
     <a class="tag-card" href="https://github.com/pierresauvignon/house-rules"><span class="stamp">CC0</span>
      <span class="who"><img src="img/bench/pierresauvignon.png" alt="" width="64" height="64" loading="lazy"><span><small>pierresauvignon /</small><strong>house-rules</strong></span></span>
      <p>Nine house rules for AI coding agents: sound human, aim high, tell the truth, keep it cheap, delegate well, cut friction, respect the code, stay secure.</p>
@@ -538,6 +545,20 @@ document.addEventListener('keydown',e=>{if(lb.hidden)return;
  if(e.key==='Tab'){const f=[...lb.querySelectorAll('button')];const i=f.indexOf(document.activeElement);if(e.shiftKey&&i<=0){e.preventDefault();f[f.length-1].focus()}else if(!e.shiftKey&&i===f.length-1){e.preventDefault();f[0].focus()}}});
 
 bind();
+const made=document.querySelector('.made'),cards=made?[...made.querySelectorAll('.tag-card')]:[];
+if(cards.length>1){const mine=made.querySelector('.mine'),set=o=>made.classList.toggle('pile',!o);
+ const fit=()=>{let p=0;cards.forEach((c,i)=>{c.style.setProperty('--i',i);c.style.setProperty('--dy',c.offsetTop-cards[0].offsetTop+'px');p=Math.max(p,c.offsetHeight+i*14)});
+  const l=cards[cards.length-1];mine.style.setProperty('--full',l.offsetTop+l.offsetHeight+'px');mine.style.setProperty('--pile',p+'px')};
+ fit();if('ResizeObserver' in window){const ro=new ResizeObserver(fit);cards.forEach(c=>ro.observe(c))};addEventListener('resize',fit);
+ made.querySelector('h3 .note').textContent=(matchMedia('(hover:hover)').matches?'hover':'tap')+' to spread them';
+ made.classList.add('js','pile');
+ made.addEventListener('pointerenter',e=>{if(e.pointerType==='mouse')set(1)});
+ made.addEventListener('pointerleave',e=>{if(e.pointerType==='mouse'&&!made.contains(document.activeElement))set(0)});
+ made.addEventListener('focusin',()=>set(1));
+ made.addEventListener('focusout',e=>{if(!made.contains(e.relatedTarget))set(0)});
+ made.addEventListener('click',e=>{if(made.classList.contains('pile')){e.preventDefault();set(1)}});
+ document.addEventListener('click',e=>{if(!made.contains(e.target))set(0)});
+}
 const tw=document.querySelector('.tweets');
 if(tw){const load=()=>{if(document.getElementById('xw'))return;const sc=document.createElement('script');sc.id='xw';sc.async=true;sc.src='https://platform.twitter.com/widgets.js';document.body.appendChild(sc)};
  if('IntersectionObserver' in window){const o=new IntersectionObserver(es=>{if(es.some(e=>e.isIntersecting)){load();o.disconnect()}},{rootMargin:'600px 0px'});o.observe(tw)}else load()}
