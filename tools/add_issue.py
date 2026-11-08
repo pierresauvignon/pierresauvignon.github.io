@@ -83,7 +83,7 @@ for i, (sl, dt) in enumerate(issues):
     assert k == 1
 open('bugle/index.html', 'w').write(archive)
 
-# --- homepage front page: lead story and earlier issues come from the archive ---
+# --- homepage Le Bugle column: latest issue and earlier issues come from the archive ---
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import render_home
 render_home.render('.')

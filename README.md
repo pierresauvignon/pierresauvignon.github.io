@@ -38,7 +38,7 @@ Save the post body as Markdown (paragraphs with `[text](url)` links), then run:
 python3 tools/add_issue.py . post.md <slug> <YYYY-MM-DD> "Full title" "Short title" "One-sentence summary."
 ```
 
-It creates `bugle/<slug>/`, renumbers every issue by date (oldest is No. 1), relinks the previous/next buttons, adds the issue to the archive, `sitemap.xml` and `llms.txt`, and rebuilds the homepage front page (latest issue as the lead story, three earlier issues beside it) with `tools/render_home.py`.
+It creates `bugle/<slug>/`, renumbers every issue by date (oldest is No. 1), relinks the previous/next buttons, adds the issue to the archive, `sitemap.xml` and `llms.txt`, and rebuilds the homepage Le Bugle column (latest issue as a strip of wire tape, three earlier issues below it, between the `bugle:start` and `bugle:end` comments) with `tools/render_home.py`.
 
 ## Run locally
 

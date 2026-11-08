@@ -1,4 +1,4 @@
-"""Rebuild the homepage Le Bugle front page (latest issue as lead story, its archive summary as the standfirst, + 3 earlier issues) from bugle/index.html.
+"""Rebuild the homepage Le Bugle column (latest issue as a strip of wire tape with its archive summary, + 3 earlier issues as a log) from bugle/index.html.
 
 usage: python3 render_home.py SITE_DIR
 """
@@ -13,28 +13,23 @@ def render(site):
     post = open(os.path.join(site, 'bugle/%s/index.html' % slug)).read()
     mins = re.search(r'· (\d+) min read', post).group(1)
     d = datetime.date.fromisoformat(date)
-    side = ''.join(
-        '\n    <a href="bugle/%s/"><small>No. %s · %d %s</small><strong>%s</strong></a>'
+    log = ''.join(
+        '\n    <a href="bugle/%s/"><small><b>No. %s</b> · %d %s</small><span>%s</span></a>'
         % (s, n, datetime.date.fromisoformat(dt).day, datetime.date.fromisoformat(dt).strftime('%b'), t)
         for s, n, dt, t, _ in earlier)
-    block = '''<article class="fp">
-   <div class="fp-mast"><span>No. %s</span><span>Perth, WA</span></div>
-   <div class="fp-strap"><time datetime="%s">%s %d %s</time><span>Weekly · tech &amp; AI</span></div>
-   <div class="fp-body">
-    <div class="fp-lead">
-     <span class="fp-kick">This week</span>
-     <h3><a href="bugle/%s/">%s</a></h3>
-     <p>%s</p>
-     <div class="fp-foot"><a class="go" href="bugle/%s/">Read this week’s issue <b>→</b></a><span>%s min read</span></div>
-    </div>
-    <aside class="fp-side" aria-label="Earlier issues"><h4>Earlier issues</h4>%s
-    </aside>
-   </div>
-  </article>''' % (num, date, d.strftime('%A'), d.day, d.strftime('%B %Y'), slug, title,
-                   summary, slug, mins, side)
+    block = '''<!-- bugle:start -->
+   <article class="lb-tape">
+    <div class="lb-meta"><span><b>No. %s</b> · Perth WA</span><time datetime="%s">%02d %s</time></div>
+    <h3><a href="bugle/%s/">%s</a></h3>
+    <p>%s</p>
+    <div class="lb-ft"><a class="lb-go" href="bugle/%s/">Read this week’s issue <b>→</b></a><span>%s min read</span></div>
+   </article>
+   <nav class="lb-list" aria-label="Earlier issues">%s
+   </nav>
+   <!-- bugle:end -->''' % (num, date, d.day, d.strftime('%b %Y'), slug, title, summary, slug, mins, log)
     p = os.path.join(site, 'index.html')
     h = open(p).read()
-    h, k = re.subn(r'<article class="(?:clip|fp)">.*?</article>', lambda m: block, h, count=1, flags=re.S)
+    h, k = re.subn(r'<!-- bugle:start -->.*?<!-- bugle:end -->', lambda m: block, h, count=1, flags=re.S)
     assert k == 1
     open(p, 'w').write(h)
 
