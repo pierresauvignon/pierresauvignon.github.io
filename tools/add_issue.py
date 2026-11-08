@@ -100,5 +100,12 @@ allb.sort(key=key, reverse=True)
 x = x.replace('\n'.join(bullets), '\n'.join(allb))
 open('llms.txt', 'w').write(x)
 
+# --- social share cards (needs Google Chrome; renumbering changes every card, so redo them all) ---
+import subprocess
+try:
+    subprocess.run([sys.executable, os.path.join(os.path.dirname(os.path.abspath(__file__)), 'og_cards.py'), '.'], check=True)
+except Exception as e:
+    print('WARNING: share cards not rendered (%s); run python3 tools/og_cards.py . by hand' % e)
+
 print('%d words, %d min, %d links, %d paragraphs, now %d issues (this is No. %d)'
       % (words, mins, body.count('<a href'), len(paras), len(issues), [s for s, _ in issues].index(slug) + 1))

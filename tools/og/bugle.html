@@ -1,0 +1,30 @@
+<!doctype html><html><head><meta charset="utf-8">
+<!-- Le Bugle share card, 1200x630. Rendered by tools/og_cards.py: ?n=12&date=04 Nov 2026&title=... (no n = archive card, date = issue range) -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+html,body{margin:0;width:1200px;height:630px;overflow:hidden}
+body{background:radial-gradient(70% 90% at 100% 0,rgba(224,81,126,.22),transparent 60%),radial-gradient(60% 80% at 0 100%,rgba(255,138,91,.14),transparent 60%),#15101a;font-family:'IBM Plex Mono',monospace;display:grid;grid-template-rows:auto 1fr;padding:44px 56px 54px;box-sizing:border-box;gap:30px}
+.top{display:flex;justify-content:space-between;align-items:baseline}
+.top h1{margin:0;font:400 72px/1 'DM Serif Display',Georgia,serif;color:#f8eee4}
+.top span{font-size:17px;letter-spacing:.16em;text-transform:uppercase;color:#a6969d;font-weight:500}
+.tape{position:relative;background:#efe6d2;color:#2a2226;padding:30px 44px 34px 84px;display:grid;align-content:start;gap:22px;transform:rotate(-1.2deg);align-self:center;
+ --z:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) bottom/24px 12px repeat-x,conic-gradient(from 135deg at top,#0000,#000 1deg 89deg,#0000 90deg) top/24px 12px repeat-x;
+ -webkit-mask:linear-gradient(#000 0 0) center/100% calc(100% - 24px) no-repeat,var(--z);mask:linear-gradient(#000 0 0) center/100% calc(100% - 24px) no-repeat,var(--z);box-shadow:0 20px 40px rgba(0,0,0,.4)}
+.tape::before{content:"";position:absolute;left:28px;top:20px;bottom:20px;width:16px;background:radial-gradient(circle,#15101a 0 6px,transparent 6.5px) top/100% 28px repeat-y}
+.meta{display:flex;justify-content:space-between;font-size:19px;letter-spacing:.12em;text-transform:uppercase;color:#7a6c62;padding-bottom:14px;border-bottom:2px solid #d3c7b0}
+.meta b{color:#e0517e;font-weight:600}
+h2{margin:0;font-weight:600;text-transform:uppercase;line-height:1.22;letter-spacing:.01em;font-size:54px;text-wrap:balance}
+h2::after{content:"";display:inline-block;width:.6em;height:1.05em;background:#000;vertical-align:-.15em;margin-left:.25em}
+</style></head><body>
+<div class="top"><h1>Le Bugle</h1><span>Pierre Sauvignon</span></div>
+<div class="tape"><div class="meta"><span id="m"></span><span id="d"></span></div><h2 id="t"></h2></div>
+<script>
+var q=new URLSearchParams(location.search),t=q.get('title');
+document.getElementById('m').innerHTML=q.get('n')?'<b>No. '+q.get('n')+'</b> · Perth WA':'<b>All issues</b> · Perth WA';
+document.getElementById('d').textContent=q.get('date')||'';
+var h=document.getElementById('t');h.textContent=t||'Weekly gatherings of things I read on the state of the industry.';
+// biggest size that fits: short headlines go large, long ones shrink until the tape fits the card
+var tape=h.closest('.tape'),s=76;h.style.fontSize=s+'px';
+while((tape.scrollHeight>420||h.scrollWidth>h.clientWidth)&&s>26){s-=2;h.style.fontSize=s+'px'}
+</script>
+</body></html>

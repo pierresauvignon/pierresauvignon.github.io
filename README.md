@@ -38,7 +38,11 @@ Save the post body as Markdown (paragraphs with `[text](url)` links), then run:
 python3 tools/add_issue.py . post.md <slug> <YYYY-MM-DD> "Full title" "Short title" "One-sentence summary."
 ```
 
-It creates `bugle/<slug>/`, renumbers every issue by date (oldest is No. 1), relinks the previous/next buttons, adds the issue to the archive, `sitemap.xml` and `llms.txt`, and rebuilds the homepage Le Bugle column (latest issue as a strip of wire tape, three earlier issues below it, between the `bugle:start` and `bugle:end` comments) with `tools/render_home.py`.
+It creates `bugle/<slug>/`, renumbers every issue by date (oldest is No. 1), relinks the previous/next buttons, adds the issue to the archive, `sitemap.xml` and `llms.txt`, and rebuilds the homepage Le Bugle column (latest issue as a strip of wire tape, three earlier issues below it, between the `bugle:start` and `bugle:end` comments) with `tools/render_home.py`. Last, it renders every share card with `tools/og_cards.py` (needs Google Chrome; if it can't, it says so and you can rerun it by hand).
+
+## Share cards
+
+Each page has its own 1200×630 `og:image` in `img/og/`, drawn from the HTML templates in `tools/og/` and screenshotted with headless Chrome: `python3 tools/og_cards.py .` renders the homepage card, the Le Bugle archive card, one wire-tape card per issue (number, date and headline read from the page) and one card per AI, explained article that has a `tools/og/ai-<slug>.html` template. A rerun only rewrites images whose pixels changed. Case studies keep their product screenshots in `img/cases/`.
 
 ## Run locally
 
