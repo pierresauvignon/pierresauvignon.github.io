@@ -39,6 +39,12 @@ Weekly gatherings of things I read on the state of the industry. [All issues](ht
 - [Real numbers at last, three deals from the Bank of Jensen, and a robot stock that rose 600% before lunch](https://pierresauvignon.github.io/bugle/real-numbers-at-last/) (26 August 2026)
 - [Three trillion, say people who own the shares; Meta goes open again; and a gym-booking agent in Melbourne commits a small crime](https://pierresauvignon.github.io/bugle/three-trillion-meta-goes-open/) (20 August 2026)
 
+## AI, explained
+
+Demystifying AI concepts.
+
+- [Software factories](https://pierresauvignon.github.io/ai/software-factories/) (8 November 2026)
+
 ## Profile
 
 - [Home page and experience](https://pierresauvignon.github.io/)
