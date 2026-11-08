@@ -154,8 +154,37 @@ section{padding-block:clamp(3.5rem,9vw,7rem);border-top:1px solid var(--line)}
 .receipt .ty{text-align:center;margin-top:.5rem;font-size:.72rem;color:#6c5b62}
 /* receipt spans the header row too, so its top lines up with the Career heading */
 @media (min-width:861px){#experience{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,21rem);column-gap:clamp(2rem,6vw,5rem);align-items:start}
-  #experience .career{display:contents}#experience .sh,#experience .story{grid-column:1}#experience .receipt{grid-column:2;grid-row:1 / span 2;margin-top:.6rem}}
-@media (max-width:860px){.career{grid-template-columns:1fr}.receipt{max-width:21rem;width:100%;margin-inline:auto}}
+  #experience .career{display:contents}#experience .sh,#experience .story{grid-column:1}#experience .rcpt{grid-column:2;grid-row:1 / span 2;align-self:center;padding:44px 0 170px}}
+@media (max-width:860px){.career{grid-template-columns:1fr}.rcpt{max-width:21rem;width:100%;margin-inline:auto;margin-block:3.5rem 3rem}}
+/* app tiles around the receipt: they bob, and a dragged one springs back home */
+.rcpt{position:relative;isolation:isolate}
+.rcpt .receipt{z-index:1;margin-top:0}
+.app{position:absolute;z-index:0;width:var(--s);aspect-ratio:1;border-radius:23%;display:grid;place-items:center;touch-action:none;cursor:grab;
+  background:var(--pcol);box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 14px 26px rgba(0,0,0,.45);
+  transform:rotate(var(--r));translate:var(--x,0px) var(--y,0px);transition:transform .3s;animation:bob 5s ease-in-out infinite}
+.app img{display:block;width:100%;height:auto}
+.app::after{content:attr(data-name);position:absolute;left:50%;top:100%;margin-top:.35rem;translate:-50% 4px;white-space:nowrap;
+  font:600 1.15rem/1 var(--hand);color:var(--pink);opacity:0;pointer-events:none;transition:opacity .2s,translate .2s}
+.app:hover{transform:rotate(0) scale(1.08)}
+.app:hover::after,.app:focus-visible::after{opacity:1;translate:-50% 0}
+.app.drag{animation:none;cursor:grabbing;scale:1.18;z-index:3;box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 28px 40px rgba(0,0,0,.55)}
+.app.back{animation:none;transition:translate .8s cubic-bezier(.34,1.8,.45,1),rotate .8s cubic-bezier(.34,1.8,.45,1),scale .3s}
+@keyframes bob{50%{translate:var(--x,0px) calc(var(--y,0px) - 7px)}}
+.app-lobsterone{--s:70px;--r:-12deg;top:0;left:-58px;image-rendering:pixelated;
+  background:url(icons/lobsterone.png) calc(var(--s)*-.33) calc(var(--s)*.1)/150% no-repeat,radial-gradient(110% 90% at 30% 15%,#fff1a8 0,#ffd23f 55%,#f0a91c 100%)}
+.app-lobsterone img{visibility:hidden}
+.app-tigersoup{--s:62px;--r:10deg;--pcol:#fff;top:280px;right:-56px;animation-delay:-1.2s}
+.app-tigersoup img{width:124%;max-width:none;clip-path:inset(9.7% round 19%)}
+.app-onreplay{--s:74px;--r:-7deg;--pcol:#0b0b0d;bottom:80px;left:2%;animation-delay:-2.5s}
+.app-onreplay img{width:84%}
+.app-onsilent{--s:64px;--r:9deg;--pcol:#fff;bottom:0;right:10%;animation-delay:-3.6s}
+.app-onsilent img{width:104%;max-width:none;clip-path:inset(1.9% round 22%)}
+.fling-note{position:absolute;z-index:2;left:34%;bottom:70px;font:1.35rem/1 var(--hand);color:var(--pink);rotate:-8deg;pointer-events:none;transition:opacity .4s}
+.fling-note svg{display:block;margin:.2rem 0 0 2.2rem}
+.rcpt.flung .fling-note{opacity:0}
+@media (max-width:860px){.app{--s:56px}.fling-note{display:none}
+  .app-lobsterone{top:-50px;left:-10px}.app-tigersoup{top:-42px;right:-8px}
+  .app-onreplay{bottom:-48px;left:-6px}.app-onsilent{bottom:-50px;right:-4px}}
 
 /* profile */
 .prof{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(2rem,6vw,5rem)}
@@ -389,11 +418,11 @@ footer nav{display:flex;gap:1.2rem}footer a:hover{color:var(--ink)}
    <figure class="portrait"><img src="img/pierre-hero.jpg" alt="Pierre with his youngest son on his shoulders" width="880" height="1100" fetchpriority="high"></figure>
    <div><span class="kick">Pierre Sauvignon · Entrepreneur with a product bias.</span>
     <h1>I turn ideas into products people <span class="u">pay for.<svg viewBox="0 0 200 20" preserveAspectRatio="none" aria-hidden="true"><path d="M3 13C40 6 90 4 130 8S185 15 197 9"/></svg></span></h1><p class="lede">Nearly two decades across Sydney and Perth: incubating <mark>100+ startups</mark>, growing a cabin business from idea to profit and now <mark>shipping with AI</mark>.</p><div class="cta"><button class="btn pri" type="button" data-copy>Copy my email</button><a class="btn" href="https://www.linkedin.com/in/pierresauvignon">LinkedIn ↗</a></div></div></header>
- <section id="experience"><div class="sh"><h2>Career</h2><span class="note">the short version</span></div><div class="career"><div class="story"><p>I started my first business in France straight out of high school. In my twenties I moved to Sydney and joined <a href="https://www.afr.com/technology/end-of-an-era-as-aussie-startup-pioneers-pollenizer-call-it-a-day-20170228-gun90e">Pollenizer</a>, Australia’s first web incubator, where I became Head of Product and built the team that launched 100+ startups. I coached 30+ of them directly, using a program we developed and later published as the book <a href="https://www.smartcompany.com.au/startupsmart/how-australias-top-start-up-incubators-performed-in-2012/">Startup Focus</a>. It worked: one of those startups, Spreets, <a href="http://anthillonline.com/spreets-sold-for-40-million-in-the-biggest-and-fastest-group-buying-deal-of-the-year-so-far/">sold to Yahoo!7 for AU$40M</a>.</p><p>In 2019 I moved to Perth and started <a href="https://heyscape.com.au">Heyscape</a> inside RAC’s innovation hub, growing it from an idea into a profitable business with 25 off-grid cabins across seven sites.</p><p>Today I <a href="#building">build my own AI products</a> and lead AI projects on contract. Most recently, at <a href="https://www.respondent.io">Respondent.io</a>, I built an AI platform that runs their recruitment campaigns.</p></div><aside class="receipt" aria-label="Skills, with where each was proven">
+ <section id="experience"><div class="sh"><h2>Career</h2><span class="note">the short version</span></div><div class="career"><div class="story"><p>I started my first business in France straight out of high school. In my twenties I moved to Sydney and joined <a href="https://www.afr.com/technology/end-of-an-era-as-aussie-startup-pioneers-pollenizer-call-it-a-day-20170228-gun90e">Pollenizer</a>, Australia’s first web incubator, where I became Head of Product and built the team that launched 100+ startups. I coached 30+ of them directly, using a program we developed and later published as the book <a href="https://www.smartcompany.com.au/startupsmart/how-australias-top-start-up-incubators-performed-in-2012/">Startup Focus</a>. It worked: one of those startups, Spreets, <a href="http://anthillonline.com/spreets-sold-for-40-million-in-the-biggest-and-fastest-group-buying-deal-of-the-year-so-far/">sold to Yahoo!7 for AU$40M</a>.</p><p>In 2019 I moved to Perth and started <a href="https://heyscape.com.au">Heyscape</a> inside RAC’s innovation hub, growing it from an idea into a profitable business with 25 off-grid cabins across seven sites.</p><p>Today I <a href="#building">build my own AI products</a> and lead AI projects on contract. Most recently, at <a href="https://www.respondent.io">Respondent.io</a>, I built an AI platform that runs their recruitment campaigns.</p></div><div class="rcpt"><a class="app app-lobsterone" href="lobsterone/" data-name="LobsterOne" aria-label="LobsterOne case study"><img src="icons/lobsterone.png" alt="" width="64" height="64"></a><a class="app app-tigersoup" href="tigersoup/" data-name="TigerSoup" aria-label="TigerSoup case study"><img src="icons/tigersoup.png" alt="" width="64" height="64"></a><a class="app app-onreplay" href="onreplay/" data-name="OnReplay" aria-label="OnReplay case study"><img src="icons/onreplay.png" alt="" width="64" height="64"></a><a class="app app-onsilent" href="onsilent/" data-name="OnSilent" aria-label="OnSilent case study"><img src="icons/onsilent.png" alt="" width="64" height="64"></a><aside class="receipt" aria-label="Skills, with where each was proven">
    <div class="rh">Pierre Sauvignon</div><div class="rs">Skills, used in production</div><hr>
    <ul class="items"><li><b>AWS serverless</b><i aria-hidden="true"></i><span class="ok" aria-label="yes">✓</span><small>Lambda · Step Functions · SQS · API Gateway</small></li><li><b>Infrastructure as code</b><i aria-hidden="true"></i><span class="ok" aria-label="yes">✓</span><small>CDK · CloudFormation · GitHub OIDC</small></li><li><b>AI &amp; LLMs</b><i aria-hidden="true"></i><span class="ok" aria-label="yes">✓</span><small>Claude · OpenAI · Gemini · Kling</small></li><li><b>Realtime voice</b><i aria-hidden="true"></i><span class="ok" aria-label="yes">✓</span><small>OpenAI Realtime · Twilio · ECS Fargate</small></li><li><b>Native apps</b><i aria-hidden="true"></i><span class="ok" aria-label="yes">✓</span><small>Swift · SwiftUI · Expo · React Native</small></li><li><b>Startup coaching</b><i aria-hidden="true"></i><span class="ok" aria-label="yes">✓</span><small>Program design · Portfolio · Startup Focus</small></li></ul><hr>
    <div style="text-align:center"><span class="stamp">Available</span></div>
-   <div class="bar" aria-hidden="true"></div><div class="ty">Thank you for scrolling</div></aside></div></section>
+   <div class="bar" aria-hidden="true"></div><div class="ty">Thank you for scrolling</div></aside><span class="fling-note" aria-hidden="true">go on, throw one<svg width="40" height="34" viewBox="0 0 40 34" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 2c4 14 14 24 30 28"/><path d="M26 31l8-1-3-7"/></svg></span></div></div></section>
  <section id="profile"><div class="sh"><h2>Profile</h2><span class="note">who you’d be hiring</span></div>
   <div class="prof">
    <div><h3>What I do</h3><div class="does">
@@ -582,6 +611,21 @@ if(cards.length>1){const order=cards.slice(),pos=o=>`translate(${o*10}px,${o*22}
 const tw=document.querySelector('.tweets');
 if(tw){const load=()=>{if(document.getElementById('xw'))return;const sc=document.createElement('script');sc.id='xw';sc.async=true;sc.src='https://platform.twitter.com/widgets.js';document.body.appendChild(sc)};
  if('IntersectionObserver' in window){const o=new IntersectionObserver(es=>{if(es.some(e=>e.isIntersecting)){load();o.disconnect()}},{rootMargin:'600px 0px'});o.observe(tw)}else load()}
+</script>
+<script>
+// app tiles: drag one anywhere, let go and it springs back; a plain click still opens the case study
+(()=>{const box=document.querySelector('.rcpt');if(!box||matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+box.querySelectorAll('.app').forEach(a=>{let sx,sy,lx,lt,vx=0,moved=false,id=null;
+  a.addEventListener('pointerdown',e=>{id=e.pointerId;a.setPointerCapture(id);sx=lx=e.clientX;sy=e.clientY;lt=performance.now();moved=false;a.classList.remove('back');a.classList.add('drag')});
+  a.addEventListener('pointermove',e=>{if(e.pointerId!==id)return;const dx=e.clientX-sx,dy=e.clientY-sy;if(Math.hypot(dx,dy)>5)moved=true;
+    const now=performance.now();vx=(e.clientX-lx)/Math.max(now-lt,1);lx=e.clientX;lt=now;
+    a.style.setProperty('--x',dx+'px');a.style.setProperty('--y',dy+'px');a.style.rotate=Math.max(-35,Math.min(35,vx*18))+'deg'});
+  const up=e=>{if(e.pointerId!==id)return;id=null;a.classList.replace('drag','back');
+    a.style.setProperty('--x','0px');a.style.setProperty('--y','0px');a.style.rotate='';if(moved)box.classList.add('flung');
+    setTimeout(()=>a.classList.remove('back'),850)};
+  a.addEventListener('pointerup',up);a.addEventListener('pointercancel',up);
+  a.addEventListener('click',e=>{if(moved){e.preventDefault();moved=false}});
+  a.addEventListener('dragstart',e=>e.preventDefault())})})();
 </script>
 </body>
 </html>
