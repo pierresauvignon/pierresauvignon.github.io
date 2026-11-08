@@ -1,0 +1,42 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+html,body{margin:0;width:1200px;height:630px;overflow:hidden}
+body{background-color:#1c1a30;background-image:linear-gradient(#2c2948 1px,transparent 1px),linear-gradient(90deg,#2c2948 1px,transparent 1px),linear-gradient(#242139 1px,transparent 1px),linear-gradient(90deg,#242139 1px,transparent 1px);background-size:80px 80px,80px 80px,16px 16px,16px 16px;color:#d8d4f0;font-family:'IBM Plex Mono',monospace}
+.frame{position:absolute;inset:32px;border:2.5px solid #d8d4f0;display:grid;grid-template-rows:1fr auto}
+.top{position:absolute;left:28px;top:22px;right:28px;display:flex;justify-content:space-between;font-size:17px;letter-spacing:.16em;text-transform:uppercase;color:#a9a4d2;font-weight:500}
+.top b{color:#ff8a5b;font-weight:600}
+.draw{display:grid;place-items:center;padding:52px 40px 6px}
+svg{width:900px;height:auto;display:block;overflow:visible;color:#d8d4f0}
+svg text{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:1.5px;fill:#a9a4d2;stroke:none}
+.bar{border-top:2.5px solid #d8d4f0;background:linear-gradient(135deg,#ff8a5b,#e0517e);color:#1a1014;display:flex;align-items:center;justify-content:space-between;padding:20px 36px}
+h1{margin:0;font:400 76px/1 'DM Serif Display',Georgia,serif}
+.by{font-size:18px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;text-align:right;line-height:1.5}
+</style></head><body>
+<div class="frame">
+ <div class="top"><span><b>AI-01</b> · AI, explained</span><span>Pierre Sauvignon</span></div>
+ <div class="draw"><svg viewBox="0 0 360 156" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+  <defs>
+   <g id="doc"><path d="M0 80h14l5 5v17H0z"/><path d="M4 88h10M4 93h10M4 98h7" opacity=".6"/></g>
+   <g id="code"><rect x="-4" y="82" width="28" height="20" rx="2"/><path d="M5 88l-3 4 3 4M15 88l3 4-3 4M11.5 87l-3 10"/></g>
+  </defs>
+  <path d="M14 40h36l-8 22H22z"/><path d="M24 46h16M26 52h12" opacity=".55"/>
+  <path d="M100 10h86M104 10v6M182 10v6" opacity=".6"/>
+  <g><circle cx="143" cy="10" r="3.2" fill="#1c1a30"/><path d="M143 13v26M134 39h18M136 39l-3 9M150 39l3 9"/></g>
+  <g stroke="#ff8a5b" stroke-width="1.6"><path d="M143 64v-5M135 66l-4-3M151 66l4-3M137 71h-5M149 71h5"/></g>
+  <path d="M218 104V56h30v48"/><path d="M218 64h30" opacity=".6"/>
+  <circle cx="233" cy="50" r="4" fill="#ff8a5b" stroke="#ff8a5b"/>
+  <path d="M220 66h26v36h-26z" fill="#ff8a5b" stroke="none" opacity=".35"/>
+  <use href="#doc" x="62"/>
+  <use href="#code" x="134"/>
+  <use href="#code" x="224"/>
+  <use href="#code" x="296"/><g stroke="#ff8a5b" stroke-width="2"><path d="M300 72l4 4 8-8"/></g>
+  <path d="M30 104h300" stroke-dasharray="8 4"/><path d="M30 120h300"/>
+  <circle cx="30" cy="112" r="8"/><path d="M24 112h12"/><circle cx="330" cy="112" r="8"/><path d="M324 112h12"/>
+  <circle cx="105" cy="112" r="4"/><circle cx="180" cy="112" r="4"/><circle cx="255" cy="112" r="4"/>
+  <path d="M30 120v14M330 120v14M22 134h316" opacity=".5"/>
+  <text x="32" y="150" text-anchor="middle">SPEC</text><text x="143" y="150" text-anchor="middle">BUILD</text><text x="233" y="150" text-anchor="middle">TEST</text><text x="322" y="150" text-anchor="middle">SHIP</text>
+ </svg></div>
+ <div class="bar"><h1>Software factories</h1></div>
+</div>
+</body></html>
