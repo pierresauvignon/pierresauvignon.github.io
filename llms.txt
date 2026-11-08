@@ -41,7 +41,7 @@ Weekly gatherings of things I read on the state of the industry. [All issues](ht
 
 ## AI, explained
 
-Demystifying AI concepts.
+Demystifying buzz words, and other rants.
 
 - [Software factories](https://pierresauvignon.github.io/ai/software-factories/) (8 November 2026)
 
