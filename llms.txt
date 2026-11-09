@@ -44,6 +44,7 @@ Weekly gatherings of things I read on the state of the industry. [All issues](ht
 Demystifying buzz words, and other rants.
 
 - [Software factories](https://pierresauvignon.github.io/ai/software-factories/) (8 November 2026)
+- [Agentic & Agentification](https://pierresauvignon.github.io/ai/agentic-agentification/) (9 November 2026)
 
 ## Profile
 
