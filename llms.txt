@@ -26,6 +26,8 @@ Other people's projects I follow:
 
 Weekly gatherings of things I read on the state of the industry. [All issues](https://pierresauvignon.github.io/bugle/)
 
+- [Jensen is out, Anthropic prices tomorrow, and nobody wants another middleman](https://pierresauvignon.github.io/bugle/jensen-is-out/) (18 November 2026)
+- [The backlash gets a vote, and Jensen has a very bad week](https://pierresauvignon.github.io/bugle/the-backlash-gets-a-vote/) (13 November 2026)
 - [Real numbers at last, and the market doesn’t like them](https://pierresauvignon.github.io/bugle/market-doesnt-like-them/) (4 November 2026)
 - [Black October: AI finds the holes in the internet](https://pierresauvignon.github.io/bugle/black-october/) (28 October 2026)
 - [The AI bill is coming due, and a few other things I noticed this week](https://pierresauvignon.github.io/bugle/ai-bill-coming-due/) (22 October 2026)
